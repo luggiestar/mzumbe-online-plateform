@@ -1,0 +1,81 @@
+{% extends 'UJUZI/base.html' %}
+{% load social_share %}
+{% block content %}
+
+<div class="u-contents-wrapper">
+    <div class="course-title">
+        {{courses.name}}
+    </div>
+    <div class="u-course-cover">
+        <img src="{{courses.image.url}}"/>
+    </div>
+
+    <ul class="share-links">
+        <li class="shar-title-txt">share: </li>
+        <li>
+             {% post_to_whatsapp object_or_url "<i class='fa fa-whatsapp whatsapp-color' ></i>" %}
+        </li>
+        <li>
+              {% post_to_linkedin object_or_url %}
+        </li>
+        <li>
+            {% post_to_facebook object_or_url "<i class='fa fa-facebook-f' ></i>" %}
+        </li>
+    </ul>
+    <div class="o-mod">
+        <div class="o-box">
+            <div class="sub-title">
+                Objectives
+            </div>
+            <div class="o-txt">
+                 {{courses.objective|safe}}
+            </div>
+        </div>
+        <div class="mod-box">
+                <div class="sub-title">
+                    Topics {{total}}
+                </div>
+                <ul class="u-mudules">
+                    {% for i in modules %}
+                    {% if i.extension|upper == ".PDF" %}
+                    <a href="{{i.content.url}}" >
+
+                        <li class="u-module">
+                            <div class="u-mod-title-text">
+                                {{forloop.counter}}. &nbsp;{{i.title}}
+
+                            </div>
+                            <span class="u-mod-ic">
+                                <i class="fa fa-file-pdf-o"></i>
+                            </span>
+                        </li>
+
+                    </a>
+
+                        {% elif i.extension|upper == ".MP4" or i.extension|upper == ".MKV" %}
+                    <a href="{% url 'UJUZI:module_content' i.id %}">
+                         <li class="u-module">
+                            <div class="u-mod-title-text">
+                                {{forloop.counter}}. &nbsp;{{i.title}}
+
+                            </div>
+                            <span class="u-mod-ic">
+                                <i class="fa fa-play-circle"></i>
+                            </span>
+                        </li>
+
+                    </a>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+<!--end of category courses-->
+{% endblock content %}

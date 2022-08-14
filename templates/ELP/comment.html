@@ -1,0 +1,135 @@
+{% extends 'ELP/navbar.html' %}
+
+{% block content %}
+<div class="container">
+	<div class="pt-3">
+		
+		<div class="row">
+			<div class="col-md-7 col-xl-7">
+				<div class="card">
+					<div class="card-header elp-bg"><i class="fa fa-comments"></i> Charts For Computer Science</div>
+					<div class="card-body">
+						<div class="row" id="comment">
+							<div class="col-md-12 col-xl-12"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id = 'message'></div>
+			{% for i in module_of_list %}
+			<div class="col-md-4">
+				<div class="card card-body">
+					{{i.name}}
+					{{i.course.name}}
+					<form method="POST" id="post-form">
+						{% csrf_token %}
+						<textarea rows="6" name="convo" id="convo" class="form-control"></textarea>
+						<input  type="text" name="module" value="{{i.id}}" id="module" class="form-control">
+						<button type="submit" class="btn btn-primary">Comment</button>
+					</form>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+ <script src="https://code.jquery.com/jquery-3.5.1.js" 
+          integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
+            crossorigin="anonymous"></script>
+<script type="text/javascript">
+
+	$(document).ready(function() {
+		$("#post-form").submit(function (e) {
+			e.preventDefault();
+			create_post();
+		});
+		//getComment() 
+	})
+	
+	
+	/*function getComment() {
+		setInterval(function() {
+
+			$.ajax({
+				type: 'GET',
+				url: '{% url "UJUZI:list_of_comment" %}',
+				success: function(response) {
+					$("#comment").empty();
+					{% for i in list_of_comment %}
+					{% if request.user.email ==  i.enrollment.student.user.email %}
+						temp = "<div class='col-md-12 col-xl-12 bg-dark card card-body text-light'>"+
+							"{{i.enrollment.student.user}}"+
+						"</div>";
+					{% endif %}
+					{% if not request.user.email ==  i.enrollment.student.user.email %}
+						temp = "<div class='col-md-12 col-xl-12 bg-danger card card-body text-light'>"+
+							"{{i.enrollment.student.user}}"+
+						"</div>";
+					{% endif %}
+
+					$("#comment").append(temp)
+					{% endfor %}
+				}
+			})
+
+		}, 1000);
+	}*/
+	
+	
+		function getComment() {
+		setInterval(function() {
+
+			$.ajax({
+				type: 'GET',
+				url: '{% url "ELP:list_new" %}',
+				success: function(response) {
+					$("#comment").empty();
+				        $.each(response, function (index, value) {
+					    console.log(response[index].convo);
+					    temp = "<div class='col-md-12 col-xl-12 bg-dark card card-body text-light'>"+
+						response[index].convo+ "</div>";
+					$("#comment").append(temp)
+					    
+					})
+					
+				}
+			})
+
+		}, 1000);
+	}
+	
+
+	function create_post() {
+    	$.ajax({
+			type: 'POST',
+			url: "{% url 'UJUZI:save_comment' %}",
+			data: {
+				convo:$('#convo').val(),
+				module: $('#module').val(),
+				csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+			},
+
+			success: function(){
+                $('#message').html(" <div class='alert alert-success'>  your comment saved successfully! </div>") 
+            },
+
+            error: function(){
+                $('#message').html(" <div class='alert alert-danger'>  Error Try again! </div>") 
+                
+            }
+
+		});
+
+		document.getElementById("post-form").reset();
+	};
+
+
+</script>
+
+{% endblock %}
+
+{% block javascript %}
+
+{% endblock %}
+</body>
+</html>

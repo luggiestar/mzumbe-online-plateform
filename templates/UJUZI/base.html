@@ -1,0 +1,131 @@
+{% load sizify %}
+{% load static %}
+
+
+<html lang="en">
+     <head>
+        <title>UJUZI</title>
+         <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+           <link rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+  crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'UJUZI_CSS/dashboard.css' %}">
+         <link rel="stylesheet" href="{% static 'UJUZI_CSS/dashboardSummary.css' %}">
+         <link rel="stylesheet" href="{% static 'UJUZI_CSS/index.css' %}">
+         <link rel="stylesheet" href="{% static 'UJUZI_CSS/skill_app.css' %}">
+<!--        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+<!--        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.1/css/all.min.css">-->
+
+         <!-- Fontawesome 6 icons -->
+        <link rel="stylesheet" href="{% static 'UJUZI_CSS/main.css' %}" />
+        <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/all.css' %}" />
+        <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/all.min.css' %}"/>
+        <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/brands.css' %}"/>
+        <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/brands.min.css' %}"/>
+        <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/regular.css' %}" />
+        <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/regular.min.css' %}"/>
+        <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/solid.css' %}" />
+        <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/solid.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/fontawesome.css' %}" />
+        <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/fontawesome.min.css' %}"/>
+        <link rel="stylesheet"  href="{% static 'UJUZI_CSS/fa-css/svg-with-js.css' %}"/>
+        <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/svg-with-js.min.css' %}"/>
+        <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/v4-font-face.css' %}" />
+        <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/v4-font-face.min.css' %}"/>
+        <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/v4-shims.css' %}"/>
+        <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/v4-shims.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/v5-font-face.css' %}" />
+        <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/v5-font-face.min.css' %}" />
+        <!-- Fontawesome 6 icons -->
+
+     </head>
+     <body>
+           <input type="checkbox" id="toggle"/>
+           <!--header starts here-->
+            <header>
+                <div class="toggle-div" style="color:yellow;">
+                      <label for="toggle" class="toggle-label"><span></span></label>
+                    </div>
+                </div>
+                <div class="u-u-name">
+                    <div class="u-u-icon">
+                         <i class="fa fa-user-circle-o"></i>
+                    </div>
+                    <p>{{request.user}} &nbsp;(<span class="gold-shadow">Student</span>)</p>
+                </div>
+            </header>
+           <!--header ends here-->
+           <!--side bar menu starts here-->
+            <div class="side-bar">
+                <div class="u-logo">
+                    <div class="logo-png gold-shadow">
+                        UJUZISET
+                    </div>
+                </div>
+
+                <a href="{% url 'UJUZI:home_view' %}" id="side-bar-dashboard" class="sidebar-link" >
+                    <i class=" fa fa-home icons gold-shadow" ></i>
+                    <span>Dashboard</span>
+                </a>
+                <a id="payment-link-btn" href="payments" class="sidebar-link" >
+                   <i class="fa-solid fa-book-open icons gold-shadow" aria-hidden="true"></i>
+                    <span>Enrolled courses</span>
+                </a>
+
+                <a id="payment-lin-btn" href="{% url 'UJUZI:profile_view' %}" class="sidebar-link" >
+                   <i class="fa fa-user-circle-o icons gold-shadow" aria-hidden="true"></i>
+                    <span>Profile</span>
+                </a>
+
+
+                 <a id="payment-li-btn" href="{% url 'UJUZI:teaching_request' %}" class="sidebar-link" >
+                   <i class="fa fa-user-circle-o icons gold-shadow" aria-hidden="true"></i>
+                    <span>Teaching Request</span>
+                </a>
+
+
+
+                 <a id="payment-l-btn" href="{% url 'UJUZI:change_password' %}" class="sidebar-link" >
+                   <i class="fa fa-lock icons gold-shadow" aria-hidden="true"></i>
+                    <span>Change Password</span>
+                </a>
+
+                <a id='exit-btn' class="sidebar-link">
+                    <i class=" fa fa-sign-out icons gold-shadow"></i>
+                    <span>Logout</span>
+                </a>
+
+            </div>
+           <!--side bar menu ends here-->
+         <div class="contents u-contents">
+
+                <div class="u-content-box">
+                   {% block content %}
+                   {% endblock content %}
+
+                </div>
+
+                <div class="u-footer" >
+
+                    <div>
+                        powered by <span class="l-gold-shadow">Vlirous</span>
+                    </div>
+                    <div class="d-year">
+                        <span class="l-gold-shadow">SmartCore</span> & <span class="l-gold-shadow">Mzumbe University</span> &copy; 2022
+                    </div>
+
+                </div>
+
+          </div>
+
+     <script type='text/javascript' src="{% static 'UJUZI_JS/jquery.js' %}"></script>
+     <script type='text/javascript' src="{% static 'UJUZI_JS/jquery-cookie/jquery.cookie.js' %}"></script>
+     <script type='text/javascript' src="{% static 'UJUZI_JS/application.js' %}"></script>
+     <script type='text/javascript' src="{% static 'UJUZI_JS/main.js' %}"></script>
+
+
+     </body>
+</html>
+app.js
+<!--end of base-->

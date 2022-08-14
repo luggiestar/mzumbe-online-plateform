@@ -1,0 +1,275 @@
+nav {
+    margin-bottom: 4em;
+}
+
+@keyframes blinker {
+    from {opacity: 1.0;}
+    to {opacity: 0.0;}
+  }
+  
+.blink {
+    text-decoration: blink;
+    animation-name: blinker;
+    animation-duration: 0.6s;
+    animation-iteration-count:infinite;
+    animation-timing-function:ease-in-out;
+    animation-direction: alternate;
+  }
+
+#replaceable-content
+{
+    display:none;
+    flex-direction:column;
+    padding-top:30px;
+}
+
+
+.s-courses
+{
+    display:flex;
+    padding-top:10px;
+}
+
+.u-contents-wrapper
+{
+    padding:0.5rem 3rem 40px 3rem;
+}
+.course-title
+{
+    color:#333;
+    font-size:1.2rem;
+    font-weight:500;
+    margin:-20px 0px 10px 0px;
+}
+.u-course-cover
+{
+    width:100%;
+    height:300px;
+    background:#e4e7edde;
+    margin-bottom:15px;
+
+}
+.u-course-cover img
+{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+
+.o-mod
+{
+    display:flex;
+    flex-wrap:wrap;
+    min-height:30px;
+    margin-top:-8px;
+}
+.o-box
+ {
+  width:49%;
+  min-height:30px;
+  margin-right:2%;
+ }
+ .o-txt{
+   padding:5px;
+   border:1px solid white;
+   font-size:0.9rem;
+ }
+
+ .mod-box
+ {
+  width:49%;
+  height:30px;
+ }
+
+  .u-mudules
+   {
+        list-style-type:none;
+        border:1px solid white;
+        padding:5px;
+        width:100%;
+   }
+    .u-mudules a
+    {
+        text-decoration:none;
+        color:#333;
+    }
+   .u-module
+   {
+        padding:5px;
+        background:white;
+        display:flex;
+        flex-direction:row;
+        flex-wrap:nowrap;
+        width:100%;
+        margin-bottom:8px;
+   }
+   .u-module:hover
+   {
+      box-shadow:1px 1px 2px 2px rgba(90,90,90,0.1);
+   }
+
+
+   .u-mod-title-text
+   {
+    width: 90%;
+   }
+   .u-mod-ic
+   {
+       width:10%;
+       position:relative;
+   }
+   .u-mod-ic i
+   {
+        font-size:20px;
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+   }
+
+
+.share-links
+{
+    list-style-type:none;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:flex-end;
+    flex-wrap:nowrap;
+    font-size:20px;
+}
+.shar-title-txt
+{
+    color:#0074e4;
+    font-weight:500;
+}
+.share-links li
+{
+    margin-right:12px;
+}
+
+.whatsapp-color
+{
+    color:green;
+}
+
+.u-back-btn
+{
+     color:#0074e4;
+}
+.u-back-btn i:hover
+{
+    cursor:pointer;
+}
+.u-back-btn i:active
+{
+    transform:scale(0.96);
+}
+.u-back-btn span
+{
+    margin-left:15px;
+}
+
+.u-contents-wrapper .u-back-btn
+{
+    margin-top:-20px;
+}
+.u-back-btn i
+{
+    font-size:20px;
+}
+
+.u-contents-wrapper video
+{
+    margin-top:15px;
+    width:100%;
+    height:500px;
+    background-color:#666;
+}
+.search-in .s-bck
+{
+    display:none;
+ }
+@media  screen and (max-width:900px)
+{
+   .u-mod-title-text
+   {
+    width: 80%;
+   }
+   .u-mod-ic
+   {
+       width:20%;
+   }
+    .u-contents-wrapper
+    {
+        padding-bottom:60px;
+    }
+}
+
+@media  screen and (max-width:768px)
+{
+   .u-mod-title-text
+   {
+    width: 85%;
+   }
+   .u-mod-ic
+   {
+       width:15%;
+   }
+    .o-box
+     {
+      margin-bottom:20px;
+     }
+    .o-mod
+    {
+        flex-direction:column;
+        min-height:30px;
+        margin-bottom:100px;
+    }
+    .o-box
+     {
+        width:100%;
+     }
+     .mod-box
+     {
+        width:100%;
+     }
+    .u-course-cover
+    {
+        height:250px;
+    }
+    .u-contents-wrapper
+    {
+        padding:0.5rem 0.3rem 1rem 0.3rem;
+    }
+}
+
+
+@media  screen and (max-width:600px)
+{
+
+
+    .u-contents-wrapper video
+    {
+        height:auto;
+    }
+    .share-links
+    {
+        font-size:18px;
+    }
+
+    .u-course-cover
+    {
+        height:200px
+    }
+    .u-contents-wrapper
+    {
+        padding:0.5rem 0.1rem 0.5rem 0.1rem;
+    }
+}
+
+.splide__pagination li {
+    display: none;
+}
+

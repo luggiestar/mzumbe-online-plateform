@@ -1,0 +1,312 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  	<title>ELP</title>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  	
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+ 
+  	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  	
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  	
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  	
+  	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  	
+  	<link rel="stylesheet" type="text/css" href="{% static 'css/mu.css' %}">
+
+	<link href="{% static 'css/app.css' %}" rel="stylesheet">
+
+    <link href="{% static 'css/owl.carousel.min.css' %}" rel="stylesheet">
+  	
+  	<link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+</head>
+<style type="text/css">
+.elp-bg{
+    background: #0e876e;
+    color: #fff !important;
+}
+
+.main-header { 
+	background: #12a183;
+	border-bottom-left-radius: 3rem;
+	border-bottom-right-radius: 3rem;
+}
+.elp-btn-white {
+	background: #fff;
+	color: #12a183;
+}
+
+.elp-btn-white:hover {
+	background: #fff;
+	color: #12a183;
+}
+.no-boder{
+/*	border-left-style: none;
+	border-right-style: none;
+	border-top-style: none;*/
+	border-radius: 1rem;
+	padding: 8px;
+	border: 1px solid #fff;
+	background-color: transparent;
+}
+
+.no-boder:focus, .no-boder:active{
+	border-left-style: none;
+	border-right-style: none;
+	border-top-style: none;
+	background-color: none;
+	outline: none;
+}
+.form-control-custom {
+	width: 35rem;
+}
+.display-on-sm {
+	display: none;
+}
+
+.group-input-btn {
+	margin-left: -1.6rem;
+}
+
+@media (max-width:551px) {
+	.display-on-lg {
+		display: none;
+	}
+	.display-on-sm {
+		display: none;
+	}
+	.form-control-custom {
+		width: 21rem;
+	}	
+	.group-input-btn {
+		margin-left: -1.6rem;
+	}
+	.header-img {
+		/*background-image:url(" {% static 'img/header.jpg' %}");*/
+		width: 100%;
+		margin-top: -2rem;
+		height: 28rem;
+		text-align: center;
+		overflow: hidden;
+		padding-top: 130px;
+		background: linear-gradient(90deg, rgba(18,161,131,0.4738270308123249) 0%, rgba(18,161,131,0.47102591036414565) 80%),url(" {% static 'img/header.jpg' %}");  /* Chrome 10-25, Safari 5.1-6 */
+	  background: linear-gradient(90deg, rgba(18,161,131,0.4738270308123249) 0%, rgba(18,161,131,0.47102591036414565) 80%), url(" {% static 'img/header.jpg' %}"); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+}
+
+@media (max-width:382px) {
+	.display-on-lg {
+		display: none;
+	}
+	.display-on-sm {
+		display: block;
+	}
+	.form-control-custom {
+		width: 17rem;
+	}	
+	.group-input-btn {
+		margin-left: -1.6rem;
+	}
+}
+
+.form-control-custom::placeholder {
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  opacity: 1; /* Firefox */
+}
+
+.form-control-custom :-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: #fff;
+}
+
+.form-control-custom::-ms-input-placeholder { /* Microsoft Edge */
+ color: #fff;
+}
+
+.header-img {
+	/*background-image:url(" {% static 'img/header.jpg' %}");*/
+	width: 100%;
+	height: 28rem;
+	text-align: center;
+	overflow: hidden;
+	padding-top: 130px;
+	background: linear-gradient(90deg, rgba(18,161,131,0.4738270308123249) 0%, rgba(18,161,131,0.47102591036414565) 80%),url(" {% static 'img/header.jpg' %}");  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(90deg, rgba(18,161,131,0.4738270308123249) 0%, rgba(18,161,131,0.47102591036414565) 80%), url(" {% static 'img/header.jpg' %}"); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+/*text*/
+.text-700 {
+	font-weight: 700;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #fff;
+}
+</style>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark elp-bg p-3 sticky-top shadow">
+	  	<a class="navbar-brand" href="#">Navbar</a>
+	  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  	</button>
+	  	<div class="collapse navbar-collapse" id="navbarNav">
+		    <ul class="navbar-nav">
+			      <li class="nav-item">
+				<a class="nav-link active" aria-current="page" href="{% url 'UJUZI:browse-courses' %}">Browse More Classes</a>
+			      </li>
+			      <li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				  Explore Courses
+				</a>
+				<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+				  <li><a class="dropdown-item" href="#">Computer Science</a></li>
+				  <li><hr class="dropdown-divider"></li>
+				  <li><a class="dropdown-item" href="#">Business Management</a></li>
+				  <li><hr class="dropdown-divider"></li>
+				  <li><a class="dropdown-item" href="#">Law</a></li>
+				  <li><hr class="dropdown-divider"></li>
+				  <li><a class="dropdown-item" href="#">Personal development</a></li>
+				  <li><hr class="dropdown-divider"></li>
+				  <li><a class="dropdown-item" href="#">Language</a></li>
+				  <li><hr class="dropdown-divider"></li>
+				  <li><a class="dropdown-item" href="#">Economics</a></li>
+				</ul>
+			      </li>
+			    <li class="nav-item">
+			        <a class="nav-link text-light" href="#course_list"><b>Course</b></a>
+			    </li>
+			  
+		    </ul>
+	  	</div>
+	  	<div>
+				<div class="d-flex">
+					<div>
+						<a href="{% url 'UJUZI:login' %}" class="text-light">Get Started</a>
+					</div>
+					<div class="ml-2">
+						<a class="btn btn-sm elp-btn-white">Login</a> 
+					</div>
+				</div>
+		</div>
+	</nav>
+	<header class="main-header elp-bg display-on-sm">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-4 col-xl-4 col-xs-12 col-sm-12">
+					<form class="form-inline p-2 ml-3">
+						<div class="d-flex">
+							<div class="form-group">
+								<input type="text" name="search" style="color:#fff" class="search no-boder form-control-custom" id="search_course" placeholder="Search Course"> 
+							</div>
+							<div class="form-group group-input-btn">
+								<button class="btn btn-sm">
+									<i class="fa fa-search text-light"></i>
+								</button> 
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</header>
+	<header class="header-img">
+		<section>
+			<input type="text" id="tags" style="color:#fff" class="search no-boder form-control-custom" id="search_course" placeholder="Search Course"> 
+			<h1 class="text-light text-700 display-4">Elevate your Learning.</h1>
+      <h5 class="pb-2 text-light text-700">Access interactive content and collabotate in shaping our society.</h5>
+			<a href="" class="btn elp-btn-white"><b>Lets get Started <i class="fa fa-angle-right"></i></b></a>
+		</section>
+	</header>
+
+	{% block content %}{% endblock %}
+	<footer class="footer mt-auto py-3 bg-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3">
+              <span class="text-muted">
+                {% for course in list_of_course %}
+                  <p class="pt-2 mt-2"><small>{{ course.name }}</small></p>
+                {% endfor%}
+              </span>
+            </div>
+            <div class="col-md-3">
+              {% for category in categories %}
+              <p class="text-muted pt-2 mt-2"><small>{{ category.name }}</small></p>
+              {% endfor%}
+            </div>
+          </div>
+        </div>
+      </footer>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js">
+</script>
+
+
+<script src="{% static 'vendor/jquery-ui-1.13.0/jquery-ui.js'%}">
+</script>
+
+<link href="{% static 'vendor/jquery-ui-1.13.0/jquery-ui.css' %}" rel="stylesheet" type="text/css">
+	<script src="{% static 'js/owl.carousel.js'%}"></script>
+
+	<script src="{% static 'js/app.js'%}"></script>
+<style type="text/css">
+.ui-widget.ui-widget-content {
+		border-top-right-radius: 1rem;
+		border-top-left-radius: 1rem;
+		border-bottom-right-radius: 0.2rem;
+		border-bottom-left-radius: 0.2rem;
+		width: 35rem;
+		font-size: 20px;
+}
+.ui-menu-item-wrapper {
+
+		width: 35rem;
+		font-size: 20px;
+		background: #0e876e;
+		color: #fff;
+}
+
+.ui-menu-item-wrapper:hover {
+
+		width: 35rem;
+		font-size: 20px;
+		background: white;
+		color: #0e876e;
+}
+</style>
+<script>
+  $(function () {
+    var availableTags = [
+        {% for course in list_of_course %}
+    		"{{course.name}}",
+    		{% endfor %}
+		];
+
+    $(".search").autocomplete({
+        source: availableTags,
+        select: function( event, ui ) {
+        	window.location.href = "{% url 'UJUZI:login'%}";
+    		}
+    });
+
+  } );
+</script>

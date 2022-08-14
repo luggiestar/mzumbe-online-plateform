@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div id="accordion">
+    <div class="card" style="border: none">
+        <div class="d-flex">
+            {% for category in category %}
+            <button class="btn btn-success collapsed m-2" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo{{category.id}}" aria-expanded="false" aria-controls="collapseTwo{{category.id}}">
+                {{category.name}}
+            </button>
+            {% endfor %}
+        </div>
+        {% for category in category %}
+        <div id="collapseTwo{{category.id}}" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+                <div class="row">
+                    {% for course in category.course_category.all %}
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                {{course.name}}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</body>
+</html>

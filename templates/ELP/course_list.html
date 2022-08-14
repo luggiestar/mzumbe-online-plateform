@@ -1,0 +1,186 @@
+{% load static %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<style type="text/css">
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #0e876e;
+    font-weight: 700;
+    background-color: #fff;
+}
+
+.elp-bg{
+    background: #0e876e;
+    color: #fff !important;
+}
+
+
+.nav-pills .nav-link {
+    background: 0 0;
+    color: #0e876e;
+    border: 0;
+    border-radius: 0.25rem;
+}
+
+.nav-pills .nav-link:hover {
+    background: 0 0;
+    color: #0e876e;
+    border: 0;
+    border-radius: 0.25rem;
+}
+.owl-theme .owl-controls .owl-page {
+    display: inline-block;
+    zoom: 1;
+    *: ;
+    display: inline;
+}
+.icon-color-index {
+    color: #ffffff45 !important;
+}
+.icon-position{
+	margin-top:-2.4rem;
+	margin-left:-0.5rem;
+	font-size:4rem;
+}
+.summary-text {
+	margin-top:-8rem;
+	margin-left:-9rem;
+	position: relative;
+	font-size: 2rem;
+	color: #ffffff97;
+}
+.count{
+	font-size: 1rem;
+}
+
+
+@media (max-width: 423px) {
+
+	.icon-position{
+    	margin-top:0rem;
+    	margin-left:0rem;
+    	font-size:3rem;
+	}
+    .summary-text {
+        margin-top:0rem;
+        margin-left:0rem;
+        position: relative;
+        font-size: 1.3rem;
+        color: #ffffff97;
+    }
+    .count{
+        font-size: 3rem;
+    }
+}
+.h-100 {
+	height: 11rem;
+}
+.elp-dark{
+	background: #091210;
+}
+.elp-danger {
+	background: #b32947;
+}
+.elp-warning {
+	background: #e17139;
+}
+</style>
+<div class="container pt-5 pb-5">
+    <div class="row">
+        <div class="col-md-12">
+            <center>
+                <h3>You can choose from a number of coursed.</h3>
+                <h4>Choose from 183,000 video courses with new additions published every month</h4>
+            </center>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 pt-5">
+            {% for category in categories %}
+            <div class="card card-body mt-2 shadow-sm">
+                <h5 class="text-center">{{ category.name }}</h5>
+                <hr class="dropdown-divider">
+                <div class="owl-carousel owl-demo owl-theme ">
+                    {% for i in list_of_course %}
+                    {% if category.id == i.category.id %}
+                    <div class="item ">
+                        <div class="card shadow-sm h-100  elp-bg mt-3" >
+                            <div class="card-body p-3 ">
+                                <div class="lazyOwl" style="padding:2rem">
+                                    <div class="">
+                                        <div class="d-flex justify-content-between">
+                                             <p>Course</p>
+                                            <center><i class="fa fa-book-open fa-3x icon-color-index icon-position"></i></center>
+                                        </div>
+
+                                    </div>
+                                      <hr style="margin-top:-1rem; height:4px">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+  </div>
+  <div class="row p-5">
+      <div class="col-md-6 col-xl-6 col-xs-12 col-sm-12">
+        <img src="{% static 'img/banner.jpg' %}" class="img-fluid">
+       </div>
+       <div class="col-md-6 col-xl-6 col-xs-12 col-sm-12 pt-5">
+            <div class="p-5">
+              <h3>Get resources and support to guide you through learning process.</h3>
+            <ul>
+              <li>Choose the course yiu wabt to learn</li>
+              <li>Customise curiculum.</li>
+              <li>Access any time you wabt to relearn.</li>
+            </ul>
+            </div>
+       </div>
+  </div>
+  <center>
+    <h3>Browse Courses</h3>
+  <p>Choose the course you wabt to learn.</p>
+  </center>
+  <div class="row p-5">
+      <div class="col-md-12">
+        <div class="owl-carousel owl-theme">
+        {% for course in list_of_course %}
+        <div class="item">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                  <h5 style="margin-top: -0.4rem;">{{course.name}}</h5>
+              </div>
+              <hr style="margin-top: -6px;">
+              <div class="d-flex">
+                <small >instructor:{{ course.instructor.user.first_name }}</small>
+                <small>institution: {{ course.instructor.institution }}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <center>
+    <h3> You can choose from a number of Categories.</h3>
+  </center>
+  <div class="row p-5">
+    {% for category in categories %}
+      <div class="col-md-3 p-3">
+          <div class="card shadow">
+            <div class="card-body">
+              <div class="d-flex justify-content-center">
+                  <h6 class="p-2">{{category.name}}</h6>
+              </div>
+            </div>
+      </div>
+      </div>
+      {% endfor %}
+  </div>
+</div>

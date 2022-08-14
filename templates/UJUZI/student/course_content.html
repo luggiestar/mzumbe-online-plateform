@@ -1,0 +1,17 @@
+{% extends 'UJUZI/base.html' %}
+{% load social_share %}
+{% block content %}
+
+<div class="u-contents-wrapper">
+    <div class="u-back-btn">
+        <a href="{% url 'UJUZI:course_detail' module.course.name %}" style="text-decoration:none;">
+        <i class="fa-solid fa-circle-arrow-left"></i> </a><span class="sub-title">{{module.title}}</span>
+    </div>
+
+    <video controls>
+        <source src= "{{module.content.url}}" type="video/mp4">
+    </video>
+
+</div>
+
+{% endblock content %}

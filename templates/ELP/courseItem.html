@@ -1,0 +1,106 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="{% static 'css/app.css' %}" rel="stylesheet">
+    <link href="{% static 'css/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/course.css' %}" rel="stylesheet">
+    <title>Online Schools</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Explore Courses
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Computer Science</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Business Management</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Law</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Personal development</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Language</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Economics</a></li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="navbar-nav pull-right">
+              <li><a class="nav-link" href="{% url 'UJUZI:request-instructor' %}">Instructor</a></li>
+              <li><a class="nav-link" href="{% url 'UJUZI:user-registration' %}">Join Us</a></li>
+              <a  class="btn btn-primary-os" href="{% url 'UJUZI:login' %}">Login</a>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div>
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="div-container">
+                    <div class="bottom-left">
+                      <h1>{{ course.name }}</h1>
+                      <p>{{ course.instructor }}</p>
+                      <p>{{ course.category }}</p>
+                    </div>   
+                    <div class="bottom-right">
+                        <a  href="#"  class="btn btn-lg btn-flat btn-primary-os p-4">Enroll to this Course</a>
+                    </div>  
+                </div>
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <ul class="nav nav-pills mb-3 p-3" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link active" id="pills-course-tab" data-bs-toggle="pill" data-bs-target="#pills-course" type="button" role="tab" aria-controls="pills-course" aria-selected="true">Course</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link" id="pills-FAQ-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-faq" aria-selected="false">FAQ's</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-comment-tab" data-bs-toggle="pill" data-bs-target="#pills-comment" type="button" role="tab" aria-controls="pills-comment" aria-selected="false">Comment</button>
+                          </li>
+                      </ul>
+                      <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane px-5" id="pills-course" role="tabpanel" aria-labelledby="pills-course-tab">
+                            <div class="px-5">
+                                {{ course.objective }}
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-faq" role="tabpanel" aria-labelledby="pills-FAQ-tab">
+                           
+                        </div>
+                        <div class="tab-pane fade" id="pills-comment" role="tabpanel" aria-labelledby="pills-comment-tab">
+                          
+                        </div>
+                      </div>
+                </div>
+            </div>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js">
+        </script>
+	</script>
+	<script src="{% static 'vendor/jquery-ui-1.13.0/jquery-ui.js'%}">
+	</script>
+	<link href="{% static 'vendor/jquery-ui-1.13.0/jquery-ui.css' %}" rel="stylesheet" type="text/css">
+  <script src="{% static 'js/owl.carousel.js'%}"></script>
+  <script src="{% static 'js/app.js'%}"></script>
+  </body>
+</html>

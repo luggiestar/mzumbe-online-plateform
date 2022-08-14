@@ -1,0 +1,27 @@
+{% if artists and count == "1" %}
+<h1 class="sub-title">searching results ({{total}})</h1>
+<!--latest courses-->
+<ul class="u-course-list s-courses">
+    {% for x in artists %}
+    <a href="{% url 'UJUZI:course_detail' x.name %}" style="text-decoration:none;">
+     <li class='u-course course-{{x.category.id}}' id='l-course-{{x.id}}'>
+        <div class='course-img'>
+            <img src="{{x.image.url}}" alt='no image'>
+        </div>
+        <div class='u-course-desc'>
+            <div class='u-course-title'>
+                {{x.name}}
+            </div>
+            <div class='u-course-desc-txt'>
+{{x.objective|safe}}            </div>
+        </div>
+    </li>
+        </a>
+    {% endfor %}
+</ul>
+<!--end of latest course-->
+{% elif not count %}
+
+{% else %}
+<p>No Course found.</p>
+{% endif %}

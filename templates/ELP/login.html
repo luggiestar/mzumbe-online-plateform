@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+{% load static %}
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Login</title>
+   <!-- Custom fonts for this template-->
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <link rel="apple-touch-icon" href="{% static ''%}">
+    <link rel="icon" href="{% static ''%}">
+
+    <!-- Custom styles for this template-->
+    <link href="{% static 'css/mu.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js" crossorigin="anonymous">
+
+    <!-- Load font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link href="{% static 'css/login.css' %}" rel="stylesheet">
+</head>
+<body id="page-to">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-5 col-md-5 wow fadeIn p-10">
+                <div class="">
+                    <div class="border shadow" style="margin-top: -5rem;">
+                        <div class="pt-2">
+                            <center> 
+                                <h1><i class="fas fa-book-reader fa-2x text-blue"></i> </h1>
+                            </center>
+                        </div>
+                        <center>
+                            <h2 class="text-blue text-shadow"><b>UJUZISET</b></h2>
+                            <h6 class=""><b>Login here</b></h6>
+                        </center>
+                        <hr style="background:white;">
+                        <div class="card-body">
+                            {% if messages %}
+                            {% for message in messages %}
+                            {% if message.tags == 'success' %}
+                                <div class="wow fadeInDown">
+                                    <p class="text-center h5" style="color:#ff0000"><b><i class="icon fa fa-danger"></i>{{ message|capfirst }}</b></p>
+                                </div>
+                            {% endif %}
+                            {% endfor %}
+                            {% endif %}
+
+                            <form class="mr-auto ml-md-3 my-2 my-md-0 mw-100" action="{% url 'UJUZI:login' %}" method="POST">
+                                {% csrf_token %}
+                                <div class="input-group shadow-sm mt-2 wow fadeIn" data-wow-delay="0.2s">
+                                    <div class="input-group-append mu-bg">
+                                        <button class="btn btn-white" type="button">
+                                            <i class="fas fa-user fa-md  text-white"></i>
+                                        </button>
+                                    </div>
+                                    <input type="text" name="username" class="no-boder form-control border-0 small text-color"
+                                           placeholder="username" required style="background:transparent; color:#0ca0fc; border: 1px solid white">
+                                </div>
+                                <div class="input-group shadow-sm mt-4 wow fadeIn" data-wow-delay="0.4s">
+                                    <div class="input-group-append mu-bg">
+                                        <button class="btn btn-white" type="button">
+                                            <i class="fas fa-lock fa-sm text-white"></i>
+                                        </button>
+                                    </div>
+                                    <input type="password" name="password" class="no-boder form-control border-0 small text-danger mu-bg"
+                                           placeholder="password" required style="background:transparent; color:#0ca0fc; border: 1px solid #0ca0fc">
+                                </div>
+                                <div class="input-group mt-4 mb-4 wow bounceIn" data-wow-delay="1s">
+                                    <button  type="submit" name="login"  class=" btn btn-block mu-bg text-color" >
+                                        <b class="h5">Login  </b> 
+                                    </button>
+                                </div>
+                            </form>
+                            <div class="d-flex justify-content-between">
+                                <h6 class="text-center">
+                                    <a href="{% url 'UJUZI:registration' %}" class="text-blue text-shadow h6"> Don't have account? </a>
+                                </h6>
+                                <h6 class="text-center" >
+                                    <a href="{% url 'UJUZI:password_reset' %}" class="text-blue text-shadow"> Forgot password </a>
+                                </h6>
+                               
+                            </div>
+                        </div>
+                        <h6 class="text-center pb-3" style=""><a href="#" class="yellow text-shadow"><b>Powered by VRI-LOUS &copy; <span>{{year}}</span></b></a></h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    window.setTimeout(function() {
+    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+        $(this).remove();
+    });
+}, 2000);
+</script>
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+    <!-- others plugins -->
+    <script src="{% static 'js/wow.min.js' %}"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="{% static 'js/mu.js' %}"></script>
+
+    <script>
+        new WOW().init();
+    </script>
+
+</body>
+
+</html>
