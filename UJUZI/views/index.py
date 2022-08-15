@@ -91,7 +91,7 @@ def user_profile(request, object_pk):
         form = ProfileForm(request.POST, instance=instance)
         if form.is_valid():
             form.save()
-            return redirect('UJUZI:user_profile')
+            return redirect('UJUZI:user_profile', object_pk=instance.id)
     else:
         form = ProfileForm(instance=instance)
     context_dict = {'form': form, 'instance': instance}
