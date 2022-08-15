@@ -13,7 +13,7 @@ from django.views.generic import DetailView
 from django.views.generic import DetailView, ListView
 
 from ..forms import *
-from ..models import  Course
+from ..models import Course
 
 
 def index(request):
@@ -65,6 +65,7 @@ def registration(request):
 
         if form.is_valid():
             get_user = form.save(commit=False)
+            get_user.is_instructor = False
             get_user.save()
             login(request, get_user)
             # Student.objects.create(user=get_user, code=id_generator())
