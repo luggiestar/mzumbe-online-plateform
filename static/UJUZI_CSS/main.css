@@ -515,10 +515,14 @@ nav {
     }
 }
 
-
+.splide__pagination__page.is-active {
+    background: var(--u-light-blue);
+    transform: scale(1.5);
+    z-index: 1;
+}
 
 .splide__pagination li {
-    display: none;
+    margin-top: 7rem;
 }
 
 
