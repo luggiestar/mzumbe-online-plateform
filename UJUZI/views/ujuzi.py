@@ -1,3 +1,7 @@
+from django.contrib import messages
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import PasswordChangeForm
 from django.db.models import Count
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
@@ -105,9 +109,23 @@ def enrolled_course(request):
 def teaching_request(request):
     return render(request, 'UJUZI/student/teaching_request.html')
 
-
+@login_required
 def change_password(request):
-    return render(request, 'UJUZI/student/change_password.html')
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)  # Important!
+            messages.success(request, 'Your password was successfully updated!')
+            return redirect('UJUZI:change_password')
+        else:
+            messages.error(request, 'Please correct the error below.')
+    else:
+        form = PasswordChangeForm(request.user)
+    return render(request, 'UJUZI/student/change_password.html.html', {
+        'form': form
+    })
+
 
 
 def get_course(request, id):
