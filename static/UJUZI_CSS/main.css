@@ -5,7 +5,7 @@ nav {
 @keyframes blinker {
     from {opacity: 1.0;}
     to {opacity: 0.0;}
-  }
+}
   
 .blink {
     text-decoration: blink;
@@ -14,7 +14,7 @@ nav {
     animation-iteration-count:infinite;
     animation-timing-function:ease-in-out;
     animation-direction: alternate;
-  }
+}
 
 #replaceable-content
 {
@@ -23,6 +23,34 @@ nav {
     padding-top:30px;
 }
 
+.splide__arrow.splide__arrow--prev {
+    background-color: transparent;
+    transition: 0.4s ease-in-out;
+}
+.splide__arrow.splide__arrow--next {
+    background-color: transparent;
+    transition: 0.4s ease-in-out;
+}
+.splide__arrow.splide__arrow--prev:hover {
+    background-color: #0ca0fc;
+    color: white !important;
+}
+.splide__arrow.splide__arrow--next:hover {
+    background-color: #0ca0fc;
+    color: white !important;
+}
+
+.splide__arrow svg {
+    fill: #000;
+    height: 1.2em;
+    width: 1.2em;
+    transition: 0.4s ease-in-out;
+}
+.splide__arrow svg:hover {
+    fill: #fff;
+    height: 1.2em;
+    width: 1.2em;
+}
 
 .s-courses
 {
@@ -41,6 +69,7 @@ nav {
     font-weight:500;
     margin:-20px 0px 10px 0px;
 }
+
 .u-course-cover
 {
     width:100%;
@@ -49,13 +78,13 @@ nav {
     margin-bottom:15px;
 
 }
+
 .u-course-cover img
 {
     width:100%;
     height:100%;
     object-fit:cover;
 }
-
 
 .o-mod
 {
@@ -331,6 +360,24 @@ nav {
     {
         padding-bottom:60px;
     }
+    .splide__arrow.splide__arrow--prev {
+        background-color: transparent;
+    }
+    .splide__arrow.splide__arrow--next {
+        background-color: transparent;
+    }
+    .splide__arrow.splide__arrow--prev:hover {
+        background-color: transparent;
+    }
+    .splide__arrow.splide__arrow--next:hover {
+        background-color: transparent;
+    }
+    .splide__arrow svg:hover {
+        fill: #000;
+        height: 1.2em;
+        width: 1.2em;
+        transition: 0.4s ease-in-out;
+    }
 }
 
 @media  screen and (max-width:768px)
@@ -353,7 +400,7 @@ nav {
        width:15%;
    }
     .o-box
-     {
+    {
       margin-bottom:20px;
      }
     .o-mod
@@ -378,11 +425,33 @@ nav {
     {
         padding:0.5rem 0.3rem 1rem 0.3rem;
     }
+    .splide__arrow.splide__arrow--prev {
+        background-color: transparent;
+        transition: 0.4s ease-in-out;
+    }
+    .splide__arrow.splide__arrow--next {
+        background-color: transparent;
+        transition: 0.4s ease-in-out;
+    }
+    .splide__arrow.splide__arrow--prev:hover {
+        background-color: transparent;
+    }
+    .splide__arrow.splide__arrow--next:hover {
+        background-color: transparent;
+    }
+    .splide__arrow svg:hover {
+        fill: #000;
+        height: 1.2em;
+        width: 1.2em;
+        transition: 0.4s ease-in-out;
+    }
 }
 
 
 @media  screen and (max-width:600px)
 {
+<<<<<<< HEAD
+=======
     .u-profile-info-box
     {
         flex-direction:column;
@@ -409,6 +478,7 @@ nav {
         height:120px;
         width:120px;
     }
+>>>>>>> 29ed816c65e081ad559eb4422c7994d934f1312e
     .u-contents-wrapper video
     {
         height:auto;
@@ -425,6 +495,26 @@ nav {
     .u-contents-wrapper
     {
         padding:0.5rem 0.1rem 0.5rem 0.1rem;
+    }
+    .splide__arrow.splide__arrow--prev {
+        background-color: transparent;
+        transition: 0.4s ease-in-out;
+    }
+    .splide__arrow.splide__arrow--next {
+        background-color: transparent;
+        transition: 0.4s ease-in-out;
+    }
+    .splide__arrow.splide__arrow--prev:hover {
+        background-color: transparent;
+    }
+    .splide__arrow.splide__arrow--next:hover {
+        background-color: transparent;
+    }
+    .splide__arrow svg:hover {
+        fill: #000;
+        height: 1.2em;
+        width: 1.2em;
+        transition: 0.4s ease-in-out;
     }
 }
 
