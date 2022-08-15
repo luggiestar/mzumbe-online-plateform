@@ -13,7 +13,7 @@ from django.views.generic import DetailView
 from django.views.generic import DetailView, ListView
 
 from ..forms import *
-from ..models import  Course
+from ..models import Course
 
 
 def index(request):
@@ -43,7 +43,7 @@ def index(request):
 
     category = Category.objects.all()
     course = Course.objects.all()
-    latest = Course.objects.all().order_by('-id')[:2]
+    latest = Course.objects.all().order_by('-id')[:3]
     context = {
         'courses': course,
         'categories': category,
@@ -65,11 +65,11 @@ def registration(request):
 
         if form.is_valid():
             get_user = form.save(commit=False)
-            get_user.is_staff = True
+            get_user.is_instructor = False
             get_user.save()
             login(request, get_user)
             # Student.objects.create(user=get_user, code=id_generator())
-            return redirect('UJUZI:profile')
+            return redirect('UJUZI:home_view')
 
     else:
         form = RegisterForm()
@@ -80,6 +80,22 @@ def registration(request):
 
     }
     return render(request, 'ELP/registration.html', context)
+
+
+def user_profile(request, object_pk):
+    try:
+        instance = User.objects.get(id=object_pk)
+    except User.DoesNotExist:
+        instance = None
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, instance=instance)
+        if form.is_valid():
+            form.save()
+            return redirect('UJUZI:user_profile', object_pk=instance.id)
+    else:
+        form = ProfileForm(instance=instance)
+    context_dict = {'form': form, 'instance': instance}
+    return render(request, 'UJUZI/student/user_profile.html', context_dict)
 
 
 def RegisterView(request):

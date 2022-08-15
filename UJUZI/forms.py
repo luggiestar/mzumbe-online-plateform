@@ -65,6 +65,12 @@ class ModuleForm(ModelForm):
         fields = ('title', 'content',)
 
 
+class ProfileForm(ModelForm):
+    class Meta:
+        model = User
+        fields = ('first_name', 'last_name', 'sex', 'phone')
+
+
 # class ContentForm(ModelForm):
 #     title = forms.CharField(label="Content Name", help_text="Content name must be precious, not more than 5 words",
 #                             required=True,
@@ -108,7 +114,7 @@ class RegisterForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ['email','phone']
+        fields = ['email', 'phone']
 
     def clean_email(self):
         '''

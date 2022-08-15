@@ -4,7 +4,7 @@
 
 <div class="u-contents-wrapper">
     <div class="course-title">
-        {{courses.name}}
+        Course: {{courses.name}}
     </div>
     <div class="u-course-cover">
         <img src="{{courses.image.url}}"/>
@@ -27,14 +27,16 @@
             <div class="sub-title">
                 Objectives
             </div>
-            <div class="o-txt">
+            <div class="o-txt" style="text-align: justify;">
                  {{courses.objective|safe}}
             </div>
         </div>
         <div class="mod-box">
                 <div class="sub-title">
-                    Topics {{total}}
+                    Topics ({{total}})
                 </div>
+            {% if request.user.is_authenticated %}
+            {% if enrolled %}
                 <ul class="u-mudules">
                     {% for i in modules %}
                     {% if i.extension|upper == ".PDF" %}
@@ -68,6 +70,15 @@
                         {% endif %}
                     {% endfor %}
                 </ul>
+
+
+            {% else %}
+                        Please Join <a href="{% url 'UJUZI:login' %}" style="text-decoration:none;"> this</a>, to explore the course contents
+
+            {% endif %}
+            {% else %}
+            Please Login <a href="{% url 'UJUZI:login' %}" style="text-decoration:none;"> here</a>, to view the contents
+            {% endif %}
         </div>
     </div>
 

@@ -371,38 +371,7 @@
                 {% endif %}
 
                 {% endif %}
-{% if request.user.is_verifier  or request.user.is_superuser %}
-                <li {% if not app.admin_url %}class="treeview"{% endif %}>
-                   <a href="{% url 'UJUZI:course_verification' %}">
-                       <i class="fas {% if app.icon %} {{app.icon}} {% else %}fa-question-circle {% endif %}" style="color:#3be7df;"></i>
-                       <span style="overflow: hidden; display: inline-block; vertical-align:top;"> &nbsp;&nbsp;Verification</span>
-                       {% if not app.admin_url %}
-                       <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i></span>
-                       {% endif %}
-                   </a>
-                      {% if not app.admin_url %}
-                      <ul class="treeview-menu" style="background-color:#16021a;">
-                          <li ><a href="{% url 'UJUZI:course_verification' %}"  ><i class="fa {% if model.icon %} {{model.icon}} {% else %}fa-list text-danger{% endif %}" style="color: #3be7df;"></i>Course Request</a></li>
-                      </ul>
-                    {% if request.user.is_superuser %}
-                      <ul class="treeview-menu" style="background-color:#16021a;">
 
-                          <li ><a href="{% url 'UJUZI:verify_staff' %}"  ><i class="fa {% if model.icon %} {{model.icon}} {% else %}fa-list text-danger{% endif %}" style="color: #3be7df;"></i>Teaching Request</a></li>
-                      </ul>
-
-                      {% endif %}
-                      {% endif %}
-                      {% endif %}
-                      {% if request.user.is_tutor or request.user.is_superuser %}
-                <li {% if not app.admin_url %}class="treeview"{% endif %}>
-
-                    <a href="{% url 'UJUZI:instructor_home' %}">
-                        <i class="fas {% if app.icon %} {{app.icon}} {% else %}fa-book-open{% endif %}" style="color:#3be7df;"></i>
-                            <span >My course</span>
-                    </a>
-                </li>
-                {% endif %}
             
 
 

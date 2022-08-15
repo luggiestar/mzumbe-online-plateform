@@ -1,14 +1,50 @@
 {% extends 'UJUZI/base.html' %}
 {% load social_share %}
+{% load static %}
 {% block content %}
 
 <div class="u-contents-wrapper">
-    <div class="course-title">
+    <div class="course-title u-pr-t">
        User Profile
+    </div>
+
+    <div class="u-profile-info-box">
+        <div class="u-profile-left">
+
+            <div class="u-profile-pic">
+                <img src="{% static 'img/user.png' %}">
+            </div>
+
+            <div class="u-profile-name">
+                {{request.user.first_name}}&nbsp;{{request.user.last_name}}
+            </div>
+            <div class="u-p-email">
+                <i class="fa-solid fa-envelope"></i>
+                <span>{{request.user.email}}</span>
+            </div>
+
+        </div>
+        <div class="u-profile-right">
+            <div class="u-info-title">
+                user Info
+            </div>
+            <div class="u-info-form">
+                 <form  class="u-form" method="post" >
+                                {% csrf_token %}
+						      	{% include 'includes/form.html'%}
+						      	<div class="form-group">
+                                    <button type="submit"  class="btn mu-bg mu-color btn-block c-btn"> <b>Save Changes</b></button>
+                                </div>
+                                <h6 class="text-center">
+                                </h6>
+                </form>
+            </div>
+        </div>
     </div>
 
 
 </div>
+
 
 
 
