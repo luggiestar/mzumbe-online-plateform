@@ -8,10 +8,10 @@
  </div>
 
 <!--enrolled courses-->
-
+  {% if total > 0 %}
 <ul class="u-course-list latest-c is-s">
 
-    {% if total > 0 %}
+
     {% for x in enrollment %}
     <a href="{% url 'UJUZI:course_detail' x.course.name %}" style="text-decoration:none;">
         <li class='u-course course-{{x.course.category.id}}' id='l-course-{{x.course.id}}'>
@@ -28,10 +28,11 @@
     </li>
     </a>
     {% endfor %}
-    {% else %}
-    Sorry, but currently you don't have any Course to Learn, find suitable course <a href="{% url 'UJUZI:home_view' %}" style="text-decoration:none;">here</a>
-    {% endif %}
+
 </ul>
+{% else %}
+    Sorry, but currently you don't have any Course to Learn, find suitable course <a href="{% url 'UJUZI:home_view' %}" style="text-decoration:none;">here</a>
+{% endif %}
 <!--end of latest course-->
 
 
