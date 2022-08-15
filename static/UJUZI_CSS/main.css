@@ -450,19 +450,6 @@ nav {
 
 @media  screen and (max-width:600px)
 {
-
-    .u-u-name p,.u-u-name span
-    {
-        font-size:0.9rem;
-        letter-spacing:0.5px;
-    }
-
-    .u-u-icon
-    {
-        font-size:0.9rem;
-    }
-
-
     .u-profile-info-box
     {
         flex-direction:column;

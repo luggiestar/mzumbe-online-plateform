@@ -68,8 +68,11 @@
 	<nav class="navbar navbar-expand-lg navbar-dark elp-bg p-3 sticky-top shadow">
 		<a class="navbar-brand " href="#"> <span class="yellow text-shadow h4"><b>UJUZISET</b></span></a>
 <!--	  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">-->
-<!--	    <span class="navbar-toggler-icon"></span>-->
+<!--	    	 <span class="yellow text-shadow h4"><b>UJUZISET</b></span>-->
 <!--	  	</button>-->
+		<div class="navbar-toggler border-0">
+	    	 <span class="yellow text-shadow h4"><b>UJUZISET</b></span>
+	  	</div>
 	  	<div class="collapse navbar-collapse" id="navbarNav">
 	  	</div>
 	  	<div>
@@ -114,7 +117,7 @@
 			<div class="splide__track">
 				<div class="splide__list">
 					{% for i in categories %}
-					<li class="category-li splide__slide ml-3" id="cat-{{i.id}}">
+					<li class="category-li splide__slide mt-4 ml-3 mb-3 shadow" id="cat-{{i.id}}">
 						<div class="course-category-name" style="display:none">{{i.name}}</div>
 						<div class="cat-img">
 							<img src="{{i.icon.url}}"/>
@@ -153,8 +156,7 @@
 	</a>
     {% endfor %}
 </ul>
-<!--end of latest course-->
-
+<!--end of the latest course-->
 
 		<ul class="u-course-list cat-courses-li is-s">
 			{% for x in courses %}
@@ -276,7 +278,8 @@
 			type: 'loop',
 			drag   : 'free',
 			focus  : 'center',
-			padding: '5rem',
+			height: '10rem',
+			paddingBottom: '12rem'
 		});
 
 		splide.mount();
