@@ -69,7 +69,7 @@ def registration(request):
             get_user.save()
             login(request, get_user)
             # Student.objects.create(user=get_user, code=id_generator())
-            return redirect('UJUZI:profile')
+            return redirect('UJUZI:home_view')
 
     else:
         form = RegisterForm()
