@@ -11,7 +11,7 @@ from .models import *
 @receiver(post_save, sender=User, dispatch_uid='add_first_name_to user')
 def create_module(sender, instance, created, **kwargs):
     if created:
-        get_name_from_email = instance.emails.split("@")[0]
+        get_name_from_email = instance.email.s.split("@")[0]
 
         get_user = User.objects.get(id=instance.id)
         get_user.first_name = get_name_from_email
