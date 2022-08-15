@@ -114,7 +114,7 @@
 			<div class="splide__track">
 				<div class="splide__list">
 					{% for i in categories %}
-					<li class="category-li splide__slide ml-3" id="cat-{{i.id}}">
+					<li class="category-li splide__slide mt-4 ml-3 mb-3 shadow" id="cat-{{i.id}}">
 						<div class="course-category-name" style="display:none">{{i.name}}</div>
 						<div class="cat-img">
 							<img src="{{i.icon.url}}"/>
@@ -153,8 +153,7 @@
 	</a>
     {% endfor %}
 </ul>
-<!--end of latest course-->
-
+<!--end of the latest course-->
 
 		<ul class="u-course-list cat-courses-li is-s">
 			{% for x in courses %}
@@ -276,7 +275,8 @@
 			type: 'loop',
 			drag   : 'free',
 			focus  : 'center',
-			padding: '5rem',
+			height: '10rem',
+			paddingBottom: '12rem'
 		});
 
 		splide.mount();

@@ -450,8 +450,6 @@ nav {
 
 @media  screen and (max-width:600px)
 {
-<<<<<<< HEAD
-=======
     .u-profile-info-box
     {
         flex-direction:column;
@@ -478,7 +476,6 @@ nav {
         height:120px;
         width:120px;
     }
->>>>>>> 29ed816c65e081ad559eb4422c7994d934f1312e
     .u-contents-wrapper video
     {
         height:auto;
