@@ -36,6 +36,7 @@
                     Topics ({{total}})
                 </div>
             {% if request.user.is_authenticated %}
+            {% if enrolled %}
                 <ul class="u-mudules">
                     {% for i in modules %}
                     {% if i.extension|upper == ".PDF" %}
@@ -69,8 +70,14 @@
                         {% endif %}
                     {% endfor %}
                 </ul>
+
+
             {% else %}
-            Please Login <a href="{% url 'UJUZI:login' %}" style="text-decoration:none;"> here</a>, to explore the course contents
+                        Please Join <a href="{% url 'UJUZI:login' %}" style="text-decoration:none;"> this</a>, to explore the course contents
+
+            {% endif %}
+            {% else %}
+            Please Login <a href="{% url 'UJUZI:login' %}" style="text-decoration:none;"> here</a>, to view the contents
             {% endif %}
         </div>
     </div>

@@ -40,6 +40,7 @@ def home_view(request):
         return JsonResponse(data=data_dict, safe=False)
 
     category = Category.objects.all()
+
     course = Course.objects.all()
     latest = Course.objects.all().order_by('-id')[:2]
     context = {
@@ -54,12 +55,14 @@ def home_view(request):
 
 def course_detail(request, course_name):
     check_course = get_object_or_404(Course, name=course_name)
+    get_enroll = Enrollment.objects.filter(student=request.user, course=check_course).first()
     modules = Module.objects.filter(course=check_course)
     total = Module.objects.filter(course=check_course).count()
     context = {
         'courses': check_course,
         'modules': modules,
         'total': total,
+        'enrolled': get_enroll,
 
     }
     return render(request, 'UJUZI/student/course_detail.html', context)
@@ -74,11 +77,10 @@ def module_content(request, module_id):
     return render(request, 'UJUZI/student/course_content.html', context)
 
 
-
-
-
 def teaching_request(request):
     return render(request, 'UJUZI/student/teaching_request.html')
+
+
 def change_password(request):
     return render(request, 'UJUZI/student/change_password.html')
 
