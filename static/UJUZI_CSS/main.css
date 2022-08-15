@@ -211,8 +211,26 @@ nav {
     border-left:2px solid #bfbdbd;
     width:60%;
     min-height:450px;
-    padding-left:10px;
+    padding-left:20px;
 }
+
+.u-form
+{
+    margin-top:10px;
+    padding:20px 30px 20px 30px;
+    box-shadow:2px 2px 3px 5px rgba(90,90,90,0.1);
+    margin-bottom:20px;
+}
+
+.c-btn
+{
+    background:var(--u-light-blue) !important;
+    color:white;
+    padding:8px !important;
+    letter-spacing:0.5px;
+}
+
+
 
 .u-profile-pic
 {
@@ -220,8 +238,11 @@ nav {
     margin-bottom:20px;
     height:200px;
     width:200px;
-    background:#d6d6d6;
     border-radius:50%;
+}
+.u-profile-pic img
+{
+    width:100%;
 }
 .u-profile-name
 {
@@ -246,8 +267,8 @@ nav {
 
 .u-info-title
 {
-    font-size:1.1rem;
-    color:#333;
+    font-size:1.2rem;
+    color:#444;
     letter-spacing:0.5px;
     font-weight:bold;
 }
