@@ -15,11 +15,11 @@
             </div>
 
             <div class="u-profile-name">
-                JOHNSON SHIRIMA
+                {{request.user.first_name}}&nbsp;{{request.user.last_name}}
             </div>
             <div class="u-p-email">
                 <i class="fa-solid fa-envelope"></i>
-                <span>johnsonshirima655@gmail.com</span>
+                <span>{{request.user.email}}</span>
             </div>
 
         </div>
@@ -28,7 +28,15 @@
                 user Info
             </div>
             <div class="u-info-form">
-                form here
+                 <form  method="post" >
+                                {% csrf_token %}
+						      	{% include 'includes/form.html'%}
+						      	<div class="form-group">
+                                    <button type="submit"  class="btn mu-bg mu-color btn-block"> <b>Signup</b></button>
+                                </div>
+                                <h6 class="text-center">
+                                </h6>
+                            </form>
             </div>
         </div>
     </div>
