@@ -15,10 +15,10 @@ urlpatterns = [
     path('course-module/<module_id>', views.module_content, name="module_content"),
 
     path('user-registration/', views.registration, name='registration'),
+    path('user-profile/<object_pk>', views.user_profile, name="user_profile"),
 
     path('login/', loginView, name="login"),
 
-    path('profile/', views.profile_view, name="profile_view"),
     path('teaching-request/', views.teaching_request, name="teaching_request"),
     path('change-password/', views.change_password, name="change_password"),
 

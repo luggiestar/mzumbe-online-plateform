@@ -82,6 +82,22 @@ def registration(request):
     return render(request, 'ELP/registration.html', context)
 
 
+def user_profile(request, object_pk):
+    try:
+        instance = User.objects.get(id=object_pk)
+    except User.DoesNotExist:
+        instance = None
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, instance=instance)
+        if form.is_valid():
+            form.save()
+            return redirect('UJUZI:user_profile')
+    else:
+        form = ProfileForm(instance=instance)
+    context_dict = {'form': form, 'instance': instance}
+    return render(request, 'UJUZI/student/user_profile.html', context_dict)
+
+
 def RegisterView(request):
     form = CourseForm
     return render(request, 'ELP/registration/register.html', {'form': form})

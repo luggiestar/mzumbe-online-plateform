@@ -74,8 +74,7 @@ def module_content(request, module_id):
     return render(request, 'UJUZI/student/course_content.html', context)
 
 
-def profile_view(request):
-    return render(request, 'UJUZI/student/user_profile.html')
+
 
 
 def teaching_request(request):
