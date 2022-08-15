@@ -84,7 +84,7 @@ def course_enrollment(request, course_id):
     get_course = get_object_or_404(Course, id=course_id)
     save_enrollment = Enrollment.objects.create(student=request.user, course=get_course)
 
-    return redirect('UJUZI:course_detail', course__name=get_course.name)
+    return redirect('UJUZI:course_detail', course_name=get_course.name)
 
 def teaching_request(request):
     return render(request, 'UJUZI/student/teaching_request.html')

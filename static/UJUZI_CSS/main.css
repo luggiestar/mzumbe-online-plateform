@@ -6,7 +6,7 @@ nav {
     from {opacity: 1.0;}
     to {opacity: 0.0;}
 }
-  
+
 .blink {
     text-decoration: blink;
     animation-name: blinker;
