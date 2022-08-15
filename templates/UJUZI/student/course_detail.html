@@ -4,7 +4,7 @@
 
 <div class="u-contents-wrapper">
     <div class="course-title">
-        {{courses.name}}
+        Course: {{courses.name}}
     </div>
     <div class="u-course-cover">
         <img src="{{courses.image.url}}"/>
@@ -33,8 +33,9 @@
         </div>
         <div class="mod-box">
                 <div class="sub-title">
-                    Topics {{total}}
+                    Topics ({{total}})
                 </div>
+            {% if request.user.is_authenticated %}
                 <ul class="u-mudules">
                     {% for i in modules %}
                     {% if i.extension|upper == ".PDF" %}
@@ -68,6 +69,9 @@
                         {% endif %}
                     {% endfor %}
                 </ul>
+            {% else %}
+            Please Login <a href="{% url 'UJUZI:login' %}" style="text-decoration:none;"> </a>here, to explore the course contents
+            {% endif %}
         </div>
     </div>
 
