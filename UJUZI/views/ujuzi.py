@@ -74,7 +74,7 @@ def course_detail(request, course_name):
     }
     return render(request, 'UJUZI/student/course_detail.html', context)
 
-
+@login_required
 def module_content(request, module_id):
     check_module = get_object_or_404(Module, id=module_id)
     context = {
@@ -83,14 +83,14 @@ def module_content(request, module_id):
     }
     return render(request, 'UJUZI/student/course_content.html', context)
 
-
+@login_required
 def course_enrollment(request, course_id):
     get_course = get_object_or_404(Course, id=course_id)
     save_enrollment = Enrollment.objects.create(student=request.user, course=get_course)
 
     return redirect('UJUZI:course_detail', course_name=get_course.name)
 
-
+@login_required
 def enrolled_course(request):
     try:
         get_enroll = Enrollment.objects.filter(student=request.user)
@@ -105,7 +105,7 @@ def enrolled_course(request):
     }
     return render(request, 'UJUZI/student/enrolled_course.html', context)
 
-
+@login_required
 def teaching_request(request):
     return render(request, 'UJUZI/student/teaching_request.html')
 
