@@ -93,7 +93,7 @@ def enrolled_course(request):
         get_enroll_total = Enrollment.objects.create(student=request.user).count()
     except:
         get_enroll = None
-        get_enroll_total = None
+        get_enroll_total = 0
     context = {
         'enrollment': get_enroll,
         'total': get_enroll_total,
