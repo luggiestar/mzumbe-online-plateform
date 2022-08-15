@@ -6,7 +6,7 @@ nav {
     from {opacity: 1.0;}
     to {opacity: 0.0;}
 }
-  
+
 .blink {
     text-decoration: blink;
     animation-name: blinker;
@@ -450,8 +450,19 @@ nav {
 
 @media  screen and (max-width:600px)
 {
-<<<<<<< HEAD
-=======
+
+    .u-u-name p,.u-u-name span
+    {
+        font-size:0.9rem;
+        letter-spacing:0.5px;
+    }
+
+    .u-u-icon
+    {
+        font-size:0.9rem;
+    }
+
+
     .u-profile-info-box
     {
         flex-direction:column;
@@ -478,7 +489,6 @@ nav {
         height:120px;
         width:120px;
     }
->>>>>>> 29ed816c65e081ad559eb4422c7994d934f1312e
     .u-contents-wrapper video
     {
         height:auto;

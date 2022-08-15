@@ -51,3 +51,34 @@ user_input.on('keyup', function () {
 	// setTimeout returns the ID of the function to be executed
 	scheduled_function = setTimeout(ajax_call, delay_by_in_ms, endpoint, request_parameters)
 })
+
+
+if(window.location.href.indexOf("home") > -1)
+{
+    $('.link-dash').css('color','rgb(255,178,0)')
+}
+
+if(window.location.href.indexOf("user-profile") > -1)
+{
+    $('.link-prof').css('color','rgb(255,178,0)')
+}
+
+if(window.location.href.indexOf("teaching-request") > -1)
+{
+    $('.link-req').css('color','rgb(255,178,0)')
+}
+
+if(window.location.href.indexOf("change-password") > -1)
+{
+    $('.link-passwd').css('color','rgb(255,178,0)')
+}
+
+if(window.location.href.indexOf("enrolled-courses") > -1)
+{
+    $('.link-enrolled').css('color','rgb(255,178,0)')
+}
+
+if(window.location.href.indexOf("logout") > -1)
+{
+    $('.link-lg-out').css('color','rgb(255,178,0)')
+}
