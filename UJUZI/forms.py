@@ -71,6 +71,12 @@ class ProfileForm(ModelForm):
         fields = ('first_name', 'last_name', 'sex', 'phone')
 
 
+class RequestForm(ModelForm):
+    class Meta:
+        model = TeachingRequest
+        fields = ('institution', 'letter',)
+
+
 # class ContentForm(ModelForm):
 #     title = forms.CharField(label="Content Name", help_text="Content name must be precious, not more than 5 words",
 #                             required=True,

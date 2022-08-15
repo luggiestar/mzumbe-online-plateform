@@ -11,6 +11,7 @@ import json
 
 from django.template.loader import render_to_string
 
+from ..forms import RequestForm
 from ..models import *
 
 
@@ -107,7 +108,19 @@ def enrolled_course(request):
 
 @login_required
 def teaching_request(request):
-    return render(request, 'UJUZI/student/teaching_request.html')
+
+    if request.method == 'POST':
+        form = RequestForm(request.POST, request.FILES)
+        if form.is_valid():
+            save_form = form.save(commit=False)
+            save_form.tutor = request.user
+
+            save_form.save()
+            return redirect('UJUZI:teaching_request',)
+    else:
+        form = RequestForm()
+
+    return render(request, 'UJUZI/student/teaching_request.html', {'form':form})
 
 @login_required
 def change_password(request):
