@@ -88,8 +88,12 @@ def course_enrollment(request, course_id):
 
 
 def enrolled_course(request):
-    get_enroll = Enrollment.objects.create(student=request.user)
-    get_enroll_total = Enrollment.objects.create(student=request.user).count()
+    try:
+        get_enroll = Enrollment.objects.filter(student=request.user)
+        get_enroll_total = Enrollment.objects.create(student=request.user).count()
+    except:
+        get_enroll = None
+        get_enroll_total = None
     context = {
         'enrollment': get_enroll,
         'total': get_enroll_total,
