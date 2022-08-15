@@ -195,13 +195,7 @@ def request_verification(request, course):
     return redirect('UJUZI:course_module', course=get_course.name)
 
 
-def course_enrollment(request, course__name):
-    get_course = get_object_or_404(Course, name=course__name)
-    get_status = get_object_or_404(Status, code="ENR")
-    get_student = get_object_or_404(Student, user=request.user)
-    save_enrollment = Enrollment.objects.create(student=get_student, course=get_course, status=get_status)
 
-    return redirect('UJUZI:profile')
 
 
 def course_contents_reverted(request, course):

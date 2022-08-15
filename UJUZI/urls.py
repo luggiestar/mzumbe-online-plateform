@@ -30,7 +30,7 @@ urlpatterns = [
     # path('get_course/<id>', views.get_course, name='get_course'),
     #
     # path('instructor-home/<course>', views.course_module, name='course_module'),
-    # path('course-enrollment/<course__name>', views.course_enrollment, name='course_enrollment'),
+    path('course-enrollment/<course_id>', views.course_enrollment, name='course_enrollment'),
     # path('course-details/', views.course_details, name='course_details'),
     # path('detailed_course/<code>', views.detailed_course, name='detailed_course'),
     # path('edit-module/<object_pk>/<course>', views.update_module, name='edit_module'),
