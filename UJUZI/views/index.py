@@ -43,7 +43,7 @@ def index(request):
 
     category = Category.objects.all()
     course = Course.objects.all()
-    latest = Course.objects.all().order_by('-id')[:2]
+    latest = Course.objects.all().order_by('-id')[:3]
     context = {
         'courses': course,
         'categories': category,
