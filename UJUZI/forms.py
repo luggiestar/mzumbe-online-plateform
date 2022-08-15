@@ -11,6 +11,7 @@ from .models import *
 
 User = get_user_model()
 
+
 class UserLoginForm(ModelForm):
     class Meta:
         model = User
@@ -29,14 +30,11 @@ class CustomUserChangeForm(UserChangeForm):
         fields = ('email',)
 
 
-# class StaffForm(ModelForm):
-#     category=forms.ModelChoiceField(queryset=Category.objects.all().order_by('name'), empty_label="Choose your specialization")
-#     institution=forms.ModelChoiceField(queryset=Institution.objects.all().order_by('name'), empty_label="Choose "
-#                                                                                                         "institute")
-#     position=forms.ModelChoiceField(queryset=Position.objects.all().order_by('name'), empty_label="Choose your Title")
-#     class Meta:
-#         model = Staff
-#         fields = ('category', 'institution', 'position')
+# class StaffForm(ModelForm): category=forms.ModelChoiceField(queryset=Category.objects.all().order_by('name'),
+# empty_label="Choose your specialization") institution=forms.ModelChoiceField(queryset=Institution.objects.all(
+# ).order_by('name'), empty_label="Choose " "institute") position=forms.ModelChoiceField(
+# queryset=Position.objects.all().order_by('name'), empty_label="Choose your Title") class Meta: model = Staff fields
+# = ('category', 'institution', 'position')
 
 
 class CourseForm(ModelForm):
@@ -74,6 +72,12 @@ class ProfileForm(ModelForm):
     class Meta:
         model = User
         fields = ('first_name', 'last_name', 'sex', 'phone')
+
+
+class RequestForm(ModelForm):
+    class Meta:
+        model = TeachingRequest
+        fields = ('institution', 'letter',)
 
 
 # class ContentForm(ModelForm):

@@ -73,7 +73,7 @@ if(window.location.href.indexOf("change-password") > -1)
     $('.link-passwd').css('color','rgb(255,178,0)')
 }
 
-if(window.location.href.indexOf("enrolled-courses") > -1)
+if(window.location.href.indexOf("enrolled-course") > -1)
 {
     $('.link-enrolled').css('color','rgb(255,178,0)')
 }

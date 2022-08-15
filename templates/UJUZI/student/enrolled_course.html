@@ -1,0 +1,45 @@
+{% extends 'UJUZI/base.html' %}
+{% block content %}
+
+
+
+<div class="sub-title is-s">
+   Enrolled Course ({{total}})
+ </div>
+
+<!--enrolled courses-->
+  {% if total > 0 %}
+<ul class="">
+
+
+    {% for x in enrollment %}
+    <a href="{% url 'UJUZI:course_detail' x.course.name %}" style="text-decoration:none;">
+        <li class='u-course course-{{x.course.category.id}}' id='l-course-{{x.course.id}}'>
+        <div class='course-img'>
+            <img src="{{x.course.image.url}}" alt='no image'>
+        </div>
+        <div class='u-course-desc'>
+            <div class='u-course-title'>
+                {{x.course.name}}
+            </div>
+            <div class='u-course-desc-txt'>
+{{x.course.objective|safe}}            </div>
+        </div>
+    </li>
+    </a>
+    {% endfor %}
+
+</ul>
+{% else %}
+    Sorry, but currently you don't have any Course to Learn, find suitable course <a href="{% url 'UJUZI:home_view' %}" style="text-decoration:none;">here</a>
+{% endif %}
+<!--end of latest course-->
+
+
+
+
+
+
+
+<!--end of category courses-->
+{% endblock content %}

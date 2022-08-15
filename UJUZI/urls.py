@@ -47,7 +47,7 @@ urlpatterns = [
     #
     # path('course_url/<slug:slug>', views.CourseItemView.as_view(), name="course_url"),
 
-    # path('enrollment-course/', views.course_enrollment, name='course_enrollment'),
+    path('enrolled-course/', views.enrolled_course, name='enrolled_course'),
 
     # path('enrollment-course-module/<course_name>', views.course_enrollment_modules, name='course_enrollment_modules'),
 
