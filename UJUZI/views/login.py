@@ -19,7 +19,7 @@ def loginView(request):
 
                     return redirect("admin:index")
                 else:
-                    pass
+                    return redirect("UJUZI:home_view")
 
                     # return redirect('home')
 

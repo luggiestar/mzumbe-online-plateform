@@ -65,7 +65,6 @@ def registration(request):
 
         if form.is_valid():
             get_user = form.save(commit=False)
-            get_user.is_staff = True
             get_user.save()
             login(request, get_user)
             # Student.objects.create(user=get_user, code=id_generator())
