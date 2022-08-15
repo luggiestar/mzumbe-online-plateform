@@ -38,6 +38,8 @@
         <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/v4-shims.min.css' %}" />
         <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/v5-font-face.css' %}" />
         <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/v5-font-face.min.css' %}" />
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <!-- Fontawesome 6 icons -->
 
      </head>
@@ -57,12 +59,13 @@
 
                     <p>{{request.user}} &nbsp;(<span class="gold-shadow">Student</span>)</p>
                     {% else %}
-                    <p><span class="gold-shadow">guest</span></p>
+                    <span class="gold-shadow"></span>
+                    <button class="btn btn-sm btn-dark ml-2" data-target="#login" data-toggle="modal">guest Login Here</button>
                     {% endif %}
                 </div>
             </header>
            <!--header ends here-->
-           <!--side bar menu starts here-->
+           <!--sidebar menu starts here-->
             <div class="side-bar">
                 <div class="u-logo">
                     <div class="logo-png gold-shadow">
@@ -80,26 +83,20 @@
                    <i class="fa-solid fa-bookmark icons gold-shadow" aria-hidden="true"></i>
                     <span>Enrolled courses</span>
                 </a>
-  {% if request.user.id %}
+                {% if request.user.id %}
                 <a id="payment-lin-btn" href="{% url 'UJUZI:user_profile'  request.user.id %}" class="sidebar-link" >
                    <i class="fa fa-user-circle-o icons gold-shadow" aria-hidden="true"></i>
                     <span>Profile</span>
                 </a>
                 {% endif %}
-
-
                  <a id="payment-li-btn" href="{% url 'UJUZI:teaching_request' %}" class="sidebar-link" >
                    <i class="fa fa fa-envelope-o icons gold-shadow" aria-hidden="true"></i>
                     <span>Teaching Request</span>
-                </a>
-
-
-
+                 </a>
                  <a id="payment-l-btn" href="{% url 'UJUZI:change_password' %}" class="sidebar-link" >
                    <i class="fa fa-lock icons gold-shadow" aria-hidden="true"></i>
                     <span>Change Password</span>
-                </a>
-
+                 </a>
                 <a id='exit-btn' class="sidebar-link" href="{% url 'UJUZI:logout' %}">
                     <i class=" fa fa-sign-out icons gold-shadow"></i>
                     <span>Logout</span>
@@ -109,39 +106,103 @@
                     <i class=" fa fa-home icons gold-shadow" ></i>
                     <span>back</span>
                 </a>
-
                 {% endif %}
-
             </div>
            <!--side bar menu ends here-->
          <div class="contents u-contents">
+             <div class="u-content-box">
+                 {% block content %}
+                 {% endblock content %}
+             </div>
+             <div class="u-footer" >
+                 <div>
+                     powered by <span class="l-gold-shadow">Vlirous</span>
+                 </div>
+                 <div class="d-year">
+                     <span class="l-gold-shadow">SmartCore</span> & <span class="l-gold-shadow">Mzumbe University</span> &copy; 2022
+                 </div>
+             </div>
+         </div>
+           <div class="modal fade" id="login">
+               <div class="modal-dialog">
+                   <div class="modal-content">
+                       <div class="modal-body">
+                           <div class="pt-2">
+                               <center>
+                                   <h1><i class="fas fa-book-reader fa-2x text-blue"></i> </h1>
+                               </center>
+                           </div>
+                           <center>
+                               <h2 class="text-blue text-shadow"><b>UJUZISET</b></h2>
+                               <h6 class=""><b>Login here</b></h6>
+                           </center>
+                           <hr style="background:white;">
+                           <form class="mr-auto ml-md-3 my-2 my-md-0 mw-100" action="{%  url 'UJUZI:login_api_view' %}" id="login-form" method="POST">
+                               {% csrf_token %}
+                               <div class="input-group shadow-sm mt-2 wow fadeIn" data-wow-delay="0.2s">
+                                   <div class="input-group-append mu-bg">
+                                       <button class="btn btn-white" type="button">
+                                           <i class="fas fa-user fa-md  text-white"></i>
+                                       </button>
+                                   </div>
+                                   <input type="text" name="username" class="no-boder form-control border-0 small text-color" placeholder="username" required style="background:transparent; color:#0ca0fc; border: 1px solid white">
+                                    </div>
+                               <div class="input-group shadow-sm mt-4 wow fadeIn" data-wow-delay="0.4s">
+                                   <div class="input-group-append mu-bg">
+                                       <button class="btn btn-white" type="button">
+                                           <i class="fas fa-lock fa-sm text-white"></i>
+                                       </button>
+                                   </div>
+                                   <input type="password" name="password" class="no-boder form-control border-0 text-color"
+                                          placeholder="password" required style="background:transparent; color:#0ca0fc; border: 1px solid #0ca0fc">
+                               </div>
+                               <div class="input-group mt-4 mb-4 wow bounceIn" data-wow-delay="1s">
+                                   <button  type="submit" name="login" id="loginId" class="btn btn-dark btn-block text-color" >
+                                       <b class="h5">Login  </b>
+                                   </button>
+                               </div>
+                           </form>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           <script type='text/javascript' src="{% static 'UJUZI_JS/jquery.js' %}"></script>
+           <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+           <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+           <script type='text/javascript' src="{% static 'UJUZI_JS/jquery-cookie/jquery.cookie.js' %}"></script>
+           <script type='text/javascript' src="{% static 'UJUZI_JS/application.js' %}"></script>
+           <script type='text/javascript' src="{% static 'UJUZI_JS/main.js' %}"></script>
+	<script>
+		$(document).ready(function (){
+    		$("#login-form").submit(function (e) {
+        		e.preventDefault()
+        		let thisForm = $(this);
+				let formData = thisForm.serialize();
+				let username = $('input[name=username]').val()
+				let password = $('input[name=password]').val()
+				console.log("success "+username)
 
-                <div class="u-content-box">
-                   {% block content %}
-                   {% endblock content %}
+				$.ajax({
+					url:"{%  url 'UJUZI:login_api_view' %}",
+					method: 'POST',
+					dataType:'json',
+					data: {
+						username:username,
+						password:password,
+						csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+					},
+					success: function (data) {
+						location.reload();
+					},
+					error: function (data) {
+						location.reload();
+					}
+				})
 
-                </div>
-
-                <div class="u-footer" >
-
-                    <div>
-                        powered by <span class="l-gold-shadow">Vlirous</span>
-                    </div>
-                    <div class="d-year">
-                        <span class="l-gold-shadow">SmartCore</span> & <span class="l-gold-shadow">Mzumbe University</span> &copy; 2022
-                    </div>
-
-                </div>
-
-          </div>
-
-     <script type='text/javascript' src="{% static 'UJUZI_JS/jquery.js' %}"></script>
-     <script type='text/javascript' src="{% static 'UJUZI_JS/jquery-cookie/jquery.cookie.js' %}"></script>
-     <script type='text/javascript' src="{% static 'UJUZI_JS/application.js' %}"></script>
-     <script type='text/javascript' src="{% static 'UJUZI_JS/main.js' %}"></script>
-
+			})
+		})
+	</script>
 
      </body>
 </html>
-app.js
 <!--end of base-->

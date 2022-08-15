@@ -18,6 +18,8 @@ urlpatterns = [
     path('user-profile/<object_pk>', views.user_profile, name="user_profile"),
 
     path('login/', loginView, name="login"),
+    path('login-api-view/', LoginViewApi, name="login_api_view"),
+    path('login-api/', LoginApi.as_view(), name="login_api"),
 
     path('teaching-request/', views.teaching_request, name="teaching_request"),
     path('change-password/', views.change_password, name="change_password"),

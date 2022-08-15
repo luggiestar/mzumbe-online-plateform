@@ -42,11 +42,11 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'select2',
     'import_export',
-
     'ckeditor',
     'crispy_forms',
     'embed_video',
     'django_social_share',
+    'rest_framework'
 
 ]
 

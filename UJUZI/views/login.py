@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from datetime import date
 
+
 def loginView(request):
     if request.method == "POST":
         form = AuthenticationForm(request, data=request.POST)
@@ -29,4 +30,4 @@ def loginView(request):
             return redirect('UJUZI:login')
     year = date.today().year
 
-    return render(request, 'ELP/login.html', {'year':year,})
+    return render(request, 'ELP/login.html', {'year': year, })

@@ -11,6 +11,11 @@ from .models import *
 
 User = get_user_model()
 
+class UserLoginForm(ModelForm):
+    class Meta:
+        model = User
+        fields = ("email", "password")
+
 
 class CustomUserCreationForm(UserCreationForm):
     class Meta:
