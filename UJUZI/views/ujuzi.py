@@ -86,6 +86,18 @@ def course_enrollment(request, course_id):
 
     return redirect('UJUZI:course_detail', course_name=get_course.name)
 
+
+def enrolled_course(request):
+    get_enroll = Enrollment.objects.create(student=request.user)
+    get_enroll_total = Enrollment.objects.create(student=request.user).count()
+    context = {
+        'enrollment': get_enroll,
+        'total': get_enroll_total,
+
+    }
+    return render(request, 'UJUZI/student/enrolled_course.html', context)
+
+
 def teaching_request(request):
     return render(request, 'UJUZI/student/teaching_request.html')
 
