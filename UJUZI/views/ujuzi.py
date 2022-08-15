@@ -90,7 +90,7 @@ def course_enrollment(request, course_id):
 def enrolled_course(request):
     try:
         get_enroll = Enrollment.objects.filter(student=request.user)
-        get_enroll_total = Enrollment.objects.create(student=request.user).count()
+        get_enroll_total = Enrollment.objects.filter(student=request.user).count()
     except:
         get_enroll = None
         get_enroll_total = 0
