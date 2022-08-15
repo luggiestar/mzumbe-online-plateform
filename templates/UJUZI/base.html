@@ -53,7 +53,12 @@
                     <div class="u-u-icon">
                          <i class="fa fa-user-circle-o"></i>
                     </div>
+                    {% if request.user.is_authenticated%}
+
                     <p>{{request.user}} &nbsp;(<span class="gold-shadow">Student</span>)</p>
+                    {% else %}
+                    <p><span class="gold-shadow">guest</span></p>
+                    {% endif %}
                 </div>
             </header>
            <!--header ends here-->
@@ -64,6 +69,7 @@
                         UJUZISET
                     </div>
                 </div>
+                  {% if request.user.is_authenticated%}
 
                 <a href="{% url 'UJUZI:home_view' %}" id="side-bar-dashboard" class="sidebar-link" >
                     <i class=" fa fa-home icons gold-shadow" ></i>
@@ -98,6 +104,16 @@
                     <i class=" fa fa-sign-out icons gold-shadow"></i>
                     <span>Logout</span>
                 </a>
+                {% else %}
+                 <a href="{% url 'UJUZI:index' %}" id="guest-dashboard" class="sidebar-link" >
+                    <i class=" fa fa-home icons gold-shadow" ></i>
+                    <span>back</span>
+                </a>
+                 <a href="{% url 'UJUZI:login' %}" id="login-dashboard" class="sidebar-link" >
+                    <i class=" fa fa-login icons gold-shadow" ></i>
+                    <span>Login to explore</span>
+                </a>
+                {% endif %}
 
             </div>
            <!--side bar menu ends here-->
