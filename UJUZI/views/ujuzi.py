@@ -122,7 +122,7 @@ def change_password(request):
             messages.error(request, 'Please correct the error below.')
     else:
         form = PasswordChangeForm(request.user)
-    return render(request, 'UJUZI/student/change_password.html.html', {
+    return render(request, 'UJUZI/student/change_password.html', {
         'form': form
     })
 
