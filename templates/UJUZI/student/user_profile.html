@@ -13,7 +13,6 @@
 
             <div class="u-profile-pic">
                 <img src="{% static 'img/user.png' %}">
-
             </div>
 
             <div class="u-profile-name">
@@ -30,15 +29,15 @@
                 user Info
             </div>
             <div class="u-info-form">
-                 <form  method="post" >
+                 <form  class="u-form" method="post" >
                                 {% csrf_token %}
 						      	{% include 'includes/form.html'%}
 						      	<div class="form-group">
-                                    <button type="submit"  class="btn mu-bg mu-color btn-block"> <b>Save Changes</b></button>
+                                    <button type="submit"  class="btn mu-bg mu-color btn-block c-btn"> <b>Save Changes</b></button>
                                 </div>
                                 <h6 class="text-center">
                                 </h6>
-                            </form>
+                </form>
             </div>
         </div>
     </div>
