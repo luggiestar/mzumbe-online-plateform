@@ -50,6 +50,7 @@ urlpatterns = [
     path('enrolled-course/', views.enrolled_course, name='enrolled_course'),
     path('my-courses/', views.my_course, name='my_course'),
     path('course-module-contents/<course_id>', views.course_module_contents, name='course_module_contents'),
+    path('delete-module/<module_id>', views.delete_module, name="delete_module"),
 
     # path('enrollment-course-module/<course_name>', views.course_enrollment_modules, name='course_enrollment_modules'),
 
@@ -70,7 +71,7 @@ urlpatterns = [
 
     path('module-content/<course>/<module>', views.module_contents, name='module_content'),
     path('course-module-content/<module_name>', views.get_module_contents, name='get_module_contents'),
-    path('edit-module-content/<object_pk>/<course>/<module>', views.update_module_content, name='edit_module_content'),
+    path('edit-module-content/<object_pk>/', views.update_module_content, name='update_module_content'),
     path('edit-course/<object_pk>/', views.update_course, name='edit_course'),
 
     path('test-autocomplete/', autocomplete.Select2QuerySetView.as_view(model=Category), name='select2_fk'),

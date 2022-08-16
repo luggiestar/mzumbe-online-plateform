@@ -54,10 +54,41 @@
   <tr>
       {% for i in modules %}
       <td>{{forloop.counter}}</td>
-      <td><a href="" style="text-decoration:none;">{{i.title}}</a> </td>
+      <td><a href="{% url 'UJUZI:update_module_content' i.id %}" style="text-decoration:none;">{{i.title}}</a> </td>
       <td>{{i.extension}}</td>
       <td>{{i.content.size|filesizeformat }}</td>
-      <td><a href="" style="text-decoration:none;"><i class="fa fa-trash" ></i></a></td>
+      <td><a href="" style="text-decoration:none;" data-target="#delete_{{i.id}}" data-toggle="modal"><i class="fa fa-trash" ></i></a></td>
+
+
+
+
+     <div class="modal fade" id="delete_{{i.id}}">
+     <div class="modal-dialog">
+         <div class="modal-content">
+             <div class="modal-body">
+                 <div class="pt-2">
+                     <h4 class="text-center">Delete Content Confirmation </h4>
+                 </div>
+                 <div >
+
+                     <hr style="background:white;">
+                        <h4 class="text-center">
+                            Are you sure ?
+                                </h4>
+
+
+						      	<div class="form-group">
+                                    <a href="{% url 'UJUZI:delete_module' %}"  class="btn btn-danger c-btn"> <b>Delete</b></a>
+                                </div>
+
+
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+
+
        {% endfor %}
   </tr>
 </table>            </div>
