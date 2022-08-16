@@ -39,6 +39,7 @@
 
      </head>
      <body>
+
      <input type="checkbox" id="toggle"/>
      <!--header starts here-->
      <header>
@@ -49,6 +50,86 @@
          <div class="u-u-name">
              <div class="u-u-icon">
                  <i class="fa fa-user-circle-o"></i>
+           <input type="checkbox" id="toggle"/>
+           <!--header starts here-->
+            <header>
+                <div class="toggle-div" style="color:yellow;">
+                      <label for="toggle" class="toggle-label"><span></span></label>
+                    </div>
+                </div>
+                <div class="u-u-name">
+                    <div class="u-u-icon">
+                         <i class="fa fa-user-circle-o"></i>
+                    </div>
+                    {% if request.user.is_authenticated%}
+
+                    <p>{{request.user}} &nbsp;(<span class="gold-shadow">Student</span>)</p>
+                    {% else %}
+                    <span class="gold-shadow"></span>
+                    <button class="btn btn-sm btn-dark ml-2" data-target="#login" data-toggle="modal">guest Login Here</button>
+                    {% endif %}
+                </div>
+            </header>
+           <!--header ends here-->
+           <!--sidebar menu starts here-->
+            <div class="side-bar">
+                <div class="u-logo">
+                    <div class="logo-png gold-shadow">
+                        UJUZISET
+                    </div>
+                </div>
+                  {% if request.user.is_authenticated%}
+
+                <a href="{% url 'UJUZI:home_view' %}" id="side-bar-dashboard" class="sidebar-link link-dash" >
+                    <i class=" fa fa-dashboard icons gold-shadow" ></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a id="payment-link-btn" href="{% url 'UJUZI:enrolled_course' %}" class="sidebar-link link-enrolled" >
+                   <i class="fa-solid fa-bookmark icons gold-shadow" aria-hidden="true"></i>
+                    <span>Enrolled courses</span>
+                </a>
+
+                   <a id="my-link-btn" href="{% url 'UJUZI:enrolled_course' %}" class="sidebar-link" >
+                   <i class="fa-solid fa-bookmark icons gold-shadow" aria-hidden="true"></i>
+                    <span>My courses</span>
+                </a>
+
+                  <a id="request-link-btn" href="{% url 'UJUZI:enrolled_course' %}" class="sidebar-link" >
+                   <i class="fa-solid fa-bookmark icons gold-shadow" aria-hidden="true"></i>
+                    <span>Request Verification</span>
+                </a>
+                {% if request.user.id %}
+                <a id="payment-lin-btn" href="{% url 'UJUZI:user_profile'  request.user.id %}" class="sidebar-link link-prof" >
+                   <i class="fa fa-user-circle-o icons gold-shadow" aria-hidden="true"></i>
+                    <span>Profile</span>
+                </a>
+                {% endif %}
+                 <a id="payment-li-btn" href="{% url 'UJUZI:teaching_request' %}" class="sidebar-link link-req" >
+                   <i class="fa fa fa-envelope-o icons gold-shadow" aria-hidden="true"></i>
+                    <span>Teaching Request</span>
+                 </a>
+                 <a id="payment-l-btn" href="{% url 'UJUZI:change_password' %}" class="sidebar-link link-passwd" >
+                   <i class="fa fa-lock icons gold-shadow" aria-hidden="true"></i>
+                    <span>Change Password</span>
+                 </a>
+                <a id='exit-btn' class="sidebar-link link-lg-out" href="{% url 'UJUZI:logout' %}">
+                    <i class=" fa fa-sign-out icons gold-shadow"></i>
+                    <span>Logout</span>
+                </a>
+                {% else %}
+                 <a href="{% url 'UJUZI:index' %}" id="guest-dashboard" class="sidebar-link" >
+                    <i class=" fa fa-home icons gold-shadow" ></i>
+                    <span>back</span>
+                </a>
+                {% endif %}
+            </div>
+           <!--side bar menu ends here-->
+         <div class="contents u-contents">
+             <div class="u-content-box">
+                 {% block content %}
+                 {% endblock content %}
+
              </div>
              {% if request.user.is_authenticated%}
 
