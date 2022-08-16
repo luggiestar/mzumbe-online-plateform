@@ -150,7 +150,7 @@ def my_course(request):
 def course_module_contents(request, course_id):
     try:
 
-        get_course = Course.objects.filter(id=course_id, tutor=request.user).first()
+        get_course = Course.objects.filter(id=course_id).first()
         get_module = Module.objects.filter(course=get_course)
         total = Module.objects.filter(course=get_course).count()
     except:
