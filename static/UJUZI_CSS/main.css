@@ -311,6 +311,66 @@ nav {
     font-weight:bold;
 }
 
+.cards
+{
+    width: 100%;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,400px));
+    grid-auto-rows: 225px;
+    grid-gap:30px;
+}
+
+.card
+{
+    background-color: white;
+    box-shadow:2px 3px 3px 5px rgba(90,90,90,0.1);
+    border-radius: 5px;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.m-course:hover
+{
+    transition: 0.08s ease-in-out;
+    cursor: pointer;
+}
+.m-course:active
+{
+    transform: scale(0.98);
+}
+.m-course-cover
+{
+    width: 100%;
+    height:140px;
+    background-color: rgb(201, 201, 201);
+}
+.m-course-title
+{
+    font-size: 1.0rem;
+    font-weight: bold;
+    color:#222;
+    padding:6px 5px 2px 3px;
+}
+.m-st-views
+{
+    display: flex;
+    justify-content: space-between;
+    padding:3px 5px 2px 3px;
+    font-size:1.0rem;
+}
+.m-st-views div span
+{
+    font-weight: bold;
+    color:#222;
+}
+
+.my-courses
+{
+    margin-top:20px;
+}
+
+
 @media  screen and (max-width:1150px)
 {
 
@@ -395,6 +455,9 @@ nav {
 
 @media  screen and (max-width:768px)
 {
+    {
+        grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    }
     .form-full
     {
         width:75%;
