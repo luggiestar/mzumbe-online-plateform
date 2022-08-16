@@ -179,4 +179,4 @@ def course_module_contents(request, course_id):
         'form': form,
 
     }
-    return render(request, 'UJUZI/tutor/my_course.html', context)
+    return render(request, 'UJUZI/tutor/course_module_contents.html', context)
