@@ -143,10 +143,10 @@
  </div>
 
 <!--latest courses-->
-<ul class="u-course-list latest-c is-s">
+<ul class="u-course-list latest-c is-s pt-3">
     {% for x in latest %}
-    <a href="{% url 'UJUZI:course_detail' x.name %}" style="text-decoration:none;">
-        <li class='u-course course-{{x.category.id}}' id='l-course-{{x.id}}'>
+	<a href="{% url 'UJUZI:course_detail' x.name %}" style="text-decoration:none;">
+		<li class='u-course course-{{x.category.id}} ' id='l-course-{{x.id}}'>
         <div class='course-img'>
             <img src="{{x.image.url}}" alt='no image'>
         </div>
