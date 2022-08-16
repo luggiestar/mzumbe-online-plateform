@@ -23,6 +23,7 @@
                         <form  class="mr-auto ml-md-3 my-2 my-md-0 mw-100" method="POST" enctype="multipart/form-data">
                                 {% csrf_token %}
 						      	{% include 'includes/form.html'%}
+                            {{form.media}}
 						      	<div class="form-group">
                                     <button type="submit"  class="btn mu-bg mu-color btn-block c-btn"> <b>Create Course</b></button>
                                 </div>

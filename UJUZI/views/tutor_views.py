@@ -130,7 +130,7 @@ def my_course(request):
         if form.is_valid():
             save_form = form.save(commit=False)
 
-            save_form.tutor = request.user
+            save_form.instructor = request.user
 
             save_form.save()
 
