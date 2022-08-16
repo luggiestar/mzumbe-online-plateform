@@ -9,57 +9,36 @@
 
 <!--enrolled courses-->
 <!--start of my courses-->
+  {% if total > 0 %}
 <ul class="cards my-courses">
+        {% for x in course %}
+    <a href="{% url 'UJUZI:course_detail' x.name %}" style="text-decoration:none;">
     <li class="card m-course">
         <div class="m-course-cover">
-            <img src="" alt="img"/>
+            <img src="{{x.image.url}}" alt="img"/>
         </div>
         <div class="m-course-title">
-            Introduction to geography
-        </div>
+   {{x.name}}        </div>
         <div class="m-course-txt">
 
         </div>
         <div class="m-st-views">
             <div class="m-st">
-                <i></i>
-                <span>120 students</span>
+                <i class="fa fa-users"></i>
+                <span>{{enrollment}} enrollments</span>
             </div>
             <div class="m-views">
-                <i></i>
+                <i class="fa fa-eye"></i>
                 <span>140 views</span>
             </div>
         </div>
     </li>
-</ul>
-<!--end of my courses-->
-  {% if total > 0 %}
-<ul class="">
-
-
-    {% for x in course %}
-    <a href="{% url 'UJUZI:course_detail' x.name %}" style="text-decoration:none;">
-        <li class='u-course course-{{x.category.id}}' id='l-course-{{x.id}}'>
-        <div class='course-img'>
-            <img src="{{x.image.url}}" alt='no image'>
-        </div>
-        <div class='u-course-desc'>
-            <div class='u-course-title'>
-                {{x.name}}
-            </div>
-            <div class='u-course-desc-txt'>
-{{x.objective|safe}}            </div>
-        </div>
-    </li>
-    </a>
+         </a>
     {% endfor %}
-
 </ul>
 {% else %}
     Sorry, but currently you don't have any Course
 {% endif %}
-<!--end of latest course-->
-
 
 
 
