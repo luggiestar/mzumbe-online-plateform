@@ -43,7 +43,7 @@
   {% if total > 0 %}
 <ul class="cards my-courses">
         {% for x in courses %}
-    <a href="{% url 'UJUZI:course_detail' x.name %}" style="text-decoration:none;">
+    <a href="{% url 'UJUZI:course_module_contents' x.id %}" style="text-decoration:none;">
     <li class="card m-course">
         <div class="m-course-cover">
             <img src="{{x.image.url}}" alt="img"/>
