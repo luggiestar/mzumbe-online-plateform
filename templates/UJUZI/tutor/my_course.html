@@ -4,10 +4,40 @@
 
 
 <div class="sub-title is-s">
-   My Course({{total}})
+   My Course({{total}})              <button class="btn btn-sm btn-dark ml-2" data-target="#course" data-toggle="modal">Create Course</button>
+
  </div>
 
-<!--enrolled courses-->
+<!--course registration modal-->
+
+<div class="modal fade" id="course">
+     <div class="modal-dialog">
+         <div class="modal-content">
+             <div class="modal-body">
+                 <div class="pt-2">
+                     <h4 class="text-center">Course Registration Form </h4>
+                 </div>
+                 <div id="loginContainer">
+
+                     <hr style="background:white;">
+                        <form  class="mr-auto ml-md-3 my-2 my-md-0 mw-100" method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+						      	{% include 'includes/form.html'%}
+						      	<div class="form-group">
+                                    <button type="submit"  class="btn mu-bg mu-color btn-block c-btn"> <b>Create Course</b></button>
+                                </div>
+                                <h6 class="text-center">
+                                </h6>
+                </form>
+
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+
+
+
 <!--start of my courses-->
   {% if total > 0 %}
 <ul class="cards my-courses">
