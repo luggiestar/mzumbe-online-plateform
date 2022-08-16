@@ -1,5 +1,6 @@
 from .index import *
 from .instructor_home import *
+from .tutor_views import *
 from .verifier import *
 from .login import *
 from .comment import *

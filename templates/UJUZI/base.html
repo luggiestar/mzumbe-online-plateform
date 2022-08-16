@@ -5,7 +5,7 @@
 
 <html lang="en">
      <head>
-        <title>UJUZI</title>
+        <title>Ujuzi-Set</title>
          <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
          <link rel="stylesheet" href="{% static 'UJUZI_CSS/dashboard.css' %}">
@@ -74,9 +74,14 @@
              <span>Dashboard</span>
          </a>
 
-         <a id="payment-link-btn" href="payments" class="sidebar-link" >
+         <a id="payment-link-btn" href="{% url 'UJUZI:enrolled_course' %}" class="sidebar-link" >
              <i class="fa-solid fa-bookmark icons gold-shadow" aria-hidden="true"></i>
              <span>Enrolled courses</span>
+         </a>
+
+             <a id="courses-link-btn" href="{% url 'UJUZI:my_course' %}" class="sidebar-link" >
+             <i class="fa-solid fa-database icons gold-shadow" aria-hidden="true"></i>
+             <span>My courses</span>
          </a>
          {% if request.user.id %}
          <a id="payment-lin-btn" href="{% url 'UJUZI:user_profile'  request.user.id %}" class="sidebar-link" >
