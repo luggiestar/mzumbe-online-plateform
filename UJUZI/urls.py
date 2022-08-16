@@ -15,11 +15,11 @@ urlpatterns = [
     path('course-module/<module_id>', views.module_content, name="module_content"),
 
     path('user-registration/', views.registration, name='registration'),
+    path('guest-registration/', guest_registration, name="guest_registration"),
     path('user-profile/<object_pk>', views.user_profile, name="user_profile"),
 
     path('login/', loginView, name="login"),
-    path('login-api-view/', LoginViewApi, name="login_api_view"),
-    path('login-api/', LoginApi.as_view(), name="login_api"),
+    path('guest-login/', LoginViewApi, name="guest_login"),
 
     path('teaching-request/', views.teaching_request, name="teaching_request"),
     path('change-password/', views.change_password, name="change_password"),

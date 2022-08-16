@@ -42,36 +42,36 @@
 							</div>
 							<div class="col-md-6">  
 								<form method="POST" class="px-5 py-5">
-								{% csrf_token %}
-								<h4>Register a New Account</h4>
-								<div class="aler alert-info">{{ rform.errors}}</div>
-			                        <div class="form-group pb-3">
-										<label for="InputUsername">{{ rform.username.label}}</label>
-										<div class="input-group flex-nowrap">
-											<span class="input-group-text" id="addon-wrapping">@</span>
-											{{ rform.username|add_class:"form-control" | attr:"id:InputUsername" }}
+									{% csrf_token %}
+									`<h4>Register a New Account</h4>
+									<div class="aler alert-info">{{ rform.errors}}</div>
+										<div class="form-group pb-3">
+											<label for="InputUsername">{{ rform.username.label}}</label>
+											<div class="input-group flex-nowrap">
+												<span class="input-group-text" id="addon-wrapping">@</span>
+												{{ rform.username|add_class:"form-control" | attr:"id:InputUsername" }}
+											</div>
 										</div>
-									</div>
-									<div class="form-group pb-3">
-										<label for="InputUsername">{{ rform.password1.label}}</label>
-										<div class="input-group flex-nowrap">
-											<span class="input-group-text" id="addon-wrapping"><i class="bi bi-lock-fill"></i></span>
-											{{ rform.password1|add_class:"form-control" | attr:"type:password" }}
+										<div class="form-group pb-3">
+											<label for="InputUsername">{{ rform.password1.label}}</label>
+											<div class="input-group flex-nowrap">
+												<span class="input-group-text" id="addon-wrapping"><i class="bi bi-lock-fill"></i></span>
+												{{ rform.password1|add_class:"form-control" | attr:"type:password" }}
+											</div>
 										</div>
-									</div>
-                        			<div class="form-group pb-3">
-										<label for="InputUsername">{{ rform.password2.label}}</label>
-										<div class="input-group flex-nowrap">
-											<span class="input-group-text" id="addon-wrapping"><i class="bi bi-lock-fill"></i></span>
-											{{ rform.password2|add_class:"form-control" | attr:"type:password" }}
+										<div class="form-group pb-3">
+											<label for="InputUsername">{{ rform.password2.label}}</label>
+											<div class="input-group flex-nowrap">
+												<span class="input-group-text" id="addon-wrapping"><i class="bi bi-lock-fill"></i></span>
+												{{ rform.password2|add_class:"form-control" | attr:"type:password" }}
+											</div>
 										</div>
-									</div>
-									<div class="d-grid gap-2">
-										<button type="submit" class="btn btn-primary-os btn-lg">Register</button>
-										<a href="#" class="link-item">Frequenly Asked Questions</a>
-										<a href="#" class="link-item">Help ?</a>
-										<small><p class="text-grey"> VLI-RUOS-4SITe PROGRAMME &copy; All rights Reserved</p></small>
-									</div>
+										<div class="d-grid gap-2">
+											<button type="submit" class="btn btn-primary-os btn-lg">Register</button>
+											<a href="#" class="link-item">Frequenly Asked Questions</a>
+											<a href="#" class="link-item">Help ?</a>
+											<small><p class="text-grey"> VLI-RUOS-4SITe PROGRAMME &copy; All rights Reserved</p></small>
+										</div>`
 									</form>									
 							</div>
 						</div>

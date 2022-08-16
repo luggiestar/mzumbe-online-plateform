@@ -3,6 +3,8 @@
     margin:0;
     padding:0;
 }
+
+
 :root
 {
     --title-brand-color:#666;
@@ -39,7 +41,7 @@ header{
 
 .u-logo
 {
-    font-size:24;
+    font-size:24px;
     padding-left:10px;
     height:60px;
     display:flex;
@@ -225,13 +227,13 @@ button{
 {
     font-size:1.2rem;
     color:var(--u-dark-light-blue);
-    letter-spacing:0.3;
+    letter-spacing:0.3px;
 }
 .u-u-name p span
 {
     color:var(--u-gold);
     font-weight:bold;
-    letter-spacing:0.6;
+    letter-spacing:0.6px;
 }
 .u-u-icon
 {
@@ -247,7 +249,7 @@ button{
     float:right;
     margin-top: -50px;
     padding-right: 20px;
-  }
+}
 .left-area{
     display:flex;
     align-items: center;
@@ -1139,7 +1141,6 @@ button{
  transform:scale(0.99);
 }
 
-}
 .category-li span
 {
     font-weight:500;
@@ -1156,10 +1157,9 @@ button{
     height:100%;
 }
 
-}
 .search-in
 {
-    width:100%
+    width:100%;
     height:50px;
     display:flex;
     justify-content:center;

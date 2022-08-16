@@ -1,7 +1,9 @@
 {% extends 'UJUZI/base.html' %}
 {% load social_share %}
 {% block content %}
-
+{% load static %}
+{% load widget_tweaks %}
+  <link href="{% static 'css/login.css' %}" rel="stylesheet">
 <div class="u-contents-wrapper">
     <div class="course-title">
         Course: {{courses.name}}
@@ -70,23 +72,125 @@
                         {% endif %}
                     {% endfor %}
                 </ul>
-
-
             {% else %}
-                        Please Join <a href="{% url 'UJUZI:course_enrollment' courses.id %}" style="text-decoration:none;"> this</a>, to explore the course contents
+             Please Join <a href="{% url 'UJUZI:course_enrollment' courses.id %}" style="text-decoration:none;"> this</a>, to explore the course contents
 
             {% endif %}
             {% else %}
-            Please Login <a href="{% url 'UJUZI:login' %}" style="text-decoration:none;"> here</a>, to view the contents
+                Please Login <a type="button" class="text-primary hover-cursor" data-target="#login" data-toggle="modal" > here</a>, to view the contents
             {% endif %}
         </div>
     </div>
 
 </div>
+<div class="modal fade" id="login">
+     <div class="modal-dialog">
+         <div class="modal-content">
+             <div class="modal-body">
+                 <div class="pt-2">
+                     <h1 class="text-center"><i class="fas fa-book-reader fa-2x text-blue"></i> </h1>
+                 </div>
+                 <h2 class="text-blue text-shadow text-center"><b>UJUZISET</b></h2>
+                 <div id="loginContainer">
+                     <h6 class="text-center"><b>Login here</b></h6>
+                     <hr style="background:white;">
+                     <form class="mr-auto ml-md-3 my-2 my-md-0 mw-100"  id="login-form" method="POST">
+                         {% csrf_token %}
+                         <div class="input-group shadow-sm mt-2 wow fadeIn" data-wow-delay="0.2s">
+                             <div class="input-group-append mu-bg">
+                                 <button class="btn btn-white" type="button">
+                                     <i class="fas fa-user fa-md  text-white"></i>
+                                 </button>
+                             </div>
+                             <input type="text" name="username" class="no-boder form-control border-0 small text-color" placeholder="username" required style="background:transparent; color:#0ca0fc; border: 1px solid white">
+                         </div>
+                         <div class="input-group shadow-sm mt-4 wow fadeIn" data-wow-delay="0.4s">
+                             <div class="input-group-append mu-bg">
+                                 <button class="btn btn-white" type="button">
+                                     <i class="fas fa-lock fa-sm text-white"></i>
+                                 </button>
+                             </div>
+                             <input type="password" name="password" class="no-boder form-control border-0 text-color"
+                                          placeholder="password" required style="background:transparent; color:#0ca0fc; border: 1px solid #0ca0fc">
+                         </div>
+                         <div class="input-group mt-4 mb-4 wow bounceIn" data-wow-delay="1s">
+                             <a class="hover-cursor" id="register">Don't have account ?</a>
+                         </div>
+                         <div class="input-group mt-4 mb-4 wow bounceIn" data-wow-delay="1s">
+                             <button type="submit" name="login" id="loginId" class="btn btn-dark btn-block text-color" >
+                                 <b class="h5">Login  </b>
+                             </button>
+                         </div>
+                     </form>
+                 </div>
+                 <div id="registerContainer">
+                     <h6 class="text-center"><b>Register a New Account</b></h6>
+                     <hr style="background:white;">
+                     <form method="POST" class="px-5 py-5" action="{%  url 'UJUZI:guest_registration' %}" id="registration-form">
+                         {% csrf_token %}
 
+                         {% include 'includes/form.html' %}
+                         <div class="d-grid gap-2">
+                             <button type="submit" class="btn mu-bg mu-color btn-block">Register</button>
+                         </div>
+                         <h6 class="text mt-3" id="userLogin" style="color:#e74a3b"> Already have an account?! <b>Login</b></h6>
+                         <div class="d-grid gap-2">
+                             <small><p class="text-grey"> VLI-RUOS-4SITe PROGRAMME &copy; All rights Reserved</p></small>
+                         </div>
+                     </form>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+<script>
+    $(document).ready(function () {
+        $("#registerContainer").hide();
+        $("#register").click(function () {
+            $("#loginContainer").hide();
+            $("#registerContainer").show(300);
+        })
+        $("#userLogin").click(function () {
+            $("#registerContainer").hide(50);
+            $("#loginContainer").show(300);
+        })
+        register();
+    })
 
+     function register() {
+         $("#registration-form").submit(function (e) {
+             e.preventDefault()
 
+             let email = $('input[name=email]').val()
+             let phone = $('input[name=phone]').val()
+             let password = $("#id_password").val()
+             let password2 = $('#id_password2').val()
+             console.log(password)
+             $.ajax({
+                 url:"{%  url 'UJUZI:guest_registration' %}",
+                 method: 'POST',
+                 dataType:'json',
+                 data: {
+                     email:email,
+                     phone:phone,
+                     password:password,
+                     password2:password2,
+                     csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+                 },
+                 success: function (data) {
+                     location.reload();
+                     // console.log("success"+data)
+                 },
+                 error: function (data) {
+                     $("#registration-form").reset()
+                     // location.reload();
+                     // console.log("error")
+                 }
+             })
+         })
+     }
 
+</script>
 
 <!--end of category courses-->
 {% endblock content %}

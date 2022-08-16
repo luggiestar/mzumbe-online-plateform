@@ -7,6 +7,10 @@ nav {
     to {opacity: 0.0;}
 }
 
+.hover-cursor:hover {
+    cursor: pointer;
+}
+
 .blink {
     text-decoration: blink;
     animation-name: blinker;

@@ -72,6 +72,8 @@ def course_details(request):
 
         }
         return render(request, "user/course_detail.html", context)
+
+
 def detailed_course(request, code):
     get_course = Course.objects.filter(name=code).first()
     get_module = Module.objects.filter(course=get_course)
@@ -82,14 +84,15 @@ def detailed_course(request, code):
         get_status = None
 
     context = {
-            # 'content': get_content,
-            'module': get_module,
-            'course': get_course,
-            'status': get_status,
+        # 'content': get_content,
+        'module': get_module,
+        'course': get_course,
+        'status': get_status,
 
-        }
+    }
 
     return render(request, "user/detailed_course.html", context)
+
 
 def get_module_contents(request, module_name):
     get_module = get_object_or_404(Module, name=module_name)

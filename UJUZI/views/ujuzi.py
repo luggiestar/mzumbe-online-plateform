@@ -11,7 +11,7 @@ import json
 
 from django.template.loader import render_to_string
 
-from ..forms import RequestForm
+from ..forms import *
 from ..models import *
 
 
@@ -66,14 +66,17 @@ def course_detail(request, course_name):
         get_enroll = None
     modules = Module.objects.filter(course=check_course)
     total = Module.objects.filter(course=check_course).count()
+
+    form = RegisterForm(request.POST)
     context = {
         'courses': check_course,
         'modules': modules,
         'total': total,
         'enrolled': get_enroll,
-
+        'form': form,
     }
     return render(request, 'UJUZI/student/course_detail.html', context)
+
 
 @login_required
 def module_content(request, module_id):
@@ -84,12 +87,14 @@ def module_content(request, module_id):
     }
     return render(request, 'UJUZI/student/course_content.html', context)
 
+
 @login_required
 def course_enrollment(request, course_id):
     get_course = get_object_or_404(Course, id=course_id)
     save_enrollment = Enrollment.objects.create(student=request.user, course=get_course)
 
     return redirect('UJUZI:course_detail', course_name=get_course.name)
+
 
 @login_required
 def enrolled_course(request):
@@ -106,9 +111,9 @@ def enrolled_course(request):
     }
     return render(request, 'UJUZI/student/enrolled_course.html', context)
 
+
 @login_required
 def teaching_request(request):
-
     if request.method == 'POST':
         form = RequestForm(request.POST, request.FILES)
         if form.is_valid():
@@ -116,11 +121,12 @@ def teaching_request(request):
             save_form.tutor = request.user
 
             save_form.save()
-            return redirect('UJUZI:teaching_request',)
+            return redirect('UJUZI:teaching_request', )
     else:
         form = RequestForm()
 
-    return render(request, 'UJUZI/student/teaching_request.html', {'form':form})
+    return render(request, 'UJUZI/student/teaching_request.html', {'form': form})
+
 
 @login_required
 def change_password(request):
@@ -138,7 +144,6 @@ def change_password(request):
     return render(request, 'UJUZI/student/change_password.html', {
         'form': form
     })
-
 
 
 def get_course(request, id):
