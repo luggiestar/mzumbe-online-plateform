@@ -50,7 +50,7 @@ class CourseForm(ModelForm):
 
 
 class ModuleForm(ModelForm):
-    name = forms.CharField(label="Module title", help_text="Module name must be precise, not more than 5 words",
+    title = forms.CharField(label="Module title", help_text="Module name must be precise, not more than 5 words",
                            required=True,
                            widget=forms.TextInput(attrs={'placeholder': 'title of a topic/Module'})
                            )
