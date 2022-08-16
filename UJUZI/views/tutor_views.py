@@ -114,14 +114,14 @@ def pdf_view(request, content):
 
 @login_required
 def my_course(request):
-    try:
-        get_course = Course.objects.filter(instructor=request.user)
-        get_course_total = Course.objects.filter(instructor=request.user).count()
-        get_enrollments_total = Enrollment.objects.filter(course=get_course).count()
-    except:
-        get_course = None
-        get_course_total = 0
-        get_enrollments_total = 0
+    # try:
+    get_course = Course.objects.filter(instructor=request.user)
+    get_course_total = Course.objects.filter(instructor=request.user).count()
+    get_enrollments_total = Enrollment.objects.filter(course=get_course).count()
+    # except:
+    #     get_course = None
+    #     get_course_total = 0
+    #     get_enrollments_total = 0
 
     form = CourseForm()
 

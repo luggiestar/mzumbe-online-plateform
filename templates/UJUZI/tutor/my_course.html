@@ -42,7 +42,7 @@
 <!--start of my courses-->
   {% if total > 0 %}
 <ul class="cards my-courses">
-        {% for x in course %}
+        {% for x in courses %}
     <a href="{% url 'UJUZI:course_detail' x.name %}" style="text-decoration:none;">
     <li class="card m-course">
         <div class="m-course-cover">
