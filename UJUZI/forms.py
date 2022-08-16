@@ -39,19 +39,16 @@ class CustomUserChangeForm(UserChangeForm):
 
 class CourseForm(ModelForm):
     # objective = forms.CharField(widget=RichTextWidget())
-    name = forms.CharField(label="Course Name", help_text="Course name must be precious, not more than 5 words",
+    name = forms.CharField(label="Course Name", help_text="Course name must be precise, not more than 5 words",
                            required=True,
                            widget=forms.TextInput(attrs={'placeholder': 'Enter course name'})
                            )
-    modules = forms.IntegerField(label="number of Course topic",
-                                 widget=forms.TextInput(attrs={'placeholder': 'how many topic?'}))
+
 
     class Meta:
         model = Course
-        fields = ('category', 'name', 'modules', 'objective',)
-        # widgets = {
-        #     'category': autocomplete.ModelSelect2(url='ELP:select2_fk', )
-        # }
+        fields = ('category', 'name', 'image', 'objective',)
+
 
 
 class ModuleForm(ModelForm):
