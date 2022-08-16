@@ -57,7 +57,7 @@ class ModuleForm(ModelForm):
 
     class Meta:
         model = Module
-        fields = ('title', 'content',)
+        fields = ('title', 'content')
 
 
 class ProfileForm(ModelForm):
