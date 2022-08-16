@@ -83,6 +83,16 @@
                    <i class="fa-solid fa-bookmark icons gold-shadow" aria-hidden="true"></i>
                     <span>Enrolled courses</span>
                 </a>
+
+                   <a id="my-link-btn" href="{% url 'UJUZI:enrolled_course' %}" class="sidebar-link" >
+                   <i class="fa-solid fa-bookmark icons gold-shadow" aria-hidden="true"></i>
+                    <span>My courses</span>
+                </a>
+
+                  <a id="request-link-btn" href="{% url 'UJUZI:enrolled_course' %}" class="sidebar-link" >
+                   <i class="fa-solid fa-bookmark icons gold-shadow" aria-hidden="true"></i>
+                    <span>Request Verification</span>
+                </a>
                 {% if request.user.id %}
                 <a id="payment-lin-btn" href="{% url 'UJUZI:user_profile'  request.user.id %}" class="sidebar-link" >
                    <i class="fa fa-user-circle-o icons gold-shadow" aria-hidden="true"></i>
