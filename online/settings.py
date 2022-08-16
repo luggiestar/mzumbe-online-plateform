@@ -81,9 +81,8 @@ CKEDITOR_CONFIGS = {
 
              ],
         ],
-        # 'height': 'full',
-        # 'width': 'full',
-        'toolbarCanCollapse': True,
+        'width': 'auto',
+        'toolbarCanCollapse': False,
     },
 }
 
