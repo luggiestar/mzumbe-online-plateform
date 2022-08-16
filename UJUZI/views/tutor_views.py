@@ -7,7 +7,6 @@ from django.shortcuts import render, redirect, get_object_or_404
 
 from django.contrib import messages
 
-
 from ..forms import *
 from ..models import *
 
@@ -129,8 +128,6 @@ def course_module(request, course):
 
     }
     return render(request, 'user/course_module.html', context)
-
-
 
 
 def pdf_view(request, content):
