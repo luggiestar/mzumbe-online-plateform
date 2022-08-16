@@ -68,6 +68,24 @@ TEMPLATE_LOADERS = (
 
 ROOT_URLCONF = 'online.urls'
 AUTH_USER_MODEL = 'UJUZI.User'
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': [
+            ['Undo', 'Redo',
+             '-', 'Bold', 'Italic', 'Underline',
+             '-', 'Link', 'Unlink', 'Anchor',
+             '-', 'Format',
+
+             '-', 'Maximize',
+
+             ],
+        ],
+        'width': 'auto',
+        'toolbarCanCollapse': True,
+    },
+}
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
