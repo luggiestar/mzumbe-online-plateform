@@ -118,7 +118,7 @@
 		<div class="sub-title is-s pt-3 pb-3">
 			Categories
 		</div>
-
+		{% if categories.count > 4  %}
 		<ul class="categories-list is-s splide" aria-label="Splide">
 			<div class="splide__track">
 				<div class="splide__list">
@@ -134,7 +134,7 @@
 				</div>
 			</div>
 		</ul>
-
+		{% endif %}
 
 <!--category courses-->
 <br/>

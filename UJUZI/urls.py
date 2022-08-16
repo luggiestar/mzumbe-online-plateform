@@ -16,8 +16,8 @@ urlpatterns = [
 
     path('user-registration/', views.registration, name='registration'),
     path('guest-registration/', guest_registration, name="guest_registration"),
+    path('check-username/', check_username, name="check_username"),
     path('user-profile/<object_pk>', views.user_profile, name="user_profile"),
-
     path('login/', loginView, name="login"),
     path('guest-login/', LoginViewApi, name="guest_login"),
 

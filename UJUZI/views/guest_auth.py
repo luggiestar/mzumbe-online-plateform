@@ -70,3 +70,23 @@ def guest_registration(request):
             return JsonResponse(data, status=status.HTTP_302_FOUND)
 
     return render(request, 'UJUZI/student/course_detail.html')
+
+
+def check_username(request):
+    username = request.POST.get('email')
+    print(username)
+    username_check = User.objects.filter(email__iexact=username).exists()
+    if username_check:
+
+        data = {
+            'msg': "User with the given email already exist"
+        }
+        print(data)
+        return JsonResponse(data)
+    else:
+        data = {
+            'status': 'available',
+            'msg': "Username available"
+        }
+        print(data)
+        return JsonResponse(data)

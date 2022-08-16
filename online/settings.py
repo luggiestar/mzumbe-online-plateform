@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -64,7 +65,6 @@ MIDDLEWARE = [
 TEMPLATE_LOADERS = (
     'django.template.loaders.app_directories.load_template_source',
 )
-
 
 ROOT_URLCONF = 'online.urls'
 AUTH_USER_MODEL = 'UJUZI.User'
@@ -165,6 +165,5 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-import dj_database_url
-prod_db  =  dj_database_url.config()
+prod_db = dj_database_url.config()
 DATABASES['default'].update(prod_db)

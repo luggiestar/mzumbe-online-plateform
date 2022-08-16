@@ -126,12 +126,12 @@
                  <div id="registerContainer">
                      <h6 class="text-center"><b>Register a New Account</b></h6>
                      <hr style="background:white;">
-                     <form method="POST" class="px-5 py-5" action="{%  url 'UJUZI:guest_registration' %}" id="registration-form">
+                     <form method="POST" class="px-3 py-3" action="{%  url 'UJUZI:guest_registration' %}" id="registration-form">
                          {% csrf_token %}
-
+                         <h6 class="text-danger" id="error"></h6>
                          {% include 'includes/form.html' %}
                          <div class="d-grid gap-2">
-                             <button type="submit" class="btn mu-bg mu-color btn-block">Register</button>
+                             <button type="submit" id="registerButton" class="btn mu-bg mu-color btn-block">Register</button>
                          </div>
                          <h6 class="text mt-3" id="userLogin" style="color:#e74a3b"> Already have an account?! <b>Login</b></h6>
                          <div class="d-grid gap-2">
@@ -146,6 +146,7 @@
 <script>
     $(document).ready(function () {
         $("#registerContainer").hide();
+        $("#registerButton").hide();
         $("#register").click(function () {
             $("#loginContainer").hide();
             $("#registerContainer").show(300);
@@ -155,6 +156,7 @@
             $("#loginContainer").show(300);
         })
         register();
+        validateEmail();
     })
 
      function register() {
@@ -188,6 +190,35 @@
                  }
              })
          })
+     }
+
+     function validateEmail() {
+        $("#id_email").change(function () {
+            console.log($(this).val())
+            let username = $(this).val()
+            $.ajax({
+                method: "POST",
+                url: "{% url 'UJUZI:check_username' %}",
+                data: {
+                    email: username,
+                    csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
+                },
+                dataType: 'json',
+                success: function (data) {
+                    if(data.status == 'available') {
+                        $("#success").append(data.msg)
+                        $("#registerButton").show(200);
+                    }
+                    else {
+                        $("#error").append(
+                            "<div class='alert alert-danger alert-dismissable'>"+data.msg+"</div>"
+                        )
+                        $("#registerButton").hide()
+                    }
+                }
+            });
+        });
+
      }
 
 </script>
