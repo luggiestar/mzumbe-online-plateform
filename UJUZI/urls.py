@@ -49,6 +49,7 @@ urlpatterns = [
 
     path('enrolled-course/', views.enrolled_course, name='enrolled_course'),
     path('my-courses/', views.my_course, name='my_course'),
+    path('course-module-contents/<course_id>', views.course_module_contents, name='course_module_contents'),
 
     # path('enrollment-course-module/<course_name>', views.course_enrollment_modules, name='course_enrollment_modules'),
 

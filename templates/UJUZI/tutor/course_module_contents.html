@@ -1,0 +1,28 @@
+{% extends 'UJUZI/base.html' %}
+{% load social_share %}
+{% block content %}
+
+<div class="u-contents-wrapper">
+    <div class="course-title">
+       Course Contents
+    </div>
+
+       <div class="u-info-form form-full">
+                 <form  class="u-form" method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+						      	{% include 'includes/form.html'%}
+						      	<div class="form-group">
+                                    <button type="submit"  class="btn mu-bg mu-color btn-block c-btn"> <b>Create content</b></button>
+                                </div>
+                                <h6 class="text-center">
+                                </h6>
+                </form>
+            </div>
+</div>
+
+
+
+
+
+<!--end of category courses-->
+{% endblock content %}

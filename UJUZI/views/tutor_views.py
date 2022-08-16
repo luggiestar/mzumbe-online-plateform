@@ -11,32 +11,6 @@ from ..forms import *
 from ..models import *
 
 
-def instructor_home(request):
-    get_user = get_object_or_404(Staff, user=request.user)
-    get_course = Course.objects.filter(instructor=get_user)
-    count = Course.objects.filter(instructor=get_user).count()
-    form = CourseForm(request.POST)
-    if request.POST:
-        if form.is_valid():
-            save_form = form.save(commit=False)
-            save_form.instructor = get_user
-            save_form.save()
-
-            if save_form:
-                messages.success(request, f"Course added successfully.")
-                return redirect('UJUZI:instructor_home')
-    else:
-        form = CourseForm()
-
-    context = {
-        'course': get_course,
-        'count': count,
-        'form': form,
-
-    }
-    return render(request, 'user/instructor_home.html', context)
-
-
 def update_course(request, object_pk):
     try:
         instance = Course.objects.get(id=object_pk)
@@ -146,9 +120,60 @@ def my_course(request):
     except:
         get_course = None
         get_course_total = 0
+
+    form = CourseForm()
+
+    if request.method == "POST":
+        form = CourseForm(request.POST, request.FILES)
+        if form.is_valid():
+            save_form = form.save(commit=False)
+
+            save_form.tutor = request.user
+
+            save_form.save()
+
+            return redirect('UJUZI:course_module_contents', course_id=save_form.id)
     context = {
+
         'courses': get_course,
         'total': get_course_total,
+        'form': form,
+
+    }
+    return render(request, 'UJUZI/tutor/my_course.html', context)
+
+
+@login_required
+def course_module_contents(request, course_id):
+    try:
+
+        get_course = Course.objects.filter(id=course_id, tutor=request.user).first()
+        get_module = Module.objects.filter(course=get_course)
+        total = Module.objects.filter(course=get_course).count()
+    except:
+        get_course = None
+        get_module = None
+        total = 0
+
+    form = ModuleForm()
+
+    if request.method == "POST":
+        form = ModuleForm(request.POST, request.FILES)
+        if form.is_valid():
+            save_form = form.save(commit=False)
+
+            save_form.created_by = request.user
+            save_form.course = get_course
+
+            save_form.save()
+
+            return redirect('UJUZI:course_module_contents', course_id=save_form.id)
+    context = {
+
+        'courses': get_course,
+        'modules': get_module,
+        'total': total,
+        'form': form,
 
     }
     return render(request, 'UJUZI/tutor/my_course.html', context)

@@ -44,20 +44,15 @@ class CourseForm(ModelForm):
                            widget=forms.TextInput(attrs={'placeholder': 'Enter course name'})
                            )
 
-
     class Meta:
         model = Course
         fields = ('category', 'name', 'image', 'objective',)
 
 
-
 class ModuleForm(ModelForm):
-    # course = select2.fields.ChoiceField(
-    #     choices=Course.objects.all().a,
-    #     overlay="Choose a course")
-    name = forms.CharField(label="Module Name", help_text="Module name must be precious, not more than 5 words",
+    name = forms.CharField(label="Module title", help_text="Module name must be precise, not more than 5 words",
                            required=True,
-                           widget=forms.TextInput(attrs={'placeholder': 'Name of a topic/Module'})
+                           widget=forms.TextInput(attrs={'placeholder': 'title of a topic/Module'})
                            )
 
     class Meta:
