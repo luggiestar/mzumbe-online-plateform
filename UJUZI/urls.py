@@ -48,25 +48,26 @@ urlpatterns = [
     # path('course_url/<slug:slug>', views.CourseItemView.as_view(), name="course_url"),
 
     path('enrolled-course/', views.enrolled_course, name='enrolled_course'),
+    path('my-courses/', views.my_course, name='my_course'),
 
     # path('enrollment-course-module/<course_name>', views.course_enrollment_modules, name='course_enrollment_modules'),
 
-    path('content-verification-request/<course>', views.request_verification, name='request_verification'),
-
-    path('course-content-verification/<course>', views.course_content, name='course_contents'),
-
-    path('course-content-verification_reverted/<course>', views.course_contents_reverted,
-         name='course_contents_reverted'),
-
-    path('course-content-verification-status/<contents>', views.content_verification, name='content_verification'),
-
-    path('course-content-verification-revert/<contents>', views.content_verification_revert,
-         name='content_verification_revert'),
-
-    path('course-content-verification-re-upload/<contents>', views.content_verification_re_upload,
-         name='content_verification_re_upload'),
-
-    path('module-content/<course>/<module>', views.module_contents, name='module_content'),
+    # path('content-verification-request/<course>', views.request_verification, name='request_verification'),
+    #
+    # path('course-content-verification/<course>', views.course_content, name='course_contents'),
+    #
+    # path('course-content-verification_reverted/<course>', views.course_contents_reverted,
+    #      name='course_contents_reverted'),
+    #
+    # path('course-content-verification-status/<contents>', views.content_verification, name='content_verification'),
+    #
+    # path('course-content-verification-revert/<contents>', views.content_verification_revert,
+    #      name='content_verification_revert'),
+    #
+    # path('course-content-verification-re-upload/<contents>', views.content_verification_re_upload,
+    #      name='content_verification_re_upload'),
+    #
+    # path('module-content/<course>/<module>', views.module_contents, name='module_content'),
     path('course-module-content/<module_name>', views.get_module_contents, name='get_module_contents'),
     path('edit-module-content/<object_pk>/<course>/<module>', views.update_module_content, name='edit_module_content'),
     path('edit-course/<object_pk>/', views.update_course, name='edit_course'),

@@ -141,9 +141,4 @@ def change_password(request):
 
 
 
-def get_course(request, id):
-    course = Course.objects.filter(category__id=id)
 
-    get_course_list = serializers.serialize('json', course)
-
-    return JsonResponse(get_course_list, safe=False)
