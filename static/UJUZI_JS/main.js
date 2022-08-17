@@ -90,9 +90,9 @@ $('.m-c-txt').each(function(){
         let pdf_value=$(this).attr("id").substring(4)
         let countView=$.ajax({
             url:"pdf-view-save/"+pdf_value,
+            method:"GET",
         })
         countView.done((response)=>{
-                alert(response)
         })
     })
 })
