@@ -24,42 +24,21 @@ urlpatterns = [
     path('teaching-request/', views.teaching_request, name="teaching_request"),
     path('change-password/', views.change_password, name="change_password"),
 
-    # path('instructor-home/', views.instructor_home, name='instructor_home'),
-    #
-    # path('course-verification-list/', views.verifier_home, name='course_verification'),
-    # path('staff-verification/', views.verify_staff, name='verify_staff'),
-    # path('staff-verification/<staff_code>', views.accept_verification, name='accept_verification'),
-    # path('get_course/<id>', views.get_course, name='get_course'),
-    #
-    # path('instructor-home/<course>', views.course_module, name='course_module'),
     path('course-enrollment/<course_id>', views.course_enrollment, name='course_enrollment'),
-    # path('course-details/', views.course_details, name='course_details'),
-    # path('detailed_course/<code>', views.detailed_course, name='detailed_course'),
-    # path('edit-module/<object_pk>/<course>', views.update_module, name='edit_module'),
-    #
-    # path('comment/', commentView, name="list_of_comment"),
-    #
-    # path('save-comment/', saveCommentView, name="save_comment"),
-    #
-    # path('list-comment/', listComment, name="list_new"),
-    #
-    # path('browse-courses', views.browseCourseView, name="browse-courses"),
-    #
-    # path('course_url/<slug:slug>', views.CourseItemView.as_view(), name="course_url"),
+
 
     path('enrolled-course/', views.enrolled_course, name='enrolled_course'),
     path('my-courses/', views.my_course, name='my_course'),
     path('course-module-contents/<course_id>', views.course_module_contents, name='course_module_contents'),
     path('delete-module/<module_id>', views.delete_module, name="delete_module"),
 
-    # path('enrollment-course-module/<course_name>', views.course_enrollment_modules, name='course_enrollment_modules'),
 
-    path('content-verification-request/<course>', views.request_verification, name='request_verification'),
+    path('teaching-verification/', views.teaching_verification, name='teaching_verification'),
 
-    path('course-content-verification/<course>', views.course_content, name='course_contents'),
+    path('view-pdf/<letter_id>', views.pdf_view, name='pdf_view'),
 
-    path('course-content-verification_reverted/<course>', views.course_contents_reverted,
-         name='course_contents_reverted'),
+    path('accept-request/<request_id>', views.accept_request,name='accept_request'),
+    path('deny-request/<request_id>', views.deny_request,name='deny_request'),
 
     path('course-content-verification-status/<contents>', views.content_verification, name='content_verification'),
 

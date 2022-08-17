@@ -114,6 +114,10 @@ def enrolled_course(request):
 
 @login_required
 def teaching_request(request):
+    try:
+        get_request = TeachingRequest.objects.filter(tutor=request.user).order_by('-id').first()
+    except:
+        get_request = None
     if request.method == 'POST':
         form = RequestForm(request.POST, request.FILES)
         if form.is_valid():
@@ -125,7 +129,7 @@ def teaching_request(request):
     else:
         form = RequestForm()
 
-    return render(request, 'UJUZI/student/teaching_request.html', {'form': form})
+    return render(request, 'UJUZI/student/teaching_request.html', {'form': form, 'requests': get_request})
 
 
 @login_required

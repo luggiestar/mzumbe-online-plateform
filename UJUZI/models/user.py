@@ -72,7 +72,6 @@ class User(AbstractUser):
     is_staff = models.BooleanField(default=False)  # a admin user; non super-user
     is_superuser = models.BooleanField(default=False)  # a superuser
     is_instructor = models.BooleanField(default=False)  # a superuser
-    is_tutor = models.BooleanField(default=False)  # a superuser
     is_verifier = models.BooleanField(default=False)  # a superuser
 
     # notice the absence of a "Password field", that is built in.

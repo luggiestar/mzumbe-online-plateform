@@ -175,24 +175,6 @@ def pdf_view(request, content):
         return response
 
 
-def request_verification(request, course):
-    get_course = get_object_or_404(Course, name=course)
-    get_status = get_object_or_404(Status, code="REQ")
-    get_content = Content.objects.filter(
-        module__course=get_course, is_valid=False
-    ).order_by('module')
-    for video in get_content:
-        verify = Verification(
-            content=video,
-            status=get_status
-
-        )
-        verify.save()
-
-    get_course.is_requested = True
-    get_course.save()
-
-    return redirect('UJUZI:course_module', course=get_course.name)
 
 
 
