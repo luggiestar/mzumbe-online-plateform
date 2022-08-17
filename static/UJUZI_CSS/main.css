@@ -525,6 +525,7 @@ nav {
     {
         -webkit-line-clamp: 2;
         line-height:1.1rem;
+        font-size:0.8rem;
     }
     .form-full
     {
