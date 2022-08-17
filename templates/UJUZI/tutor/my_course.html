@@ -41,10 +41,9 @@
 
 <!--start of my courses-->
 {% if total > 0 %}
-<ul class="cards my-courses">
+<div class="cards my-courses">
     {% for x in courses %}
-    <li class="card m-course">
-        <a href="{% url 'UJUZI:course_module_contents' x.id %}" style="text-decoration:none;">
+        <a href="{% url 'UJUZI:course_module_contents' x.id %}" class="card m-course" style="text-decoration:none;">
             <div class="m-course-cover">
                 <img src="{{x.image.url}}" alt="img"/>
             </div>
@@ -65,10 +64,9 @@
                 </div>
             </div>
         </a>
-     </li>
 
     {% endfor %}
-</ul>
+</div>
 {% else %}
     Sorry, but currently you don't have any Course
 {% endif %}
