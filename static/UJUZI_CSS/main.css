@@ -389,7 +389,7 @@ nav {
 .m-st-views
 {
     position: absolute;
-    bottom:0px;
+    bottom:1px;
     width: 100%;
     display: flex;
     justify-content: space-between;
