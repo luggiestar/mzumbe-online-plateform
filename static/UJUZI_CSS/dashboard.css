@@ -1227,7 +1227,7 @@ button{
     background:white;
     display:flex;
     flex-wrap:wrap;
-    min-height:150px;
+    min-height:170px;
     align-items:center;
     justify-content:flex-start;
     margin-right:30px;
