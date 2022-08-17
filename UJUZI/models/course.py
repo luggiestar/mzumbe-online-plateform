@@ -9,7 +9,6 @@ from .staff import *
 from .category import *
 from .institution import *
 
-User = settings.AUTH_USER_MODEL
 
 
 #

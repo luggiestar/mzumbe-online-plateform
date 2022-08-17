@@ -8,7 +8,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 
 from ..forms import *
-from ..models import *
+from ..models import User
 
 
 def update_course(request, object_pk):

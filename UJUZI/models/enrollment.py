@@ -1,6 +1,5 @@
 
 from .course import *
-User = settings.AUTH_USER_MODEL
 
 
 class Enrollment(models.Model):
