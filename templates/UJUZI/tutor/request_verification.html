@@ -9,42 +9,39 @@
 <div class="u-contents-wrapper">
    <div class="sub-title is-s">
     Request Verification({{total}})
-
- </div>
+   </div>
 
 <!--course registration modal-->
 
 
-       <div class="u-info-form form-full">
-
-<table>
-  <tr>
-    <th>#</th>
-    <th>Tutor</th>
-    <th>Contact</th>
-    <th>Institution</th>
-    <th>letter</th>
-    <th>Accept</th>
-    <th>Deny</th>
-  </tr>
-  <tr>
-      {% for i in requests %}
-      <td>{{forloop.counter}}</td>
-      <td>{{i.tutor.first_name}} - {{i.tutor.last_name}}</a> </td>
-      <td>{{i.tutor.phone}}</td>
-      <td>{{i.institution.name }}</td>
-      <td><a href="{% url 'UJUZI:pdf_view' i.id %}" style="text-decoration:none;"><i class="fa fa-eye"></i></a></td>
-      <td><a href="{% url 'UJUZI:accept_request' i.id %}" style="text-decoration:none;"><i class="fa fa-toggle-off" ></i></a></td>
-      <td><a href="{% url 'UJUZI:deny_request' i.id %}" style="text-decoration:none;"><i class="fa fa-toggle-off" ></i></a></td>
+    <table class="form-full">
+      <tr>
+        <th>#</th>
+        <th>Tutor</th>
+        <th>Contact</th>
+        <th>Institution</th>
+        <th>letter</th>
+        <th>Accept</th>
+        <th>Deny</th>
+      </tr>
+      <tr>
+          {% for i in requests %}
+          <td>{{forloop.counter}}</td>
+          <td>{{i.tutor.first_name}} - {{i.tutor.last_name}}</a> </td>
+          <td>{{i.tutor.phone}}</td>
+          <td>{{i.institution.name }}</td>
+          <td><a href="{% url 'UJUZI:pdf_view' i.id %}" style="text-decoration:none;"><i class="fa fa-eye"></i></a></td>
+          <td><a href="{% url 'UJUZI:accept_request' i.id %}" style="text-decoration:none;"><i class="fa fa-toggle-off" ></i></a></td>
+          <td><a href="{% url 'UJUZI:deny_request' i.id %}" style="text-decoration:none;"><i class="fa fa-toggle-off" ></i></a></td>
 
 
 
 
 
 
-       {% endfor %}
-  </tr>
-</table>            </div>
+           {% endfor %}
+      </tr>
+    </table>
 </div>
 
 
