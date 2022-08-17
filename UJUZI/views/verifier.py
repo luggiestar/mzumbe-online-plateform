@@ -44,13 +44,6 @@ def verify_staff(request):
     return render(request, 'user/staff_verification.html', context)
 
 
-def accept_verification(request, staff_code):
-    get_staff = get_object_or_404(Staff, id=staff_code)
-    update_user = User.objects.filter(id=get_staff.user.id).first()
-    update_user.is_tutor = True
-    update_user.save()
-
-    return redirect('UJUZI:verify_staff',)
 
 def course_content(request, course):
     get_user = get_object_or_404(Staff, user=request.user)

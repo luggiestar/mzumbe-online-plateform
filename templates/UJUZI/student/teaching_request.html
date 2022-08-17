@@ -8,6 +8,7 @@
     </div>
 
        <div class="u-info-form form-full">
+           {% if not requests %}
            Hint: choose your institution only if you're working as academician
                  <form  class="u-form" method="POST" enctype="multipart/form-data">
                                 {% csrf_token %}
@@ -18,6 +19,20 @@
                                 <h6 class="text-center">
                                 </h6>
                 </form>
+           {% elif request.status == "DENIED" %}
+           Sorry, your request is denied, you can try again to apply <br>
+            Hint: choose your institution only if you're working as academician
+                 <form  class="u-form" method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+						      	{% include 'includes/form.html'%}
+						      	<div class="form-group">
+                                    <button type="submit"  class="btn mu-bg mu-color btn-block c-btn"> <b>Send request</b></button>
+                                </div>
+                                <h6 class="text-center">
+                                </h6>
+                </form>
+           {% endif %}
+
             </div>
 </div>
 

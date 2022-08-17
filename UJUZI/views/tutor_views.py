@@ -45,13 +45,9 @@ def update_module(request, object_pk, course):
     return render(request, 'user/edit_module_content.html', context_dict)
 
 
-
-
-
-
-def pdf_view(request, content):
-    get_content = get_object_or_404(Module, title=content)
-    with open(f'{get_content.file.url}', 'r') as pdf:
+def pdf_view(request, letter_id):
+    get_content = get_object_or_404(TeachingRequest, id=letter_id)
+    with open(f'{get_content.letter.url}', 'r') as pdf:
         response = HttpResponse(pdf.read(), content_type='application/pdf')
         response['Content-Disposition'] = 'inline;filename=some_file.pdf'
         return response
@@ -91,6 +87,50 @@ def my_course(request):
     return render(request, 'UJUZI/tutor/my_course.html', context)
 
 
+def accept_request(request, request_id):
+    get_request = get_object_or_404(TeachingRequest, id=request_id)
+    get_request.status = "ACCEPTED"
+    get_request.is_verified = True
+    get_request.save()
+
+    update_user = User.objects.filter(id=get_request.tutor.id).first()
+    update_user.is_instructor = True
+    update_user.save()
+
+    return redirect('UJUZI:teaching_verification', )
+
+
+def deny_request(request, request_id):
+    get_request = get_object_or_404(TeachingRequest, id=request_id)
+    get_request.status = "DENIED"
+    get_request.save()
+
+    return redirect('UJUZI:teaching_verification', )
+
+
+@login_required
+def teaching_verification(request):
+    try:
+        get_request = TeachingRequest.objects.filter(status="PENDING")
+        get_request_total = TeachingRequest.objects.filter(status="PENDING").count()
+        # get_enrollments_total = Enrollment.objects.filter(course=get_course).count()
+    except:
+        get_request = None
+        get_request_total = 0
+        # get_enrollments_total = 0
+
+    form = CourseForm()
+
+    context = {
+
+        'requests': get_request,
+        'total': get_request_total,
+        # 'enrollment': get_enrollments_total,
+
+    }
+    return render(request, 'UJUZI/tutor/request_verification.html', context)
+
+
 @login_required
 def course_module_contents(request, course_id):
     try:
@@ -127,9 +167,7 @@ def course_module_contents(request, course_id):
     return render(request, 'UJUZI/tutor/course_module_contents.html', context)
 
 
-
 def update_module_content(request, object_pk):
-
     get_module = get_object_or_404(Module, id=object_pk)
     try:
         instance = Module.objects.get(id=object_pk)
@@ -144,6 +182,7 @@ def update_module_content(request, object_pk):
         form = ModuleForm(instance=instance)
     context = {'form': form, 'instance': instance}
     return render(request, 'UJUZI/tutor/edit_module.html', context)
+
 
 def delete_module(request, module_id):
     get_content = Module.objects.filter(id=module_id).first()
