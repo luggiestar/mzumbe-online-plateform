@@ -13,6 +13,7 @@ urlpatterns = [
     path('home/', views.home_view, name="home_view"),
     path('course-detail/<course_name>', views.course_detail, name="course_detail"),
     path('course-module/<module_id>', views.module_content, name="module_content"),
+    path('pdf-view-save/<object_pk>', views.save_pdf_view, name="save_pdf_view"),
 
     path('user-registration/', views.registration, name='registration'),
     path('guest-registration/', guest_registration, name="guest_registration"),

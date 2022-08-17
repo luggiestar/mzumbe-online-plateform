@@ -8,7 +8,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 
 from ..forms import *
-from ..models import User
+from ..models import *
 
 
 def update_course(request, object_pk):
@@ -25,6 +25,13 @@ def update_course(request, object_pk):
         form = CourseForm(instance=instance)
     context_dict = {'form': form, 'instance': instance}
     return render(request, 'user/edit_course.html', context_dict)
+def save_pdf_view(request, object_pk):
+    get_module=get_object_or_404(Module, id=object_pk)
+    ContentViewers.objects.create(content=get_module,viewer=request.user)
+
+    return HttpResponse("")
+
+
 
 
 def update_module(request, object_pk, course):

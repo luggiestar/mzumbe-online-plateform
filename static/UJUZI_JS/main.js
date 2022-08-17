@@ -88,16 +88,12 @@ if(window.location.href.indexOf("logout") > -1)
 $('.m-c-txt').each(function(){
     $(this).click(()=>{
         let pdf_value=$(this).attr("id").substring(4)
-        alert(pdf_value)
-//        let countView=$.ajax({
-//            url:"{% url 'UJUZI:guest_registration' %}",
-//            method:"POST",
-//            dataType:'json',
-//            data:{data:pdf_value}
-//        })
-//        countView.done((response)=>{
-//                //result after request
-//        })
+        let countView=$.ajax({
+            url:"pdf-view-save/"+pdf_value,
+        })
+        countView.done((response)=>{
+                //result after request
+        })
     })
 })
 
