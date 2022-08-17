@@ -1250,7 +1250,7 @@ button{
  .course-img
  {
     width:220;
-    height:120px;
+    height:130px;
     padding:15px 5px 15px 15px;
  }
  .course-img img
@@ -1282,9 +1282,10 @@ button{
 
  .u-course-desc-txt
  {
-    position:relative;
+    padding:0;
+    margin:0;
  }
- .u-course-desc-txt
+ .u-course-desc-txt p
  {
     font-size:0.9rem;
     line-height:1rem;
@@ -1293,6 +1294,8 @@ button{
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     overflow: hidden;
+    padding:0;
+    margin:0;
  }
 
 /*tablet view*/
