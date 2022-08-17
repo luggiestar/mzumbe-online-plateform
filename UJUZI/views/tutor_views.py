@@ -58,11 +58,12 @@ def my_course(request):
     try:
         get_course = Course.objects.filter(instructor=request.user)
         get_course_total = Course.objects.filter(instructor=request.user).count()
-        # get_enrollments_total = Enrollment.objects.filter(course=get_course).count()
+        get_enrollments_total = Enrollment.objects.filter(course__instructor=request.user).annotate(total=Count('course',
+                                         distinct=True))
     except:
         get_course = None
         get_course_total = 0
-        # get_enrollments_total = 0
+        get_enrollments_total = 0
 
     form = CourseForm()
 
@@ -80,7 +81,7 @@ def my_course(request):
 
         'courses': get_course,
         'total': get_course_total,
-        # 'enrollment': get_enrollments_total,
+        'enrollment': get_enrollments_total,
         'form': form,
 
     }
