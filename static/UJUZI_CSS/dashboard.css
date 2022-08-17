@@ -1249,7 +1249,7 @@ button{
 }
  .course-img
  {
-    width:220;
+    width:215;
     height:132px;
     padding:15px 5px 15px 15px;
  }
@@ -1264,7 +1264,7 @@ button{
 
  .u-course-desc
  {
-    width:295px;
+    width:290px;
     height:120px;
     padding:15px 15px 15px 5px;
  }
@@ -1296,7 +1296,7 @@ button{
     padding:0;
     margin:0;
  }
-@media  screen and (max-width:1200px){
+@media  screen and (max-width:1400px){
     .u-course-desc
     {
         width:260px;

@@ -77,9 +77,12 @@ if(window.location.href.indexOf("enrolled-course") > -1)
 {
     $('.u-enrol-courses').css('display','flex');
     $('.link-enrolled').css('color','rgb(255,178,0)')
+    var w= window.innerWidth;
+    alert('screen size:' +w);
 }
 
 if(window.location.href.indexOf("logout") > -1)
 {
     $('.link-lg-out').css('color','rgb(255,178,0)')
 }
+
