@@ -377,7 +377,7 @@ nav {
 .m-course-title p
 {
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -476,8 +476,8 @@ nav {
 {
     .cards
     {
-        grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-        grid-auto-rows: 210px;
+        grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+        grid-auto-rows: 220px;
     }
     .m-course-title p
     {
