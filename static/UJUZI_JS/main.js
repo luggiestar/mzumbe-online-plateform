@@ -92,7 +92,7 @@ $('.m-c-txt').each(function(){
             url:"pdf-view-save/"+pdf_value,
         })
         countView.done((response)=>{
-                //result after request
+                alert(response)
         })
     })
 })
