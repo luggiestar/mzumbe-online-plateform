@@ -1,13 +1,10 @@
 from .user import *
 from .category import *
-from .staff import *
-from .student import *
-from .content_views import *
-from .institution import *
-from .course import *
-from .module import *
-from .module_assessment import *
-from .module_tracking import *
-from .question import *
-from .verification_request import *
-from .enrollment import *
+
+# from .content_views import *
+# from .institution import *
+# from .course import *
+# from .module import *
+#
+# from .verification_request import *
+# from .enrollment import *
