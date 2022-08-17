@@ -1,7 +1,7 @@
 from django.conf.global_settings import MEDIA_ROOT
 from django.contrib.auth.decorators import login_required
 from django.db import transaction
-from django.db.models import Count
+from django.db.models import Count, Sum
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 
@@ -60,9 +60,13 @@ def my_course(request):
         get_course_total = Course.objects.filter(instructor=request.user).count()
         get_enrollments_total = Enrollment.objects.filter(course__instructor=request.user).annotate(total=Count('course',
                                          distinct=True))
+        get_views = TotalContentViewers.objects.all(content__course__instructor=request.user).annotate(total=Sum('content__course',
+                                         distinct=True))
+
     except:
         get_course = None
         get_course_total = 0
+        get_views = 0
         get_enrollments_total = 0
 
     form = CourseForm()
@@ -82,6 +86,7 @@ def my_course(request):
         'courses': get_course,
         'total': get_course_total,
         'enrollment': get_enrollments_total,
+        'views': get_views,
         'form': form,
 
     }

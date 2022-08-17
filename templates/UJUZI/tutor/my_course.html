@@ -54,7 +54,7 @@
                 <div class="m-st">
                     <i class="fa fa-users"></i>
                     <span>
-
+views
  {% for y in enrollment %}
                         {% if x.id  ==  y.course.id %}
 
@@ -64,7 +64,12 @@
                 </div>
                 <div class="m-views">
                     <i class="fa fa-eye"></i>
-                    <span>140 views</span>
+                    <span> {% for z in views %}
+                        {% if x.id  ==  z.content.course.id %}
+
+                        {{z.total}} views</span>
+                     {% endif %}
+                     {% endfor %}</span>
                 </div>
             </div>
         </a>
