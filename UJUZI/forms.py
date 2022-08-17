@@ -9,8 +9,6 @@ from django.utils.encoding import force_text
 
 from .models import *
 
-User = get_user_model()
-
 
 class UserLoginForm(ModelForm):
     class Meta:
@@ -51,9 +49,9 @@ class CourseForm(ModelForm):
 
 class ModuleForm(ModelForm):
     title = forms.CharField(label="Module title", help_text="Module name must be precise, not more than 5 words",
-                           required=True,
-                           widget=forms.TextInput(attrs={'placeholder': 'title of a topic/Module'})
-                           )
+                            required=True,
+                            widget=forms.TextInput(attrs={'placeholder': 'title of a topic/Module'})
+                            )
 
     class Meta:
         model = Module
