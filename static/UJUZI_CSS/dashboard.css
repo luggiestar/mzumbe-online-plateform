@@ -1227,7 +1227,7 @@ button{
     background:white;
     display:flex;
     flex-wrap:wrap;
-    min-height:158px;
+    min-height:155px;
     align-items:center;
     justify-content:flex-start;
     margin-right:30px;
@@ -1255,7 +1255,6 @@ button{
  }
  .course-img img
  {
-
     background:white;
     height:100%;
     width:100%;
@@ -1297,7 +1296,17 @@ button{
     padding:0;
     margin:0;
  }
-
+@media  screen and (max-width:1200px){
+    .u-course-desc
+    {
+        width:260px;
+        background:red;
+    }
+    .course-img
+    {
+        width:200;
+    }
+}
 /*tablet view*/
 @media  screen and (max-width:768px){
     .u-course:hover
