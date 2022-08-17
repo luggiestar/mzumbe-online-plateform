@@ -81,6 +81,7 @@ def course_detail(request, course_name):
 @login_required
 def module_content(request, module_id):
     check_module = get_object_or_404(Module, id=module_id)
+    ContentViewers.objects.create(content=check_module,viewer=request.user)
     context = {
         'module': check_module,
 
