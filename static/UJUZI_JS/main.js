@@ -75,6 +75,7 @@ if(window.location.href.indexOf("change-password") > -1)
 
 if(window.location.href.indexOf("enrolled-course") > -1)
 {
+    $('.u-enrol-courses').css('display','flex');
     $('.link-enrolled').css('color','rgb(255,178,0)')
 }
 
