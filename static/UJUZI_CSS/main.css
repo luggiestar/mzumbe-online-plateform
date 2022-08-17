@@ -523,7 +523,7 @@ nav {
     .m-course-title p
     {
         -webkit-line-clamp: 2;
-        line-height:0.9rem;
+        line-height:0.8rem;
         font-size:0.8rem;
     }
     .form-full
