@@ -85,3 +85,11 @@ if(window.location.href.indexOf("logout") > -1)
     $('.link-lg-out').css('color','rgb(255,178,0)')
 }
 
+$('.m-c-txt').each(function(){
+    $(this).click(()=>{
+        let pdf_path=$(this).getAttribute("href")
+        alert(pdf_path)
+    })
+})
+
+
