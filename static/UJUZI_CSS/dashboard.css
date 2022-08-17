@@ -1315,6 +1315,7 @@ button{
     .u-course
     {
         max-width:240px;
+        border-radius:0px;
         box-shadow: 2px 2px 3px 1px rgba(90, 90, 90, 0.2);
         box-shadow: -2px -2px 3px 1px rgba(90, 90,90, 0.2);
     }
