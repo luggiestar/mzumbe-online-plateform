@@ -7,91 +7,92 @@
 
 
 <div class="u-contents-wrapper">
-   <div class="sub-title is-s">
-   {{courses}} <br> contents({{total}})              <button class="btn btn-sm btn-dark ml-2" data-target="#course" data-toggle="modal">Create Content</button>
-
- </div>
+    <div class="sub-title is-s">
+        {{courses}} <br> contents({{total}}) <button class="btn btn-sm btn-dark ml-2" data-target="#course" data-toggle="modal">Create Content</button>
+    </div>
 
 <!--course registration modal-->
 
-<div class="modal fade" id="course">
-     <div class="modal-dialog">
-         <div class="modal-content">
-             <div class="modal-body">
-                 <div class="pt-2">
-                     <h4 class="text-center">Content Registration Form </h4>
-                 </div>
-                 <div id="loginContainer">
+    <div class="modal fade" id="course">
+         <div class="modal-dialog">
+             <div class="modal-content">
+                 <div class="modal-body">
+                     <div class="pt-2">
+                         <h4 class="text-center">Content Registration Form </h4>
+                     </div>
+                     <div id="loginContainer">
 
-                     <hr style="background:white;">
-                        <form  class="mr-auto ml-md-3 my-2 my-md-0 mw-100" method="POST" enctype="multipart/form-data">
-                                {% csrf_token %}
-						      	{% include 'includes/form.html'%}
-                            {{form.media}}
-						      	<div class="form-group">
-                                    <button type="submit"  class="btn mu-bg mu-color btn-block c-btn"> <b>Create Content</b></button>
-                                </div>
-                                <h6 class="text-center">
-                                </h6>
-                </form>
+                         <hr style="background:white;">
+                            <form  class="mr-auto ml-md-3 my-2 my-md-0 mw-100" method="POST" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    {% include 'includes/form.html'%}
+                                {{form.media}}
+                                    <div class="form-group">
+                                        <button type="submit"  class="btn mu-bg mu-color btn-block c-btn"> <b>Create Content</b></button>
+                                    </div>
+                                    <h6 class="text-center">
+                                    </h6>
+                    </form>
 
-                 </div>
-             </div>
-         </div>
-     </div>
- </div>
-
-       <div class="u-info-form form-full">
-
-<table>
-  <tr>
-    <th>#</th>
-    <th>module name</th>
-    <th>Type</th>
-    <th>Size</th>
-    <th>Action</th>
-  </tr>
-  <tr>
-      {% for i in modules %}
-      <td>{{forloop.counter}}</td>
-      <td><a href="{% url 'UJUZI:update_module_content' i.id %}" style="text-decoration:none;">{{i.title}}</a> </td>
-      <td>{{i.extension}}</td>
-      <td>{{i.content.size|filesizeformat }}</td>
-      <td><a href="" style="text-decoration:none;" data-target="#delete_{{i.id}}" data-toggle="modal"><i class="fa fa-trash" ></i></a></td>
-
-
-
-
-     <div class="modal fade" id="delete_{{i.id}}">
-     <div class="modal-dialog">
-         <div class="modal-content">
-             <div class="modal-body">
-                 <div class="pt-2">
-                     <h4 class="text-center">Delete Content Confirmation </h4>
-                 </div>
-                 <div >
-
-                     <hr style="background:white;">
-                        <h4 class="text-center">
-                            Are you sure ?
-                                </h4>
-
-
-						      	<div class="form-group">
-                                    <a href="{% url 'UJUZI:delete_module' i.id %}"  class="btn btn-danger c-btn"> <b>Delete</b></a>
-                                </div>
-
-
+                     </div>
                  </div>
              </div>
          </div>
      </div>
- </div>
+
+    <div class="u-info-form form-full table-box">
+        <div  class="u-form">
+            <table>
+              <tr>
+                <th>#</th>
+                <th>module name</th>
+                <th>Type</th>
+                <th>Size</th>
+                <th>Action</th>
+              </tr>
+              <tr>
+                  {% for i in modules %}
+                  <td>{{forloop.counter}}</td>
+                  <td><a href="{% url 'UJUZI:update_module_content' i.id %}" style="text-decoration:none;">{{i.title}}</a> </td>
+                  <td>{{i.extension}}</td>
+                  <td>{{i.content.size|filesizeformat }}</td>
+                  <td><a href="" style="text-decoration:none;" data-target="#delete_{{i.id}}" data-toggle="modal"><i class="fa fa-trash" ></i></a></td>
 
 
-       {% endfor %}
-  </tr>
-</table>            </div>
+
+
+                 <div class="modal fade" id="delete_{{i.id}}">
+                 <div class="modal-dialog">
+                     <div class="modal-content">
+                         <div class="modal-body">
+                             <div class="pt-2">
+                                 <h4 class="text-center">Delete Content Confirmation </h4>
+                             </div>
+                             <div >
+
+                                 <hr style="background:white;">
+                                    <h4 class="text-center">
+                                        Are you sure ?
+                                            </h4>
+
+
+                                            <div class="form-group">
+                                                <a href="{% url 'UJUZI:delete_module' i.id %}"  class="btn btn-danger c-btn"> <b>Delete</b></a>
+                                            </div>
+
+
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+
+
+                   {% endfor %}
+              </tr>
+            </table>
+        </div>
+    </div>
 </div>
 
 
