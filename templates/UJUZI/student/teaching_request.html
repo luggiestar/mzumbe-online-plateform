@@ -19,7 +19,7 @@
                                 <h6 class="text-center">
                                 </h6>
                 </form>
-           {% elif request.status == "DENIED" %}
+           {% elif requests.status == "DENIED" %}
            Sorry, your request is denied, you can try again to apply <br>
             Hint: choose your institution only if you're working as academician
                  <form  class="u-form" method="POST" enctype="multipart/form-data">
@@ -31,7 +31,7 @@
                                 <h6 class="text-center">
                                 </h6>
                 </form>
-           {% elif request.status == "PENDING"  %}
+           {% elif requests.status == "PENDING"  %}
            Your request sent, please await for verification with maximum Three (3) days <br>
 
            {% endif %}
