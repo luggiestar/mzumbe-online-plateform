@@ -87,7 +87,7 @@ if(window.location.href.indexOf("logout") > -1)
 
 $('.m-c-txt').each(function(){
     $(this).click(()=>{
-        let pdf_value=$(this).attr("href")
+        let pdf_value=$(this).attr("id").substring(4)
         alert(pdf_value)
 //        let countView=$.ajax({
 //            url:"{% url 'UJUZI:guest_registration' %}",
