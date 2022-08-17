@@ -263,6 +263,10 @@ nav {
 {
     width:90%;
 }
+table
+{
+    border:1px solid white;
+}
  th
  {
     background:var(--u-light-blue);
