@@ -18,23 +18,23 @@ def create_module(sender, instance, created, **kwargs):
         get_user.first_name = get_name_from_email
         get_user.save()
 
-
-@receiver(post_save, sender=ContentViewers, dispatch_uid='count_views')
-def count_viewers(sender, instance, created, **kwargs):
-    if created:
-        get_current_total_views = TotalContentViewers.objects.filter(content=instance.content).first()
-
-        count_views=ContentViewers.objects.filter(date=datetime.date.today).count()
-        get_latest_total=get_current_total_views.total + count_views
-
-        get_current_total_views.total=get_latest_total
-        get_current_total_views.save()
-
-
-@receiver(post_save, sender=Module, dispatch_uid='create_default_views')
-def create_default_views(sender, instance, created, **kwargs):
-    if created:
-        TotalContentViewers.objects.create(content=instance)
+#
+# @receiver(post_save, sender=ContentViewers, dispatch_uid='count_views')
+# def count_viewers(sender, instance, created, **kwargs):
+#     if created:
+#         get_current_total_views = TotalContentViewers.objects.filter(content=instance.content).first()
+#
+#         count_views=ContentViewers.objects.filter(date=datetime.date.today).count()
+#         get_latest_total=get_current_total_views.total + count_views
+#
+#         get_current_total_views.total=get_latest_total
+#         get_current_total_views.save()
+#
+#
+# @receiver(post_save, sender=Module, dispatch_uid='create_default_views')
+# def create_default_views(sender, instance, created, **kwargs):
+#     if created:
+#         TotalContentViewers.objects.create(content=instance)
 
 
 #
