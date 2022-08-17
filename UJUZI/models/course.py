@@ -39,7 +39,7 @@ class Course(models.Model):
 
 
 class TotalContentViewers(models.Model):
-    content = models.ForeignKey('Module', on_delete=models.CASCADE, unique=True)
+    content = models.OneToOneField('Module', on_delete=models.CASCADE,)
     total = models.IntegerField(default=0)
     date = models.DateField(default=datetime.date.today, editable=False)
 
