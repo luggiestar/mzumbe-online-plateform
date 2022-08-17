@@ -261,7 +261,7 @@ nav {
 }
 .table-box
 {
-    width:70%;
+    width:90%;
 }
 
 .c-btn
@@ -463,10 +463,6 @@ nav {
     {
         width:70%;
     }
-    .table-box
-    {
-        width:80%;
-    }
     .u-p-email
     {
         font-size:0.75rem;
@@ -536,7 +532,7 @@ nav {
     }
     .table-box
     {
-        width:90%;
+        width:100%;
     }
     .table-box
     {
@@ -614,10 +610,7 @@ nav {
     {
         width:100%;
     }
-    .table-box
-    {
-        width:100%;
-    }
+
     .u-u-name p,.u-u-name span
     {
         font-size:0.9rem;
