@@ -58,8 +58,9 @@
             <div class='u-course-title'>
                 {{x.name}}
             </div>
-            <div class='u-course-desc-txt' style="text-align:justify">
-{{x.objective|safe}}            </div>
+            <div class='u-course-desc-txt'>
+                <p>{{x.objective|safe}}</p>
+            </div>
         </div>
     </li>
     </a>
@@ -80,7 +81,8 @@
                 {{x.name}}
             </div>
             <div class='u-course-desc-txt'>
-{{x.objective|safe}}                </div>
+                {{x.objective|safe}}
+            </div>
         </div>
     </li>
     </a>

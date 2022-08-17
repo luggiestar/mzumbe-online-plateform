@@ -1280,7 +1280,7 @@ button{
     text-overflow: ellipsis;
  }
 
- .u-course-desc-txt
+ .u-course-desc-txt p
  {
     font-size:0.9rem;
     line-height:1rem;
