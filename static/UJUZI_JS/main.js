@@ -89,7 +89,8 @@ $('.m-c-txt').each(function(){
     $(this).click(()=>{
         let pdf_value=$(this).attr("id").substring(4)
         let countView=$.ajax({
-            url:"pdf-view-savec/"+pdf_value+'1',
+            url:"pdf-view-save/"+pdf_value,
+            method:"GET",
         })
         countView.done((response)=>{
                     alert(response)
