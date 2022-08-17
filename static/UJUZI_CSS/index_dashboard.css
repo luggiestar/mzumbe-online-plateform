@@ -3,8 +3,14 @@
     margin:0;
     padding:0;
 }
+
+
 :root
 {
+    --title-brand-color:#666;
+    --txt-brand-color-1:#666;
+    --btn-brand-color:#555;
+    --border-brand-color:#555;
 
     --u-dark-light-blue:#041027;
     --u-gold:rgb(255,178,0);
@@ -14,10 +20,9 @@
 
 }
 
-
 .u-logo
 {
-    font-size:24;
+    font-size:24px;
     padding-left:10px;
     height:60px;
     display:flex;
@@ -203,13 +208,13 @@ button{
 {
     font-size:1.2rem;
     color:var(--u-dark-light-blue);
-    letter-spacing:0.3;
+    letter-spacing:0.3px;
 }
 .u-u-name p span
 {
     color:var(--u-gold);
     font-weight:bold;
-    letter-spacing:0.6;
+    letter-spacing:0.6px;
 }
 .u-u-icon
 {
@@ -225,7 +230,7 @@ button{
     float:right;
     margin-top: -50px;
     padding-right: 20px;
-  }
+}
 .left-area{
     display:flex;
     align-items: center;
@@ -318,7 +323,7 @@ button{
 }
 #toggle:checked ~ .side-bar .icons{
     width: 40px;
-} 
+}
 #toggle:checked ~ .side-bar a{
     margin-left:180px;
     width: 70px;
@@ -395,7 +400,7 @@ button{
 }
 #content{
     background-color: darkgray;
-    display:none; 
+    display:none;
 }
 
 .contents-common{
@@ -418,7 +423,7 @@ button{
 .grid-property{
     display:grid;
 /* justify-content: space-between; */
-    grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); 
+    grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
     grid-auto-rows: 90px;
     grid-gap:-10px;
 }
@@ -562,7 +567,7 @@ button{
     margin-left: 2%;
     width:96%;
     display:none;
-} 
+}
 .stream-list{
     width:100%;
     display:flex;
@@ -1117,7 +1122,6 @@ button{
  transform:scale(0.99);
 }
 
-}
 .category-li span
 {
     font-weight:500;
@@ -1134,10 +1138,9 @@ button{
     height:100%;
 }
 
-}
 .search-in
 {
-    width:100%
+    width:100%;
     height:50px;
     display:flex;
     justify-content:center;
@@ -1147,7 +1150,7 @@ button{
 
 .search-in input
 {
-    width:70%;
+    width:40%;
     height:38px;
     padding:8px;
     border-top-right-radius:20px;
@@ -1166,7 +1169,6 @@ button{
     display:flex;
     flex-direction:row;
     justify-content:center;
-    margin-top:20px;
 }
 .s-icon
 {
@@ -1187,7 +1189,6 @@ button{
 {
     margin-right:-15px;
 }
-
 /* ujuzi category courses*/
 
 
@@ -1207,7 +1208,7 @@ button{
     background:white;
     display:flex;
     flex-wrap:wrap;
-    min-height:150px;
+    min-height:155px;
     align-items:center;
     justify-content:flex-start;
     margin-right:30px;
@@ -1229,13 +1230,12 @@ button{
 }
  .course-img
  {
-    width:220;
-    height:120px;
+    width:215;
+    height:132px;
     padding:15px 5px 15px 15px;
  }
  .course-img img
  {
-
     background:white;
     height:100%;
     width:100%;
@@ -1245,7 +1245,7 @@ button{
 
  .u-course-desc
  {
-    width:295px;
+    width:290px;
     height:120px;
     padding:15px 15px 15px 5px;
  }
@@ -1262,15 +1262,31 @@ button{
 
  .u-course-desc-txt
  {
+    padding:0;
+    margin:0;
+ }
+ .u-course-desc-txt p
+ {
     font-size:0.9rem;
-    letter-spacing:0.5px;
-        display: -webkit-box;
+    line-height:1rem;
+    display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
-    overflow: hidden;
     text-overflow: ellipsis;
+    overflow: hidden;
+    padding:0;
+    margin:0;
  }
-
+@media  screen and (max-width:1350px){
+    .u-course-desc
+    {
+        width:260px;
+    }
+    .course-img
+    {
+        width:200;
+    }
+}
 /*tablet view*/
 @media  screen and (max-width:768px){
     .u-course:hover
@@ -1280,12 +1296,14 @@ button{
     .u-course
     {
         max-width:240px;
-        border:1px solid #999;
+        border-radius:0px;
+        box-shadow: 2px 2px 3px 1px rgba(90, 90, 90, 0.2);
+        box-shadow: -2px -2px 3px 1px rgba(90, 90,90, 0.2);
     }
      .course-img
     {
         width:220;
-        height:100px;
+        height:120px;
         padding-bottom:8px;
     }
      .u-course-desc
