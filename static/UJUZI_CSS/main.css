@@ -394,12 +394,11 @@ nav {
     display: flex;
     justify-content: space-between;
     padding:8px 5px 2px 6px;
-    font-size:0.8rem;
+    font-size:0.7rem;
 
 }
 .m-st-views div span
 {
-    font-weight: bold;
     color:#222;
     padding-right:15px;
 }
@@ -518,7 +517,7 @@ nav {
     }
     .card
     {
-        padding-bottom:40px;
+        padding-bottom:45px;
     }
 
     .m-course-title p
