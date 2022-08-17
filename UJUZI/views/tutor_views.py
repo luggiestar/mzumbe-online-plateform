@@ -47,7 +47,7 @@ def update_module(request, object_pk, course):
 
 def pdf_view(request, letter_id):
     get_content = get_object_or_404(TeachingRequest, id=letter_id)
-    with open(f'{get_content.letter.url}', 'r') as pdf:
+    with open(f'{get_content.letter.url}', 'rb') as pdf:
         response = HttpResponse(pdf.read(), content_type='application/pdf')
         response['Content-Disposition'] = 'inline;filename=some_file.pdf'
         return response
@@ -144,6 +144,7 @@ def course_module_contents(request, course_id):
         get_course = Course.objects.filter(id=course_id).first()
         get_module = Module.objects.filter(course=get_course)
         total = Module.objects.filter(course=get_course).count()
+
     except:
         get_course = None
         get_module = None
