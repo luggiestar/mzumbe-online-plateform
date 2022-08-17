@@ -29,7 +29,7 @@ def save_pdf_view(request, object_pk):
     get_module=get_object_or_404(Module, id=object_pk)
     ContentViewers.objects.create(content=get_module,viewer=request.user)
 
-    return HttpResponse("")
+    return HttpResponse("Ok")
 
 
 
