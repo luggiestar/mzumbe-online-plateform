@@ -271,6 +271,7 @@ table
  {
     background:var(--u-light-blue);
     color:white;
+    letter-spacing:.5px;
  }
 
 .c-btn
