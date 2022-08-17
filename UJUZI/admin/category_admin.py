@@ -13,5 +13,5 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Category, CategoryAdmin)
-# admin.site.register(Author)
-# admin.site.register(Entry)
+admin.site.register(TotalContentViewers)
+admin.site.register(ContentViewers)

@@ -1,3 +1,5 @@
+import datetime
+
 from django.db import models
 from django.conf import settings
 from ckeditor.fields import RichTextField
@@ -5,7 +7,6 @@ from django.utils.encoding import force_text
 
 from .staff import *
 from .category import *
-from .position import *
 from .institution import *
 
 User = settings.AUTH_USER_MODEL
@@ -15,7 +16,7 @@ User = settings.AUTH_USER_MODEL
 class CourseManager(models.Manager):
     def as_choices(self):
         for course in self.all():
-            yield (course.pk, force_text(course))
+            yield course.pk, force_text(course)
 
 
 class Course(models.Model):
@@ -34,3 +35,17 @@ class Course(models.Model):
 
     def __str__(self):
         return "{0}-{1}".format(self.name, self.category)
+
+
+
+class TotalContentViewers(models.Model):
+    content = models.OneToOneField('Module', on_delete=models.CASCADE,)
+    total = models.IntegerField(default=0)
+    date = models.DateField(default=datetime.date.today, editable=False)
+
+    class Meta:
+        verbose_name = "Total Content Viewers"
+        verbose_name_plural = "Total Content Viewers"
+
+    def __str__(self):
+        return self.content
