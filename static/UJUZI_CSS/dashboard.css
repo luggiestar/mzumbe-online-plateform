@@ -1284,12 +1284,11 @@ button{
  {
     font-size:0.9rem;
     letter-spacing:0.5px;
-        display: -webkit-box;
     display: -webkit-box;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
-    overflow: hidden;
     text-overflow: ellipsis;
+    overflow: hidden;
  }
 
 /*tablet view*/
