@@ -2,7 +2,7 @@
 from .institution import *
 
 
-User = settings.AUTH_USER_MODEL
+
 
 
 def validate_file_extension(value):

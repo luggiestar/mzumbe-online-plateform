@@ -5,7 +5,7 @@ import select2.models
 from django.conf import settings
 from six import python_2_unicode_compatible
 
-User = settings.AUTH_USER_MODEL
+
 
 
 class Category(models.Model):
