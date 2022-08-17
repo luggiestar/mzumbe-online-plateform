@@ -1296,11 +1296,10 @@ button{
     padding:0;
     margin:0;
  }
-@media  screen and (max-width:1400px){
+@media  screen and (max-width:1350px){
     .u-course-desc
     {
         width:260px;
-        background:red;
     }
     .course-img
     {
