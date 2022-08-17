@@ -1280,8 +1280,15 @@ button{
     text-overflow: ellipsis;
  }
 
+ .u-course-desc-txt
+ {
+    position:relative;
+ }
  .u-course-desc-txt p
  {
+    position:absolute;
+    left:0;
+    top:0;
     font-size:0.9rem;
     line-height:1rem;
     display: -webkit-box;
