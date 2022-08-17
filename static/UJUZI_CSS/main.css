@@ -259,6 +259,10 @@ nav {
 {
     width:50%;
 }
+.table-box
+{
+    width:70%;
+}
 
 .c-btn
 {
@@ -459,6 +463,10 @@ nav {
     {
         width:70%;
     }
+    .table-box
+    {
+        width:80%;
+    }
     .u-p-email
     {
         font-size:0.75rem;
@@ -525,6 +533,14 @@ nav {
     .form-full
     {
         width:75%;
+    }
+    .table-box
+    {
+        width:90%;
+    }
+    .table-box
+    {
+        width:70%;
     }
     .u-profile-name
     {
@@ -595,6 +611,10 @@ nav {
 @media  screen and (max-width:600px)
 {
     .form-full
+    {
+        width:100%;
+    }
+    .table-box
     {
         width:100%;
     }
