@@ -518,6 +518,7 @@ nav {
     .m-st-views
     {
         position: relative;
+        bottom:3px;
     }
     .m-course-title p
     {
