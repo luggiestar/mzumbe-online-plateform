@@ -263,6 +263,10 @@ nav {
 {
     width:90%;
 }
+ th
+ {
+    background:var(--u-light-blue);
+ }
 
 .c-btn
 {
@@ -534,9 +538,10 @@ nav {
     {
         width:100%;
     }
-    .table-box
+
+    .table-box .u-form
     {
-        width:70%;
+        padding:25px 7px 20px 7px;
     }
     .u-profile-name
     {
