@@ -313,6 +313,18 @@ nav {
 .u-create-btn
 {
     margin-left:15px;
+    background:var(--u-light-blue);
+    transition:.2s ease-in-out;
+}
+.u-create-btn:hover
+{
+ background:var(--u-light-blue);
+ opacity:0.96;
+}
+.u-create-btn:hover
+{
+    transform:scale(0.98);
+
 }
 .cards
 {
@@ -334,6 +346,13 @@ nav {
     position: relative;
     color:#222;
 }
+.cards a:hover
+{
+    color:#222;
+    opacity:0.98;
+}
+
+
 .m-course:hover
 {
     transition: 0.08s ease-in-out;
@@ -362,7 +381,7 @@ nav {
     font-size: 0.9rem;
     font-weight: bold;
     color:#222;
-    padding:6px 5px 2px 3px;
+    padding:6px 5px 2px 6px;
 }
 .m-st-views
 {
