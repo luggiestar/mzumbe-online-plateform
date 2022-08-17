@@ -4,7 +4,7 @@
 
 <div class="u-contents-wrapper">
     <div class="course-title">
-       Teaching_request
+       Teaching Request
     </div>
 
        <div class="u-info-form form-full">
@@ -31,6 +31,9 @@
                                 <h6 class="text-center">
                                 </h6>
                 </form>
+           {% request.status == "PENDING"  %}
+           Your request sent, please await for verification with maximum Three (3) days <br>
+
            {% endif %}
 
             </div>
