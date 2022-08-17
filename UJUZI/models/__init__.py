@@ -2,7 +2,7 @@ from .user import *
 from .category import *
 from .staff import *
 from .student import *
-from .position import *
+from .content_views import *
 from .institution import *
 from .course import *
 from .module import *

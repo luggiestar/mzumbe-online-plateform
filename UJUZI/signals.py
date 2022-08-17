@@ -2,6 +2,7 @@ import json
 
 import base64
 import decimal
+import datetime
 from django.db.models.signals import post_save
 from django.contrib.auth.models import User
 from django.dispatch import receiver
@@ -11,12 +12,31 @@ from .models import *
 @receiver(post_save, sender=User, dispatch_uid='add_first_name_to user')
 def create_module(sender, instance, created, **kwargs):
     if created:
-
         get_name_from_email = instance.email.split("@")[0]
 
         get_user = instance
         get_user.first_name = get_name_from_email
         get_user.save()
+
+
+@receiver(post_save, sender=ContentViewers, dispatch_uid='count_views')
+def count_viewers(sender, instance, created, **kwargs):
+    if created:
+        get_current_total_views = TotalContentViewers.objects.filter(content=instance.content).first()
+
+        count_views=ContentViewers.objects.filter(date=datetime.date.today).count()
+        get_latest_total=get_current_total_views.total + count_views
+
+        get_current_total_views.total=get_latest_total
+        get_current_total_views.save()
+
+
+@receiver(post_save, sender=Module, dispatch_uid='create_default_views')
+def create_default_views(sender, instance, created, **kwargs):
+    if created:
+        TotalContentViewers.objects.create(content=instance)
+
+
 #
 #
 # @receiver(post_save, sender=Content, dispatch_uid='check_amount_of_content_available')
