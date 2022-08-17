@@ -1284,9 +1284,8 @@ button{
  {
     position:relative;
  }
- .u-course-desc-txt p
+ .u-course-desc-txt
  {
-    margin-top:-15px;
     font-size:0.9rem;
     line-height:1rem;
     display: -webkit-box;
