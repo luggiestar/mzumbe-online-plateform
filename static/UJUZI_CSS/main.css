@@ -518,13 +518,13 @@ nav {
     }
     .card
     {
-        padding-bottom:20px;
+        padding-bottom:40px;
     }
 
     .m-course-title p
     {
         -webkit-line-clamp: 2;
-        line-height:1.1rem;
+        line-height:0.9rem;
         font-size:0.8rem;
     }
     .form-full
