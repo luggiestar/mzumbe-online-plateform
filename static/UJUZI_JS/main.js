@@ -93,7 +93,6 @@ $('.m-c-txt').each(function(){
             method:"GET",
         })
         countView.done((response)=>{
-                    alert(response)
         })
     })
 })
