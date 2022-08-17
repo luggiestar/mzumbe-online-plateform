@@ -332,6 +332,7 @@ nav {
     letter-spacing:0.5px;
     overflow: hidden;
     position: relative;
+    color:#222;
 }
 .m-course:hover
 {
