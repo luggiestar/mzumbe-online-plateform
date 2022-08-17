@@ -315,14 +315,17 @@ nav {
     margin-left:15px;
     background:var(--u-light-blue);
     transition:.2s ease-in-out;
+    border:none;
 }
+
 .u-create-btn:hover
 {
  background:var(--u-light-blue);
  opacity:0.96;
 }
-.u-create-btn:hover
+.u-create-btn:active
 {
+    box-shadow:none;
     transform:scale(0.98);
 
 }
@@ -331,13 +334,13 @@ nav {
     width: 100%;
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(260px,300px));
-    grid-auto-rows: 185px;
+    grid-auto-rows: 180px;
     grid-gap:30px;
 }
 .card
 {
     background-color: white;
-    box-shadow:2px 3px 3px 5px rgba(156, 156, 156, 0.1);
+    box-shadow:2px 3px 3px 5px rgba(156, 156, 156, 0.2);
     border-radius: 5px;
     display:flex;
     flex-direction: column;
@@ -407,12 +410,14 @@ nav {
 
 .m-course-title p
 {
+    margin-top:5px;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    line-height:1rem;
+    line-height:1.2rem;
+    padding-left:3px;
 }
 
 
@@ -519,7 +524,7 @@ nav {
     .m-course-title p
     {
         -webkit-line-clamp: 2;
-        line-height:0.6rem;
+        line-height:1.1rem;
     }
     .form-full
     {
