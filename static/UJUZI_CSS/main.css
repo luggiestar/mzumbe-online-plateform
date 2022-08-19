@@ -56,12 +56,12 @@ nav {
 }
 .splide__arrow.splide__arrow--prev {
     margin-top:10px;
-    background-color: var(--body-color);
+    background-color: transparent;
     border:1px solid #333;
     transition: 0.3s ease-in-out;
 }
 .splide__arrow.splide__arrow--next {
-    background-color: var(--body-color);
+    background-color:transparent;
      border:1px solid #333;
     transition: 0.3s ease-in-out;
 }
