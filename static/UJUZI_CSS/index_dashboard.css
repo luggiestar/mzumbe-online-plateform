@@ -1132,7 +1132,7 @@ button{
 }
 .category-li .cat-img
 {
-   height:50px;
+   height:45px;
    margin-bottom:8px;
 }
 .category-li .cat-img img
@@ -1152,7 +1152,7 @@ button{
 
 .search-in input
 {
-    width:40%;
+    width:50%;
     height:38px;
     padding:8px;
     border-top-right-radius:20px;
