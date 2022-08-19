@@ -1,0 +1,72 @@
+.mu-bg{
+    background: #0ca0fc;
+    color: #fff !important;
+}
+
+.no-boder{
+    border-radius: 1rem;
+    padding: 8px;
+    border: 1px solid #fff;
+    background-color: none;
+}
+
+.no-boder:focus, .no-boder:active{
+    border-left-style: none;
+    border-right-style: none;
+    border-top-style: none;
+    background-color: none;
+    outline: none;
+}
+
+.p-10 {
+    padding-top: 130px;
+}
+
+.text-blue {
+    color: #0ca0fc;   
+}
+
+.yellow {
+	color: rgb(252, 189, 41);
+}
+
+.border {
+    border: 10px solid #0ca0fc;
+}
+
+/* 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15) */
+.text-shadow {
+	text-shadow: 0 0px 0.012rem #000000;
+}
+
+.form-control::placeholder {
+    color: #0ca0fc94;
+    font-size: 20px;
+    opacity: 1; /* Firefox */
+}
+
+.form-control :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #0ca0fc;
+}
+
+.form-control::-ms-input-placeholder { /* Microsoft Edge */
+    color: #0ca0fc;
+}
+
+.card{
+    background: none;
+}
+
+.card-header{
+    background: none;
+}
+.rounded {
+    background: #0ca0fc;
+    padding: 7px;
+    border-radius:50%;
+}
+.intro-2 {
+    color: rgb(255, 178, 0);
+    text-shadow: 2px 2px 4px #000000;
+    font-size: 23px;
+}
