@@ -20,6 +20,14 @@ nav {
     animation-direction: alternate;
 }
 
+
+.ind-title
+{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
 #replaceable-content
 {
     display:none;
