@@ -182,7 +182,6 @@ def instructor_management(request):
         get_tutor_total = 0
         # get_enrollments_total = 0
 
-
     context = {
 
         'instructor': get_tutor,
@@ -191,6 +190,49 @@ def instructor_management(request):
 
     }
     return render(request, 'UJUZI/tutor/instructor_management.html', context)
+
+
+def course_management(request):
+    get_course = Course.objects.all()
+    get_course_total = TeachingRequest.objects.all().count()
+
+    context = {
+
+        'courses': get_course,
+        'total': get_course_total,
+        # 'enrollment': get_enrollments_total,
+
+    }
+    return render(request, 'UJUZI/tutor/course_management.html', context)
+
+
+def change_course_status(request, object_pk):
+    get_course = get_object_or_404(Course, id=object_pk)
+    if get_course.is_active:
+        get_course.is_active = False
+        get_course.save()
+    else:
+        get_course.is_active = True
+        get_course.save()
+
+    return redirect('UJUZI:course_management', )
+
+
+def edit_course(request, object_pk):
+    try:
+        instance = Course.objects.get(id=object_pk)
+    except Course.DoesNotExist:
+        instance = None
+    if request.method == 'POST':
+        form = EditCourseForm(request.POST, instance=instance)
+        if form.is_valid():
+            form.save()
+            return redirect('UJUZI:edit_course', object_pk=instance.id)
+    else:
+        form = EditCourseForm(instance=instance)
+    context_dict = {'form': form, 'instance': instance}
+    return render(request, 'UJUZI/tutor/edit_course.html', context_dict)
+
 
 
 @login_required

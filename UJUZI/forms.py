@@ -64,6 +64,12 @@ class ProfileForm(ModelForm):
         fields = ('first_name', 'last_name', 'sex', 'phone')
 
 
+class EditCourseForm(ModelForm):
+    class Meta:
+        model = Course
+        fields = ('category', 'name', 'objective',)
+
+
 class RequestForm(ModelForm):
     class Meta:
         model = TeachingRequest

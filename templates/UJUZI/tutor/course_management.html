@@ -1,0 +1,96 @@
+{% extends 'UJUZI/base.html' %}
+{% load social_share %}
+{% load sizify %}
+{% block content %}
+
+
+
+
+<div class="u-contents-wrapper">
+   <div class="sub-title is-s">
+    Course management({{total}})
+   </div>
+
+<!--course registration modal-->
+    <div class="u-info-form form-full table-box">
+         <div  class="u-form">
+          <table>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Category</th>
+                    <th>Objectives</th>
+                <th>Instructor</th>
+                <th>Contact</th>
+                <th>Email</th>
+
+
+                <th>Is Active</th>
+
+              </tr>
+              <tr>
+                  {% for i in courses %}
+                  <td>{{forloop.counter}}</td>
+                  <td>
+                                        <a href="{% url 'UJUZI:edit_course' i.id %}" style="text-decoration:none;"><i class="fa fa-edit"></i> {{i.name}}</a>
+
+
+
+                  </td>
+                  <td>{{i.category}}</td>
+                  <td>               <a class="text-primary hover-cursor" data-target="#objective_{{i.id}}" data-toggle="modal" > <i class="fa fa-eye"></i></a>
+</td>
+                  <td>{{i.instructor.first_name}} - {{i.instructor.last_name}} </td>
+                  <td>{{i.instructor.phone}}</td>
+                                    <td>{{i.instructor.email}}</td>
+
+
+                  <td>
+                      {% if i.is_active %}
+
+
+                      <a href="{% url 'UJUZI:change_course_status' i.id %}" style="text-decoration:none;"><i class="fa fa-toggle-on text-success"></i></a>
+                      {% else %}
+              <a href="{% url 'UJUZI:change_course_status' i.id %}" style="text-decoration:none;"><i class="fa fa-toggle-off text-muted"></i></a>
+
+                      {% endif %}
+
+                  </td>
+
+
+                  <div class="modal fade" id="objective_{{i.id}}">
+     <div class="modal-dialog">
+         <div class="modal-content">
+             <div class="modal-body">
+                 <div class="pt-2">
+                     <h1 class="text-center"><i class="fas fa-book-reader fa-2x text-blue"></i> </h1>
+                 </div>
+                 <h2 class="text-blue text-shadow text-center"><b>Course: {{i.name}}</b></h2>
+                 <div id="loginContainer">
+                     <h6 class="text-center"><b>Objectives</b></h6>
+                     <hr style="background:white;">
+                     <div>
+                     {{i.objective|safe}}
+
+                     </div>
+                 </div>
+
+             </div>
+         </div>
+     </div>
+ </div>
+
+                  {% endfor %}
+              </tr>
+            </table>
+         </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+{% endblock content %}

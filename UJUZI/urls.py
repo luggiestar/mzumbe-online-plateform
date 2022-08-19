@@ -28,6 +28,7 @@ urlpatterns = [
 
     path('course-enrollment/<course_id>', views.course_enrollment, name='course_enrollment'),
     path('change-instructor-status/<object_pk>', views.change_instructor_status, name='change_instructor_status'),
+    path('change-course-status/<object_pk>', views.change_course_status, name='change_course_status'),
 
 
     path('enrolled-course/', views.enrolled_course, name='enrolled_course'),
@@ -38,6 +39,7 @@ urlpatterns = [
 
     path('teaching-verification/', views.teaching_verification, name='teaching_verification'),
     path('instructor-management/', views.instructor_management, name='instructor_management'),
+    path('course-management/', views.course_management, name='course_management'),
 
     path('view-pdf/<letter_id>', views.pdf_view, name='pdf_view'),
 
@@ -55,7 +57,7 @@ urlpatterns = [
     path('module-content/<course>/<module>', views.module_contents, name='module_content'),
     path('course-module-content/<module_name>', views.get_module_contents, name='get_module_contents'),
     path('edit-module-content/<object_pk>/', views.update_module_content, name='update_module_content'),
-    path('edit-course/<object_pk>/', views.update_course, name='edit_course'),
+    path('edit-course/<object_pk>/', views.edit_course, name='edit_course'),
 
     path('test-autocomplete/', autocomplete.Select2QuerySetView.as_view(model=Category), name='select2_fk'),
 
