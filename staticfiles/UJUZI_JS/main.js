@@ -75,10 +75,26 @@ if(window.location.href.indexOf("change-password") > -1)
 
 if(window.location.href.indexOf("enrolled-course") > -1)
 {
+    $('.u-enrol-courses').css('display','flex');
     $('.link-enrolled').css('color','rgb(255,178,0)')
+    var w= window.innerWidth;
 }
 
 if(window.location.href.indexOf("logout") > -1)
 {
     $('.link-lg-out').css('color','rgb(255,178,0)')
 }
+
+$('.m-c-txt').each(function(){
+    $(this).click(()=>{
+        let pdf_value=$(this).attr("id").substring(4)
+        let countView=$.ajax({
+            url:"pdf-view-save/"+pdf_value,
+            method:"GET",
+        })
+        countView.done((response)=>{
+        })
+    })
+})
+
+

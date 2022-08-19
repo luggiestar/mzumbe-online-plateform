@@ -1227,7 +1227,7 @@ button{
     background:white;
     display:flex;
     flex-wrap:wrap;
-    min-height:150px;
+    min-height:155px;
     align-items:center;
     justify-content:flex-start;
     margin-right:30px;
@@ -1249,13 +1249,12 @@ button{
 }
  .course-img
  {
-    width:220;
-    height:120px;
+    width:215;
+    height:132px;
     padding:15px 5px 15px 15px;
  }
  .course-img img
  {
-
     background:white;
     height:100%;
     width:100%;
@@ -1265,7 +1264,7 @@ button{
 
  .u-course-desc
  {
-    width:295px;
+    width:290px;
     height:120px;
     padding:15px 15px 15px 5px;
  }
@@ -1282,15 +1281,31 @@ button{
 
  .u-course-desc-txt
  {
+    padding:0;
+    margin:0;
+ }
+ .u-course-desc-txt p
+ {
     font-size:0.9rem;
-    letter-spacing:0.5px;
-        display: -webkit-box;
+    line-height:1rem;
+    display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
-    overflow: hidden;
     text-overflow: ellipsis;
+    overflow: hidden;
+    padding:0;
+    margin:0;
  }
-
+@media  screen and (max-width:1350px){
+    .u-course-desc
+    {
+        width:260px;
+    }
+    .course-img
+    {
+        width:200;
+    }
+}
 /*tablet view*/
 @media  screen and (max-width:768px){
     .u-course:hover
@@ -1300,12 +1315,14 @@ button{
     .u-course
     {
         max-width:240px;
-        border:1px solid #999;
+        border-radius:0px;
+        box-shadow: 2px 2px 3px 1px rgba(90, 90, 90, 0.2);
+        box-shadow: -2px -2px 3px 1px rgba(90, 90,90, 0.2);
     }
      .course-img
     {
         width:220;
-        height:100px;
+        height:120px;
         padding-bottom:8px;
     }
      .u-course-desc
