@@ -1097,8 +1097,8 @@ button{
 
 .category-li
 {
-    min-width: 250px;
-    flex-basis: 250px;
+    min-width: 230px;
+    flex-basis: 230px;
     min-height:120px !important;
     max-height:130px !important;
     background:white;
