@@ -11,9 +11,11 @@
             $('.cat-courses-li').css('display','flex');
             $('.latest-c').css('display','none');
 
-            let catId=$(this).attr('id').substring(4)
+//            let catId=$(this).attr('id').substring(4)
 
-            alert(catId)
+            let catId=$(this).find('.u-cat-no').text();
+
+            alert('New '+catId)
 
             let catName=$(this).find('.course-category-name').text()
              $('.sub-title .cat-name').html(catName)

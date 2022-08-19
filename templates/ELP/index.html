@@ -122,7 +122,8 @@
 			<div class="splide__track">
 				<div class="splide__list">
 					{% for i in categories %}
-					<li class="category-li splide__slide mt-4 ml-3 mb-3 shadow" id="cat-{{i.id}}">
+					<li class="category-li splide__slide mt-4 ml-3 mb-3 shadow">
+						<div class="u-cat-no">cat-{{i.id}}</div>
 						<div class="course-category-name" style="display:none">{{i.name}}</div>
 						<div class="cat-img">
 							<img src="{{i.icon.url}}"/>
