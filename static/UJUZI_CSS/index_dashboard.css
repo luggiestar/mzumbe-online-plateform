@@ -1216,7 +1216,7 @@ button{
     background:white;
     display:flex;
     flex-wrap:wrap;
-    min-height:155px;
+    min-height:160px;
     align-items:center;
     justify-content:flex-start;
     margin-right:30px;
@@ -1238,8 +1238,8 @@ button{
 }
  .course-img
  {
-    width:215;
-    height:132px;
+    width:225;
+    height:135px;
     padding:15px 5px 15px 15px;
  }
  .course-img img
@@ -1253,7 +1253,7 @@ button{
 
  .u-course-desc
  {
-    width:290px;
+    width:320px;
     height:120px;
     padding:15px 15px 15px 5px;
  }
