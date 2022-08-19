@@ -1154,7 +1154,10 @@ button{
 .search-in input::placeholder {
     font: 1.2rem;
 }
-
+.ind-search-title
+{
+    padding-left:35px;
+}
 
 .search-in input
 {
