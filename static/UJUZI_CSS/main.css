@@ -41,6 +41,7 @@ nav {
 .ind-cont-box
 {
     background:var(--body-color);
+    min-height:350px;
 }
 
 #replaceable-content
@@ -51,11 +52,15 @@ nav {
 }
 
 .splide__arrow.splide__arrow--prev {
-    background-color: transparent;
+    background-color: var(--body-color);
+    box-shadow:1px 1px 3px 3px rgba(90,90,90,0.1);
+    box-shadow:-1px -1px 3px 3px rgba(90,90,90,0.1);
     transition: 0.4s ease-in-out;
 }
 .splide__arrow.splide__arrow--next {
-    background-color: transparent;
+    background-color: var(--body-color);
+    box-shadow:1px 1px 3px 3px rgba(90,90,90,0.1);
+    box-shadow:-1px -1px 3px 3px rgba(90,90,90,0.1);
     transition: 0.4s ease-in-out;
 }
 .splide__arrow.splide__arrow--prev:hover {
