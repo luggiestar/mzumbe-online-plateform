@@ -32,6 +32,7 @@ if(window.location.pathname == '/home/')
 
 if(window.location.pathname == '/')
 {
+    alert('am executed')
     $('.cat-courses-li').css('display','none');
     $('.latest-c').css('display','flex');
 
