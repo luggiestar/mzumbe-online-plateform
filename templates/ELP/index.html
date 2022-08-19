@@ -109,13 +109,12 @@
 		</div>
 	</header>
 
-
-
-	<div class="container">
+<!--	start  of category and courses section-->
+<div class="u-content-box ind-cont-box">
 		<div id="replaceable-content">
 			{% include 'UJUZI/search-results-partial.html' %}
 		</div>
-		<div class="sub-title is-s pt-3 pb-3">
+		<div class="sub-title is-s ind-title">
 			Categories
 		</div>
 		{% if categories.count > 4  %}
@@ -136,38 +135,16 @@
 		</ul>
 		{% endif %}
 
-<!--category courses-->
-<br/>
-<div class="sub-title is-s">
-    <span class="cat-name">Latest</span> ~ courses
- </div>
+		<div class="sub-title is-s">
+			<span class="cat-name">Latest</span> ~ courses
+		 </div>
 
-<!--latest courses-->
-<ul class="u-course-list latest-c is-s pt-3">
-    {% for x in latest %}
-	<a href="{% url 'UJUZI:course_detail' x.name %}" style="text-decoration:none;">
-		<li class='u-course course-{{x.category.id}} ' id='l-course-{{x.id}}'>
-        <div class='course-img'>
-            <img src="{{x.image.url}}" alt='no image'>
-        </div>
-        <div class='u-course-desc'>
-            <div class='u-course-title'>
-                {{x.name}}
-            </div>
-            <div class='u-course-desc-txt'>
-				{{x.objective|safe}}
-			</div>
-        </div>
-    </li>
-	</a>
-    {% endfor %}
-</ul>
-<!--end of the latest course-->
 
-		<ul class="u-course-list cat-courses-li is-s">
-			{% for x in courses %}
+		<!--latest courses-->
+		<ul class="u-course-list latest-c is-s pt-3">
+			{% for x in latest %}
 			<a href="{% url 'UJUZI:course_detail' x.name %}" style="text-decoration:none;">
-				<li class='u-course course-{{x.category.id}}' id='course-{{x.id}}'>
+				<li class='u-course course-{{x.category.id}} ' id='l-course-{{x.id}}'>
 				<div class='course-img'>
 					<img src="{{x.image.url}}" alt='no image'>
 				</div>
@@ -176,15 +153,43 @@
 						{{x.name}}
 					</div>
 					<div class='u-course-desc-txt'>
-						<p>
 						{{x.objective|safe}}
-						</p>
 					</div>
 				</div>
 			</li>
 			</a>
 			{% endfor %}
 		</ul>
+		<!--end of the latest course-->
+
+		<!--selected category courss-->
+		<ul class="u-course-list cat-courses-li is-s">
+					{% for x in courses %}
+					<a href="{% url 'UJUZI:course_detail' x.name %}" style="text-decoration:none;">
+						<li class='u-course course-{{x.category.id}}' id='course-{{x.id}}'>
+						<div class='course-img'>
+							<img src="{{x.image.url}}" alt='no image'>
+						</div>
+						<div class='u-course-desc'>
+							<div class='u-course-title'>
+								{{x.name}}
+							</div>
+							<div class='u-course-desc-txt'>
+								<p>
+								{{x.objective|safe}}
+								</p>
+							</div>
+						</div>
+					</li>
+					</a>
+					{% endfor %}
+				</ul>
+		<!--end of category courses-->
+
+</div>
+<!--	end of category and courses section-->
+
+	<div class="container">
 
 		<div class="pt-5 pb-3">
 			<h1 class="text-center">About us</h1>
