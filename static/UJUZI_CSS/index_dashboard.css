@@ -1219,7 +1219,7 @@ button{
     min-height:160px;
     align-items:center;
     justify-content:flex-start;
-    margin-right:30px;
+    margin-right:40px;
     border-radius:10px;
     margin-bottom:20px;
     overflow:hidden;
@@ -1253,7 +1253,7 @@ button{
 
  .u-course-desc
  {
-    width:320px;
+    width:330px;
     height:120px;
     padding:15px 15px 15px 5px;
  }
