@@ -376,11 +376,11 @@
 
 
 {% endif %}
-                {% if not request.user.is_authenticated%}
+                {% if  request.user.is_authenticated %}
  <li {% if not app.admin_url %}class="treeview"{% endif %}>
-                    <a href="{% url 'UJUZI:index' %}">
+                    <a href="{% url 'UJUZI:home_view' %}">
                         <i class="fas {% if app.icon %} {{app.icon}} {% else %}fa-home{% endif %}" style="color:#3be7df;"></i>
-                        <span style="color: #fff; overflow: hidden; display: inline-block; vertical-align:top;">Back to Home</span> </a>
+                        <span style="color: #fff; overflow: hidden; display: inline-block; vertical-align:top;">Home Site</span> </a>
                 </li>
                  {% endif %}
 {% if request.user.is_authenticated%}
