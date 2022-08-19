@@ -731,7 +731,7 @@ table
 
 .splide__pagination__page
 {
-    background:white;
+    background:#666;
 }
 
 .splide__pagination__page.is-active {
