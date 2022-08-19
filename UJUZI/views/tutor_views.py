@@ -137,8 +137,8 @@ def deny_request(request, request_id):
     return redirect('UJUZI:teaching_verification', )
 
 
-def change_instructor_status(request, request_id):
-    get_user = get_object_or_404(User, id=request_id)
+def change_instructor_status(request, object_pk):
+    get_user = get_object_or_404(User, id=object_pk)
     if get_user.is_instructor:
         get_user.is_instructor = False
         get_user.save()
