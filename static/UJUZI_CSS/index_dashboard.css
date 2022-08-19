@@ -1148,11 +1148,12 @@ button{
     justify-content:center;
     align-items:center;
     margin-bottom:20px;
+    margin-top:30px;
 }
 
 .search-in input
 {
-    width:50%;
+    width:55%;
     height:38px;
     padding:8px;
     border-top-right-radius:20px;
