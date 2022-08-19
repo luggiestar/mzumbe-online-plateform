@@ -90,7 +90,7 @@ tr:nth-child(even) {
              <i class=" fa fa-dashboard icons gold-shadow" ></i>
              <span>Dashboard</span>
          </a>
-               {% if request.user.is_authenticated %}
+               {% if request.user.is_superuser %}
           <a href="{% url 'admin:index' %}" id="admin-dashboard" class="sidebar-link" >
              <i class=" fa fa-gears icons gold-shadow" ></i>
              <span>Admin Site</span>
