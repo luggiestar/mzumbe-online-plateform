@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-q7se-z#x-&io2pv2hwr$qyph7!^=g*=0@vd1(p4h-7sq%e^a29'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -179,8 +179,7 @@ STATIC_URL = STATIC_HOST + "/static/"
 
 MEDIA_URL = '/media/'
 # MEDIA_ROOT is for server path to store files in computer
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media-root/')
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -189,3 +188,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 prod_db = dj_database_url.config()
 DATABASES['default'].update(prod_db)
+
+# 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
