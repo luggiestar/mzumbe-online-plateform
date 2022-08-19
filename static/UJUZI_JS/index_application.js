@@ -9,13 +9,13 @@
 
 
             $('.cat-courses-li').css('display','flex');
+            $('.cat-courses-li').css('padding-top','10px');
             $('.latest-c').css('display','none');
 
 //            let catId=$(this).attr('id').substring(4)
 
             let catId=$(this).find('.u-cat-no').text();
 
-            alert('New '+catId)
 
             let catName=$(this).find('.course-category-name').text()
              $('.sub-title .cat-name').html(catName)
