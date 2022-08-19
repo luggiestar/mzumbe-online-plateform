@@ -16,9 +16,10 @@
              $('.sub-title .cat-name').html(catName)
 
             $('.u-course').css('visibility','hidden');
-            $('.u-course').css('opacity',0);
+            $('.u-course').css('opacity',1);
             $('.u-course').css('display','none');
 
+            alert('am here')
             $('.course-'+catId).css('visibility','visible');
             $('.course-'+catId).css('opacity',1);
             $('.course-'+catId).css('display','flex');
