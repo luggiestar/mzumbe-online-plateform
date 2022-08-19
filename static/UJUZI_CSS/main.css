@@ -732,7 +732,6 @@ table
 .splide__pagination__page
 {
     background:white;
-    margin-top:200px !important;
 }
 
 .splide__pagination__page.is-active {
@@ -741,7 +740,10 @@ table
     z-index: 1;
 }
 
-
+.splide__pagination
+{
+    bottom:-2em;
+}
 
 .splide__pagination li {
     margin-top: 7rem;
