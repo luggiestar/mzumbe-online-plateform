@@ -8,7 +8,7 @@
 
 <div class="u-contents-wrapper">
    <div class="sub-title is-s">
-    Request Verification({{total}})
+    Instructor management({{total}})
    </div>
 
 <!--course registration modal-->
@@ -18,21 +18,31 @@
               <tr>
                 <th>#</th>
                 <th>Tutor</th>
+                <th>email</th>
                 <th>Contact</th>
                 <th>Institution</th>
-                <th>letter</th>
-                <th>Accept</th>
-                <th>Deny</th>
+                <th>Is Active</th>
+
               </tr>
               <tr>
-                  {% for i in requests %}
+                  {% for i in instructor %}
                   <td>{{forloop.counter}}</td>
-                  <td>{{i.tutor.first_name}} - {{i.tutor.last_name}}</a> </td>
+                  <td>{{i.tutor.first_name}} - {{i.tutor.last_name}} </td>
+                  <td>{{i.tutor.email}}</td>
                   <td>{{i.tutor.phone}}</td>
                   <td>{{i.institution.name }}</td>
-                  <td><a href="{% url 'UJUZI:letter_view' i.id %}" style="text-decoration:none;"><i class="fa fa-eye"></i></a></td>
-                  <td><a href="{% url 'UJUZI:accept_request' i.id %}" style="text-decoration:none;"><i class="fa fa-toggle-off" ></i></a></td>
-                  <td><a href="{% url 'UJUZI:deny_request' i.id %}" style="text-decoration:none;"><i class="fa fa-toggle-off" ></i></a></td>
+
+                  <td>
+                      {% if i.tutor.is_instructor %}
+
+
+                      <a href="{% url 'UJUZI:change_instructor_status' i.tutor.id %}" style="text-decoration:none;"><i class="fa fa-toggle-on text-success"></i></a>
+                      {% else %}
+              <a href="{% url 'UJUZI:change_instructor_status' i.tutor.id %}" style="text-decoration:none;"><i class="fa fa-toggle-off text-muted"></i></a>
+
+                      {% endif %}
+
+                  </td>
 
                   {% endfor %}
               </tr>

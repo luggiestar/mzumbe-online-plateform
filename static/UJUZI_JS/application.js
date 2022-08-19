@@ -33,6 +33,8 @@ if(window.location.pathname == '/home/')
 
 
 
+
+
 //  var getCategoryCourses=$.ajax({
 //    url:"../assets/php/getCategoryCourses",
 //    method:"POST",

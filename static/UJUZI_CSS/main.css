@@ -15,7 +15,13 @@ nav {
 .hover-cursor:hover {
     cursor: pointer;
 }
-
+.u-message
+{
+    text-align:center;
+    color:#555;
+    font-size:1.2rem;
+    padding:1.5rem 1rem 2rem 1rem;
+}
 .blink {
     text-decoration: blink;
     animation-name: blinker;
@@ -31,11 +37,18 @@ nav {
     display:flex;
     justify-content:center;
     align-items:center;
+    font-size:1.5rem;
+}
+.ind-s-c-name
+{
+    padding-left:32px;
+    margin-top:25px;
 }
 
 .ind-cont-box
 {
     background:var(--body-color);
+    min-height:450px;
 }
 
 #replaceable-content
@@ -44,34 +57,42 @@ nav {
     flex-direction:column;
     padding-top:30px;
 }
-
+.splide__arrow
+{
+   padding:8px;
+}
 .splide__arrow.splide__arrow--prev {
-    background-color: transparent;
-    transition: 0.4s ease-in-out;
+    margin-top:3px;
+    background-color:#e6e6e6;
+    border:1px solid #333;
+    transition: 0.3s ease-in-out;
 }
 .splide__arrow.splide__arrow--next {
-    background-color: transparent;
-    transition: 0.4s ease-in-out;
+    background-color:#e6e6e6;
+     border:1px solid #333;
+    transition: 0.3s ease-in-out;
 }
 .splide__arrow.splide__arrow--prev:hover {
     background-color: #0ca0fc;
     color: white !important;
+    border:none;
 }
 .splide__arrow.splide__arrow--next:hover {
     background-color: #0ca0fc;
     color: white !important;
+    border:none;
 }
 
 .splide__arrow svg {
     fill: #000;
-    height: 1.2em;
-    width: 1.2em;
+    height: 1.0em;
+    width: 1.0em;
     transition: 0.4s ease-in-out;
 }
 .splide__arrow svg:hover {
     fill: #fff;
-    height: 1.2em;
-    width: 1.2em;
+    height: 1.0em;
+    width: 1.0em;
 }
 
 .s-courses
@@ -714,10 +735,20 @@ table
     }
 }
 
+.splide__pagination__page
+{
+    background:#717171;
+}
+
 .splide__pagination__page.is-active {
     background: var(--u-light-blue);
     transform: scale(1.5);
     z-index: 1;
+}
+
+.splide__pagination
+{
+    bottom:-.3em !important;
 }
 
 .splide__pagination li {

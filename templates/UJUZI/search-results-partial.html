@@ -1,5 +1,5 @@
 {% if artists and count == "1" %}
-<h1 class="sub-title">searching results ({{total}})</h1>
+<h1 class="sub-title ind-search-title">searching results ({{total}})</h1>
 <!--latest courses-->
 <ul class="u-course-list s-courses">
     {% for x in artists %}
@@ -23,5 +23,5 @@
 {% elif not count %}
 
 {% else %}
-<p>No Course found.</p>
+<p class="u-message">No Course found.</p>
 {% endif %}

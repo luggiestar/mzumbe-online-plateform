@@ -25,13 +25,13 @@ def update_course(request, object_pk):
         form = CourseForm(instance=instance)
     context_dict = {'form': form, 'instance': instance}
     return render(request, 'user/edit_course.html', context_dict)
+
+
 def save_pdf_view(request, object_pk):
-    get_module=get_object_or_404(Module, id=object_pk)
-    ContentViewers.objects.create(content=get_module,viewer=request.user)
+    get_module = get_object_or_404(Module, id=object_pk)
+    ContentViewers.objects.create(content=get_module, viewer=request.user)
 
     return HttpResponse("Ok")
-
-
 
 
 def update_module(request, object_pk, course):
@@ -52,9 +52,24 @@ def update_module(request, object_pk, course):
     return render(request, 'user/edit_module_content.html', context_dict)
 
 
-def pdf_view(request, letter_id):
+def pdf_view(request, object_pk):
+    get_content = get_object_or_404(Module, id=object_pk)
+    try:
+
+        ContentViewers.objects.create(content=get_content, viewer=request.user)
+    except:
+        pass
+
+    with open(get_content.content.path, 'rb') as pdf:
+        response = HttpResponse(pdf.read(), content_type='application/pdf')
+        response['Content-Disposition'] = 'inline;filename=some_file.pdf'
+        return response
+
+
+def letter_view(request, letter_id):
     get_content = get_object_or_404(TeachingRequest, id=letter_id)
-    with open(f'{get_content.letter.url}', 'rb') as pdf:
+
+    with open(get_content.letter.path, 'rb') as pdf:
         response = HttpResponse(pdf.read(), content_type='application/pdf')
         response['Content-Disposition'] = 'inline;filename=some_file.pdf'
         return response
@@ -122,6 +137,18 @@ def deny_request(request, request_id):
     return redirect('UJUZI:teaching_verification', )
 
 
+def change_instructor_status(request, object_pk):
+    get_user = get_object_or_404(User, id=object_pk)
+    if get_user.is_instructor:
+        get_user.is_instructor = False
+        get_user.save()
+    else:
+        get_user.is_instructor = True
+        get_user.save()
+
+    return redirect('UJUZI:instructor_management', )
+
+
 @login_required
 def teaching_verification(request):
     try:
@@ -143,6 +170,27 @@ def teaching_verification(request):
 
     }
     return render(request, 'UJUZI/tutor/request_verification.html', context)
+
+
+def instructor_management(request):
+    try:
+        get_tutor = TeachingRequest.objects.filter(status="ACCEPTED")
+        get_tutor_total = TeachingRequest.objects.filter(status="ACCEPTED").count()
+        # get_enrollments_total = Enrollment.objects.filter(course=get_course).count()
+    except:
+        get_tutor = None
+        get_tutor_total = 0
+        # get_enrollments_total = 0
+
+
+    context = {
+
+        'instructor': get_tutor,
+        'total': get_tutor_total,
+        # 'enrollment': get_enrollments_total,
+
+    }
+    return render(request, 'UJUZI/tutor/instructor_management.html', context)
 
 
 @login_required

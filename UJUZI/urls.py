@@ -14,6 +14,7 @@ urlpatterns = [
     path('course-detail/<course_name>', views.course_detail, name="course_detail"),
     path('course-module/<module_id>', views.module_content, name="module_content"),
     path('pdf-view-save/<object_pk>', views.save_pdf_view, name="save_pdf_view"),
+    path('letter-view/<letter_id>', views.letter_view, name="letter_view"),
 
     path('user-registration/', views.registration, name='registration'),
     path('guest-registration/', guest_registration, name="guest_registration"),
@@ -26,6 +27,7 @@ urlpatterns = [
     path('change-password/', views.change_password, name="change_password"),
 
     path('course-enrollment/<course_id>', views.course_enrollment, name='course_enrollment'),
+    path('change-instructor-status/<object_pk>', views.change_instructor_status, name='change_instructor_status'),
 
 
     path('enrolled-course/', views.enrolled_course, name='enrolled_course'),
@@ -35,6 +37,7 @@ urlpatterns = [
 
 
     path('teaching-verification/', views.teaching_verification, name='teaching_verification'),
+    path('instructor-management/', views.instructor_management, name='instructor_management'),
 
     path('view-pdf/<letter_id>', views.pdf_view, name='pdf_view'),
 
