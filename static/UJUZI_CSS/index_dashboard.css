@@ -1220,6 +1220,7 @@ button{
     align-items:center;
     justify-content:flex-start;
     margin-right:40px;
+    margin-left:5px;
     border-radius:10px;
     margin-bottom:20px;
     overflow:hidden;
