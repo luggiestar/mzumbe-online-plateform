@@ -12,6 +12,9 @@
             $('.latest-c').css('display','none');
 
             let catId=$(this).attr('id').substring(4)
+
+            alert(catId)
+
             let catName=$(this).find('.course-category-name').text()
              $('.sub-title .cat-name').html(catName)
 
@@ -19,7 +22,8 @@
             $('.u-course').css('opacity',1);
             $('.u-course').css('display','none');
 
-            alert('am here')
+
+
             $('.course-'+catId).css('visibility','visible');
             $('.course-'+catId).css('opacity',1);
             $('.course-'+catId).css('display','flex');
