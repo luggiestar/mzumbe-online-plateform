@@ -92,6 +92,7 @@ def my_course(request):
 
         'courses': get_course,
         'total': get_course_total,
+
         # 'enrollment': get_enrollments_total,
         # 'views': get_views,
         'form': form,
