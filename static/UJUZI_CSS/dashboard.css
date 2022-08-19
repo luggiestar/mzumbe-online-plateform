@@ -1105,7 +1105,7 @@ button{
 
 .categories-list
 {
-    margin-top:6px;
+    margin-top:2px;
     list-style-type:none;
 
     display: flex;
@@ -1217,7 +1217,7 @@ button{
  display:none;
  flex-wrap:wrap;
  padding-bottom:20px;
- margin-top:6px;
+ margin-top:0px;
 }
 
 
