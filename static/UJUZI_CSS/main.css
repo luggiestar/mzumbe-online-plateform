@@ -10,10 +10,6 @@ nav {
 .u-cat-no
 {
     display:none;
-    visibility:hidden;
-    opacity:0;
-    height:0px;
-    width:0px;
 }
 @keyframes blinker {
     from {opacity: 1.0;}
