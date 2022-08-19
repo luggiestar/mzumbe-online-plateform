@@ -1,3 +1,8 @@
+
+:root
+{
+    --body-color: #DBE0F9;
+}
 nav {
     margin-bottom: 4em;
 }
@@ -26,6 +31,11 @@ nav {
     display:flex;
     justify-content:center;
     align-items:center;
+}
+
+.ind-cont-box
+{
+    background:var(--body-color);
 }
 
 #replaceable-content
