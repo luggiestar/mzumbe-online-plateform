@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
   $(".owl-demo").owlCarousel({
-//    items : 3,
-//    lazyLoad : true,
+    items : 3,
+    lazyLoad : true,
     navigation : true
   });
 
