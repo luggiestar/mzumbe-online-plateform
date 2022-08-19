@@ -27,6 +27,7 @@ urlpatterns = [
     path('change-password/', views.change_password, name="change_password"),
 
     path('course-enrollment/<course_id>', views.course_enrollment, name='course_enrollment'),
+    path('change-instructor-status/<object_pk>', views.change_instructor_status, name='change_instructor_status'),
 
 
     path('enrolled-course/', views.enrolled_course, name='enrolled_course'),
