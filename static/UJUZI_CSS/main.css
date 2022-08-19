@@ -55,22 +55,25 @@ nav {
    padding:8px;
 }
 .splide__arrow.splide__arrow--prev {
+    margin-top:10px;
     background-color: var(--body-color);
-    border:1px solid #000;
-    transition: 0.4s ease-in-out;
+    border:1px solid #333;
+    transition: 0.3s ease-in-out;
 }
 .splide__arrow.splide__arrow--next {
     background-color: var(--body-color);
-     border:1px solid #000;
-    transition: 0.4s ease-in-out;
+     border:1px solid #333;
+    transition: 0.3s ease-in-out;
 }
 .splide__arrow.splide__arrow--prev:hover {
     background-color: #0ca0fc;
     color: white !important;
+    border:none;
 }
 .splide__arrow.splide__arrow--next:hover {
     background-color: #0ca0fc;
     color: white !important;
+    border:none;
 }
 
 .splide__arrow svg {
