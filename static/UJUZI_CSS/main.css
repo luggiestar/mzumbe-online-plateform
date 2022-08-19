@@ -729,14 +729,21 @@ table
     }
 }
 
+.splide__pagination__page
+{
+    background:white;
+}
+
 .splide__pagination__page.is-active {
     background: var(--u-light-blue);
     transform: scale(1.5);
     z-index: 1;
 }
 
+
+
 .splide__pagination li {
-    margin-top: 9rem;
+    margin-top: 12rem;
 }
 
 
