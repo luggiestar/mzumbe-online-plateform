@@ -30,6 +30,38 @@ if(window.location.pathname == '/home/')
     })
 }
 
+if(window.location.pathname == '/')
+{
+    alert('am executed')
+    $('.cat-courses-li').css('display','none');
+    $('.latest-c').css('display','flex');
+
+
+    $('.category-li').each(function(){
+           $(this).click(()=>{
+
+
+            $('.cat-courses-li').css('display','flex');
+            $('.latest-c').css('display','none');
+
+            let catId=$(this).attr('id').substring(4)
+            let catName=$(this).find('.course-category-name').text()
+             $('.sub-title .cat-name').html(catName)
+
+            $('.u-course').css('visibility','hidden');
+            $('.u-course').css('opacity',0);
+            $('.u-course').css('display','none');
+
+            $('.course-'+catId).css('visibility','visible');
+            $('.course-'+catId).css('opacity',1);
+            $('.course-'+catId).css('display','flex');
+
+
+
+        })
+    })
+}
+
 
 
 
