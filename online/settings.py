@@ -172,7 +172,10 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
+
+STATIC_HOST = "https://d1p6bh1kcuersn.cloudfront.net" if not DEBUG else ""
+STATIC_URL = STATIC_HOST + "/static/"
 
 MEDIA_URL = '/media/'
 # MEDIA_ROOT is for server path to store files in computer
