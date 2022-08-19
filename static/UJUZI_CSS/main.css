@@ -742,7 +742,7 @@ table
 
 .splide__pagination
 {
-    bottom:-1em !important;
+    bottom:-.3em !important;
 }
 
 .splide__pagination li {
