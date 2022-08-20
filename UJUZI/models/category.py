@@ -7,6 +7,8 @@ from django.utils.encoding import force_text
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
+
+
 def validate_file_extension(value):
     import os
     from django.core.exceptions import ValidationError
@@ -14,6 +16,7 @@ def validate_file_extension(value):
     valid_extensions = ['.mp4', '.mkv', '.pdf', '.mp3']
     if not ext.lower() in valid_extensions:
         raise ValidationError('Unsupported file extension. please upload the video file')
+
 
 class Category(models.Model):
     CAT = (
@@ -53,8 +56,6 @@ class Course(models.Model):
         return "{0}-{1}".format(self.name, self.category)
 
 
-
-
 class Module(models.Model):
     title = models.CharField(max_length=90, unique=True)
     content = models.FileField(upload_to='contents/%Y/%m/%d', validators=[validate_file_extension])
@@ -80,7 +81,6 @@ class Module(models.Model):
 
 
 class Enrollment(models.Model):
-
     student = models.ForeignKey(User, on_delete=models.CASCADE)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now_add=True)
@@ -132,7 +132,6 @@ class Institution(models.Model):
         return self.name
 
 
-
 class TeachingRequest(models.Model):
     STATUS = (
         ('ACCEPTED', 'ACCEPTED'),
@@ -140,9 +139,9 @@ class TeachingRequest(models.Model):
         ('PENDING', 'PENDING'),
     )
     tutor = models.ForeignKey(User, on_delete=models.CASCADE)
-    institution = models.ForeignKey(Institution, on_delete=models.CASCADE,  null=True,blank=True)
+    institution = models.ForeignKey(Institution, on_delete=models.CASCADE, null=True, blank=True)
     letter = models.FileField(upload_to='Requests/%Y/%m/%d', validators=[validate_file_extension])
-    status = models.CharField(max_length=100,choices=STATUS, default="PENDING")
+    status = models.CharField(max_length=100, choices=STATUS, default="PENDING")
 
     is_verified = models.BooleanField(default=False)
     date = models.DateTimeField(auto_now_add=True)

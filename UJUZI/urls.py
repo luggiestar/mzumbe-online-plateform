@@ -4,6 +4,7 @@ from . import views
 from .views import *
 from dal import autocomplete
 from .models import *
+from .API import CategoryListApi, UserSignUpApi,UserSignIn
 
 app_name = 'UJUZI'
 
@@ -64,6 +65,10 @@ urlpatterns = [
     path('password_reset/', auth_views.PasswordResetView.
          as_view(template_name='password/password_reset.html'), name='password_reset'),
 
+    # APP'S urls
+    path("category-list/", CategoryListApi.as_view(), name="category_list"),
+    path("user-signup-api/", UserSignUpApi.as_view(), name="user_signup"),
+    path("user-signin/", UserSignIn.as_view(), name="user_signin"),
 ]
 
 # import djhacker

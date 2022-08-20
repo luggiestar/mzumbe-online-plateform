@@ -52,7 +52,7 @@ class User(AbstractUser):
     #     ('KENYA', 'KENYA'),
     #
     # )
-    phone_regex = RegexValidator(regex=r'[0][6-9][0-9]{8}', message="Phone number must be entered in the format: "
+    phone_regex = RegexValidator(regex=r'[6-9][0-9]{8}', message="Phone number must be entered in the format: "
                                                                     "'0.....'. Up to 10 digits allowed.")
 
     email = models.EmailField(
