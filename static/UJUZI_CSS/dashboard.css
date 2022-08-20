@@ -222,7 +222,6 @@ button{
     display:flex;
     align-items:center;
     height:60px;
-    transition:1s ease-in-out;
 }
 .u-u-name p
 {
@@ -2452,13 +2451,21 @@ border:1px solid rgba(218, 217, 217, 0.9);
 
     .u-course
     {
-        max-width:225px;
+        max-width:235px;
         margin-right:5px;
     }
      .u-course-desc
      {
-        width:225px;
+        width:235px;
      }
+     .u-u-name
+     {
+        opacity:1;
+        visibility:visible;
+        transition:0s ease-in;
+        transition:2s ease-out;
+    }
+
     #toggle:checked ~ header .u-u-name{
         opacity:0;
         visibility:hidden;
