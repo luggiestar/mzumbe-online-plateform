@@ -4,7 +4,7 @@
     $('.latest-c').css('display','flex');
 
 
-    $('.category-li').each(function(){
+    $('.cat-li-act').each(function(){
            $(this).click(()=>{
 
             alert('am clicked')
