@@ -2497,11 +2497,13 @@ border:1px solid rgba(218, 217, 217, 0.9);
     {
         width:calc(100% - 50px);
         background:red;
+        margin-left:50px;
     }
     .u-content-box
     {
         width:100%;
         display:flex;
+        flex-direction:column;
         justify-content:center;
         align-items:center;
         overflow-x:visible;
