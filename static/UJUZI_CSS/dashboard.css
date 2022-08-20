@@ -2495,8 +2495,17 @@ border:1px solid rgba(218, 217, 217, 0.9);
     }
     .u-contents
     {
-        width:calc(100% - 100px);
+        width:calc(100% - 70px);
         background:red;
+        margin-left:30px;
+    }
+    .u-content-box
+    {
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        width:100%;
+        overflow-x:hidden
     }
 }
 
