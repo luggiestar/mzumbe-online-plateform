@@ -1472,9 +1472,8 @@ button{
     margin-left: 240px;
     font-size:0.7rem;
 }
-#toggle:checked ~ header .u-u-icon{
-    margin-left: 240px;
-    font-size:0.7rem;
+#toggle:checked ~ header .u-u-icon
+{
     font-size:16px;
 }
       /* subject items */
