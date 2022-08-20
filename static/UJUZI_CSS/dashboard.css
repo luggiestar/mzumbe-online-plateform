@@ -2495,17 +2495,16 @@ border:1px solid rgba(218, 217, 217, 0.9);
     }
     .u-contents
     {
-        width:calc(100% - 70px);
+        width:calc(100% - 50px);
         background:red;
-        margin-left:30px;
     }
     .u-content-box
     {
+        width:100%;
         display:flex;
         justify-content:center;
         align-items:center;
-        width:100%;
-        overflow-x:hidden
+        overflow-x:visible;
     }
 }
 
@@ -2514,6 +2513,7 @@ border:1px solid rgba(218, 217, 217, 0.9);
     position:relative;
     overflow-y:scroll;
 }
+
 
 .u-content-box
 {
