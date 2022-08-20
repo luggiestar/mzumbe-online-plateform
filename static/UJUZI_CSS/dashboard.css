@@ -2445,7 +2445,8 @@ border:1px solid rgba(218, 217, 217, 0.9);
         width:400px;
     }
 }
-@media  screen and (max-width:600px){
+@media  screen and (max-width:600px)
+{
     .search-box{
         width:90%;
         left:5%;
@@ -2492,12 +2493,16 @@ border:1px solid rgba(218, 217, 217, 0.9);
         padding:12px;
         margin-top:-8px;
     }
+    .u-content-box
+    {
+        width:calc(100% - 30px);
+    }
 }
 
 .u-contents
 {
     position:relative;
-     overflow-y:scroll;
+    overflow-y:scroll;
 }
 
 .u-content-box
