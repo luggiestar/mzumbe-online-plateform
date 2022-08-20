@@ -2609,3 +2609,13 @@ border:1px solid rgba(218, 217, 217, 0.9);
     transform: scale(1.5);
     z-index: 1;
 }
+
+.splide__pagination
+{
+    bottom:-.3em !important;
+}
+
+.splide__pagination li {
+    margin-top: 7rem;
+}
+
