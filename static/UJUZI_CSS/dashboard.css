@@ -1517,6 +1517,13 @@ button{
 /*phone view*/
 @media  screen and (max-width:600px)
 {
+    .u-u-name{
+        font-size:0.6rem;
+    }
+    .u-u-icon
+    {
+        font-size:11px;
+    }
    .u-course
     {
         max-width:280px;
