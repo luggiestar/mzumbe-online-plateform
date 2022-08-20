@@ -1107,7 +1107,7 @@ button{
 {
     margin-top:2px;
     list-style-type:none;
-    margin-left:-10px;
+    margin-left:0px;
     display: flex;
     position: relative;
     transition: all 2s;
