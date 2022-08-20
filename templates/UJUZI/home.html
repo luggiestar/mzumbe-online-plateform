@@ -29,6 +29,7 @@
        {% for i in categories %}
 
         <li class="category-li splide__slide mt-4 ml-3 mb-3 shadow" id="cat-{{i.id}}">
+            <div class="u-cat-no">{{i.id}}</div>
              <div class="course-category-name" style="display:none">{{i.name}}</div>
              <div class="cat-img">
                  <img src="{{i.icon.url}}"/>
