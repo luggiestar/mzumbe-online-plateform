@@ -2495,9 +2495,9 @@ border:1px solid rgba(218, 217, 217, 0.9);
     }
     .u-contents
     {
-        width:calc(100% - 50px);
+        width:calc(100% - 60px);
         background:red;
-        margin-left:50px;
+        margin-left:60px;
     }
     .u-content-box
     {
@@ -2506,7 +2506,6 @@ border:1px solid rgba(218, 217, 217, 0.9);
         flex-direction:column;
         justify-content:center;
         align-items:center;
-        overflow-x:visible;
     }
 }
 
