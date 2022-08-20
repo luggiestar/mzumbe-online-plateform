@@ -4,10 +4,14 @@
     $('.latest-c').css('display','flex');
 
 
+$('.splide__list').on('click', '.category-li', function () {
+    alert("click");
+});
+
     $('.category-li').each(function(){
            $(this).click(()=>{
 
-            alert('am clicked')
+//            alert('am clicked')
             $('.cat-courses-li').css('display','flex');
             $('.cat-courses-li').css('padding-top','10px');
             $('.latest-c').css('display','none');
