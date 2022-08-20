@@ -292,7 +292,17 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <!--	<script type='text/javascript' src="{% static 'UJUZI_JS/loginScript.js' %}"></script>-->
 
+    <script>
+		let splide = new Splide('.splide', {
+			type: 'loop',
+			drag   : 'free',
+			focus  : 'center',
+			height: '10rem',
+			paddingBottom: '12rem'
+		});
 
+		splide.mount();
+	</script>
 
 
 
