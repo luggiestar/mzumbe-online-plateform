@@ -2447,6 +2447,11 @@ border:1px solid rgba(218, 217, 217, 0.9);
 }
 @media  screen and (max-width:600px)
 {
+
+    #toggle:checked ~ header .u-u-name{
+        opacity:0;
+        visibility:hidden;
+    }
     .search-box{
         width:90%;
         left:5%;
