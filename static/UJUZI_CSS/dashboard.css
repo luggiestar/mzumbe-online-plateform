@@ -1470,8 +1470,13 @@ button{
 }
 #toggle:checked ~ header .u-u-name{
     margin-left: 240px;
+    font-size:0.7rem;
 }
-          
+#toggle:checked ~ header .u-u-icon{
+    margin-left: 240px;
+    font-size:0.7rem;
+    font-size:16px;
+}
       /* subject items */
     .subject{
         width: 150px;
