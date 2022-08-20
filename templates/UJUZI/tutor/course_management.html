@@ -28,8 +28,9 @@
                 <th>Is Active</th>
 
               </tr>
-              <tr>
+
                   {% for i in courses %}
+              <tr>
                   <td>{{forloop.counter}}</td>
                   <td>
                                         <a href="{% url 'UJUZI:edit_course' i.id %}" style="text-decoration:none;"><i class="fa fa-edit"></i> {{i.name}}</a>
@@ -79,9 +80,9 @@
          </div>
      </div>
  </div>
-
+                    </tr>
                   {% endfor %}
-              </tr>
+
             </table>
          </div>
     </div>
