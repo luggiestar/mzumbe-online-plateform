@@ -1202,7 +1202,7 @@ button{
     justify-content:center;
     align-items:center;
     color:#555;
-    z-index:999;
+    z-index:9;
 }
 .s-icon i
 {
