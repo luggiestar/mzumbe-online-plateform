@@ -24,8 +24,9 @@
                 <th>Is Active</th>
 
               </tr>
-              <tr>
+
                   {% for i in instructor %}
+              <tr>
                   <td>{{forloop.counter}}</td>
                   <td>{{i.tutor.first_name}} - {{i.tutor.last_name}} </td>
                   <td>{{i.tutor.email}}</td>
@@ -43,9 +44,9 @@
                       {% endif %}
 
                   </td>
-
+                </tr>
                   {% endfor %}
-              </tr>
+
             </table>
          </div>
     </div>

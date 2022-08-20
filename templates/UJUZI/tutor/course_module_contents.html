@@ -51,8 +51,9 @@
                 <th>Size</th>
                 <th>Action</th>
               </tr>
-              <tr>
+
                   {% for i in modules %}
+                 <tr>
                   <td>{{forloop.counter}}</td>
                   <td><a href="{% url 'UJUZI:update_module_content' i.id %}" style="text-decoration:none;">{{i.title}}</a> </td>
                   <td>{{i.extension}}</td>
@@ -88,9 +89,9 @@
                  </div>
              </div>
 
-
+                     </tr>
                    {% endfor %}
-              </tr>
+
             </table>
         </div>
     </div>

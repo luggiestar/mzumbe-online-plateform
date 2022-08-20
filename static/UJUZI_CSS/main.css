@@ -7,6 +7,10 @@ nav {
     margin-bottom: 4em;
 }
 
+.u-cat-no
+{
+    display:none;
+}
 @keyframes blinker {
     from {opacity: 1.0;}
     to {opacity: 0.0;}

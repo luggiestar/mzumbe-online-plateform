@@ -1,17 +1,20 @@
 
 
-    $('.cat-courses-li').css('display','none');
-    $('.latest-c').css('display','flex');
+$('.cat-courses-li').css('display','none');
+$('.latest-c').css('display','flex');
 
 
-    $('.category-li').each(function(){
-           $(this).click(()=>{
-
+$('.splide__list').on('click', '.category-li', function () {
 
             $('.cat-courses-li').css('display','flex');
+            $('.cat-courses-li').css('padding-top','10px');
             $('.latest-c').css('display','none');
 
-            let catId=$(this).attr('id').substring(4)
+//            let catId=$(this).attr('id').substring(4)
+
+            let catId=$(this).find('.u-cat-no').text();
+
+
             let catName=$(this).find('.course-category-name').text()
              $('.sub-title .cat-name').html(catName)
 
@@ -19,15 +22,24 @@
             $('.u-course').css('opacity',1);
             $('.u-course').css('display','none');
 
-            alert('am here')
+
+
             $('.course-'+catId).css('visibility','visible');
             $('.course-'+catId).css('opacity',1);
             $('.course-'+catId).css('display','flex');
 
+});
 
-
-        })
-    })
+//    $('.category-li').each(function(){
+//           $(this).click(()=>{
+//
+//
+//
+//
+//
+//
+//        })
+//    })
 
 
 

@@ -122,13 +122,14 @@
 			<div class="splide__track">
 				<div class="splide__list">
 					{% for i in categories %}
-					<li class="category-li splide__slide mt-4 ml-3 mb-3 shadow" id="cat-{{i.id}}">
-						<div class="course-category-name" style="display:none">{{i.name}}</div>
-						<div class="cat-img">
-							<img src="{{i.icon.url}}"/>
-						</div>
-						<span>{{i.name}} </span>
-					</li>
+						<li class="category-li splide__slide mt-4 ml-3 mb-3 shadow">
+								<div class="u-cat-no">{{i.id}}</div>
+								<div class="course-category-name" style="display:none">{{i.name}}</div>
+								<div class="cat-img">
+									<img src="{{i.icon.url}}"/>
+								</div>
+								<span>{{i.name}} </span>
+						</li>
 					{% endfor %}
 				</div>
 			</div>
@@ -271,10 +272,13 @@
 		</div>
 	</div>
 
-	<script type='text/javascript' src="{% static 'UJUZI_JS/splide.js' %}"></script>
-	<script type='text/javascript' src="{% static 'UJUZI_JS/splide.esm.js' %}"></script>
+
 	<script type='text/javascript' src="{% static 'UJUZI_JS/jquery.js' %}"></script>
 	<script type='text/javascript' src="{% static 'UJUZI_JS/jquery-cookie/jquery.cookie.js' %}"></script>
+
+	<script type='text/javascript' src="{% static 'UJUZI_JS/splide.js' %}"></script>
+	<script type='text/javascript' src="{% static 'UJUZI_JS/splide.esm.js' %}"></script>
+
 	<script type='text/javascript' src="{% static 'UJUZI_JS/index_application.js' %}"></script>
 	<script type='text/javascript' src="{% static 'UJUZI_JS/main.js' %}"></script>
 
@@ -288,9 +292,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <!--	<script type='text/javascript' src="{% static 'UJUZI_JS/loginScript.js' %}"></script>-->
 
-
-
-	<script>
+    <script>
 		let splide = new Splide('.splide', {
 			type: 'loop',
 			drag   : 'free',
@@ -301,6 +303,8 @@
 
 		splide.mount();
 	</script>
+
+
 
 	<script>
 		$("#category-empty").hide();

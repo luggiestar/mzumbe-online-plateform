@@ -47,6 +47,7 @@ class Course(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="course_category")
     name = models.CharField(max_length=60, unique=True)
     objective = RichTextField(null=True, blank=True)
+    is_active = models.BooleanField(default=True)
 
     class Meta:
         verbose_name = "Course"

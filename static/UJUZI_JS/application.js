@@ -5,14 +5,13 @@ if(window.location.pathname == '/home/')
     $('.latest-c').css('display','flex');
 
 
-    $('.category-li').each(function(){
-           $(this).click(()=>{
+$('.splide__list').on('click', '.category-li', function () {
 
 
             $('.cat-courses-li').css('display','flex');
             $('.latest-c').css('display','none');
 
-            let catId=$(this).attr('id').substring(4)
+            let catId=$(this).find('.u-cat-no').text();
             let catName=$(this).find('.course-category-name').text()
              $('.sub-title .cat-name').html(catName)
 
@@ -24,9 +23,6 @@ if(window.location.pathname == '/home/')
             $('.course-'+catId).css('opacity',1);
             $('.course-'+catId).css('display','flex');
 
-
-
-        })
     })
 }
 
