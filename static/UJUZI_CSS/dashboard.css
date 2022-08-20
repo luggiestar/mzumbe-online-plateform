@@ -2453,11 +2453,11 @@ border:1px solid rgba(218, 217, 217, 0.9);
     {
         max-width:240px;
         margin-right:5px;
-        padding-right:5px
+        padding-right:10px;
     }
      .u-course-desc
      {
-        width:235px;
+        max-width:240px;
      }
      .u-u-name
      {
