@@ -2498,17 +2498,6 @@ border:1px solid rgba(218, 217, 217, 0.9);
         padding:12px;
         margin-top:-8px;
     }
-    .u-contents
-    {
-        width:calc(100% - 50px);
-        margin-left:50px;
-        background:red;
-    }
-    .u-content-box
-    {
-        width:calc(100% - 20px);
-        background:purple;
-    }
 }
 
 .u-contents
