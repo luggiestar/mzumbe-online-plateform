@@ -2506,7 +2506,8 @@ border:1px solid rgba(218, 217, 217, 0.9);
     }
     .u-content-box
     {
-        width:100%;
+        width:calc(100% - 20px);
+        background:purple;
     }
 }
 
