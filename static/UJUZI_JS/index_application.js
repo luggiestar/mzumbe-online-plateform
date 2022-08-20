@@ -1,17 +1,11 @@
 
 
-    $('.cat-courses-li').css('display','none');
-    $('.latest-c').css('display','flex');
+$('.cat-courses-li').css('display','none');
+$('.latest-c').css('display','flex');
 
 
 $('.splide__list').on('click', '.category-li', function () {
-    alert("click");
-});
 
-    $('.category-li').each(function(){
-           $(this).click(()=>{
-
-//            alert('am clicked')
             $('.cat-courses-li').css('display','flex');
             $('.cat-courses-li').css('padding-top','10px');
             $('.latest-c').css('display','none');
@@ -34,10 +28,18 @@ $('.splide__list').on('click', '.category-li', function () {
             $('.course-'+catId).css('opacity',1);
             $('.course-'+catId).css('display','flex');
 
+});
 
-
-        })
-    })
+//    $('.category-li').each(function(){
+//           $(this).click(()=>{
+//
+//
+//
+//
+//
+//
+//        })
+//    })
 
 
 
