@@ -222,6 +222,7 @@ button{
     display:flex;
     align-items:center;
     height:60px;
+    transition:1s ease-in-out;
 }
 .u-u-name p
 {
