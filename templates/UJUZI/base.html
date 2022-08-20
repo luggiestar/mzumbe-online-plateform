@@ -5,9 +5,15 @@
 
 <html lang="en">
      <head>
-        <title>Ujuzi-Set</title>
+         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+         <title>Ujuzi-Set</title>
          <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+         <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css">
+         <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.2.4/css/fixedHeader.bootstrap.min.css">
+         <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.bootstrap.min.css">
+<!--         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">-->
          <link rel="stylesheet" href="{% static 'UJUZI_CSS/dashboard.css' %}">
          <link rel="stylesheet" href="{% static 'UJUZI_CSS/dashboardSummary.css' %}">
          <link rel="stylesheet" href="{% static 'UJUZI_CSS/index.css' %}">
@@ -176,11 +182,22 @@ tr:nth-child(even) {
      <script type='text/javascript' src="{% static 'UJUZI_JS/jquery-cookie/jquery.cookie.js' %}"></script>
      <script type='text/javascript' src="{% static 'UJUZI_JS/application.js' %}"></script>
      <script type='text/javascript' src="{% static 'UJUZI_JS/main.js' %}"></script>
-
-    <script type='text/javascript' src="{% static 'UJUZI_JS/splide.js' %}"></script>
-	<script type='text/javascript' src="{% static 'UJUZI_JS/splide.esm.js' %}"></script>
-	<script>
-
+     <script type='text/javascript' src="{% static 'UJUZI_JS/splide.js' %}"></script>
+     <script type='text/javascript' src="{% static 'UJUZI_JS/splide.esm.js' %}"></script>
+     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+     <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+     <script src="https://cdn.datatables.net/fixedheader/3.2.4/js/dataTables.fixedHeader.min.js"></script>
+     <script src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
+     <script src="https://cdn.datatables.net/responsive/2.3.0/js/responsive.bootstrap.min.js"></script>
+     <script>
+         $(document).ready(function () {
+             let table = $('#datatable').DataTable( {
+                 responsive: true
+             } );
+             new $.fn.dataTable.FixedHeader( table );
+        });
+    </script>
+     <script>
 		$(document).ready(function (){
             login()
 		})
