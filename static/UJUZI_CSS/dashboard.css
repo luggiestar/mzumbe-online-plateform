@@ -2495,7 +2495,7 @@ border:1px solid rgba(218, 217, 217, 0.9);
     }
     .u-contents
     {
-        width:calc(100% - 50px);
+        width:calc(100% - 100px);
         background:red;
     }
 }
