@@ -22,12 +22,13 @@
 
 
 
-
-    <ul class="categories-list is-s">
-
+{% if categories.count > 4  %}
+<ul class="categories-list is-s splide" aria-label="Splide">
+    <div class="splide__track">
+        <div class="splide__list">
        {% for i in categories %}
 
-        <li class="category-li" id="cat-{{i.id}}">
+        <li class="category-li splide__slide mt-4 ml-3 mb-3 shadow" id="cat-{{i.id}}">
              <div class="course-category-name" style="display:none">{{i.name}}</div>
              <div class="cat-img">
                  <img src="{{i.icon.url}}"/>
@@ -37,8 +38,10 @@
 
         {% endfor %}
 
-    </ul>
-
+        </div>
+    </div>
+</ul>
+{% endif %}
 
 <!--category courses-->
 <div class="sub-title is-s">

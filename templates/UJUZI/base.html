@@ -36,6 +36,8 @@
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <!-- Fontawesome 6 icons -->
+
+         <link rel="stylesheet" href="{% static 'UJUZI_CSS/splide.min.css' %}">
 <style>
 table {
   font-family: arial, sans-serif;
@@ -175,6 +177,8 @@ tr:nth-child(even) {
      <script type='text/javascript' src="{% static 'UJUZI_JS/application.js' %}"></script>
      <script type='text/javascript' src="{% static 'UJUZI_JS/main.js' %}"></script>
 
+    <script type='text/javascript' src="{% static 'UJUZI_JS/splide.js' %}"></script>
+	<script type='text/javascript' src="{% static 'UJUZI_JS/splide.esm.js' %}"></script>
 	<script>
 
 		$(document).ready(function (){
@@ -208,6 +212,18 @@ tr:nth-child(even) {
 			})
         }
 
+	</script>
+
+    <script>
+		let splide = new Splide('.splide', {
+			type: 'loop',
+			drag   : 'free',
+			focus  : 'center',
+			height: '10rem',
+			paddingBottom: '12rem'
+		});
+
+		splide.mount();
 	</script>
 
      </body>
