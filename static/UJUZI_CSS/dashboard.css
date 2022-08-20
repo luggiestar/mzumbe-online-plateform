@@ -2493,7 +2493,7 @@ border:1px solid rgba(218, 217, 217, 0.9);
         padding:12px;
         margin-top:-8px;
     }
-    .u-content-box
+    .u-contents
     {
         width:calc(100% - 50px);
         background:red;
