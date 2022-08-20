@@ -1442,11 +1442,11 @@ button{
 }
 #toggle:checked ~ .side-bar{
    left:0px;
-   width:150px;
+   width:180px;
 }
 #toggle:checked ~ .side-bar a{
     margin-left:0px;
-    width:150px;
+    width:180px;
  }
 #toggle:checked ~ .side-bar .name{
     display:block;
@@ -1466,10 +1466,10 @@ button{
     width:33px;
 }
 #toggle:checked ~ header .toggle-div{
-    margin-left: 150px;
+    margin-left: 180px;
 }
 #toggle:checked ~ header .u-u-name{
-    margin-left: 200px;
+    margin-left: 240px;
 }
           
       /* subject items */
