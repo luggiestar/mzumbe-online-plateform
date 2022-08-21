@@ -77,7 +77,7 @@ tr:nth-child(even) {
              </div>
              {% if request.user.is_authenticated%}
 
-             <p>{{request.user}} &nbsp;(<span class="l-gold-shadow">{% if request.user.is_instructor %} Tutor {% elif request.user.is_verifier %} Verifier {% else %} Student {% endif %}</span>)</p>
+             <p>{{request.user.first_name}} &nbsp;(<span class="l-gold-shadow">{% if request.user.is_instructor %} Tutor {% elif request.user.is_verifier %} Verifier {% else %} Student {% endif %}</span>)</p>
              {% else %}
              <span class="l-gold-shadow"></span>
              <button class="btn btn-sm btn-dark ml-2" data-target="#login" data-toggle="modal">guest Login Here</button>
