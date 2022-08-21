@@ -8,7 +8,7 @@ from django.db.models import Sum
 from django.db.models.signals import post_save
 from django.contrib.auth.models import User
 from django.dispatch import receiver
-from .models import Course, CourseSummary, ContentViewers, TotalContentViewers
+from .models import Course, CourseSummary, ContentViewers, TotalContentViewers, Enrollment
 
 
 @receiver(post_save, sender=User, dispatch_uid='add_first_name_to user')
@@ -48,11 +48,18 @@ def store_total_views(sender, instance, created, **kwargs):
             total_views=Sum('total',
                             distinct=True))
         for i in get_current_total_views:
-
             save_views = CourseSummary.objects.filter(course=instance.content.course).first()
             save_views.views = i.total_views
             save_views.save()
 
+
+@receiver(post_save, sender=Enrollment, dispatch_uid='count_enrollment')
+def count_enrollment(sender, instance, created, **kwargs):
+    if instance:
+        get_enrollment = Enrollment.objects.filter(course=instance.course).count()
+        save_views = CourseSummary.objects.filter(course=instance.course).first()
+        save_views.enrollments = get_enrollment
+        save_views.save()
 #
 #
 # @receiver(post_save, sender=Module, dispatch_uid='create_default_views')
