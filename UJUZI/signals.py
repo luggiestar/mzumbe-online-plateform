@@ -2,13 +2,13 @@ import json
 
 import base64
 import decimal
-import datetime
+from datetime import datetime
 
 from django.db.models import Sum
 from django.db.models.signals import post_save
 from django.contrib.auth.models import User
 from django.dispatch import receiver
-from .models import *
+from .models import Course, CourseSummary, ContentViewers, TotalContentViewers
 
 
 @receiver(post_save, sender=User, dispatch_uid='add_first_name_to user')
@@ -31,9 +31,10 @@ def create_course_summary(sender, instance, created, **kwargs):
 @receiver(post_save, sender=ContentViewers, dispatch_uid='count_views')
 def count_viewers(sender, instance, created, **kwargs):
     if created:
+        today = datetime.today().date()
         get_current_total_views = TotalContentViewers.objects.filter(content=instance.content).first()
 
-        count_views = ContentViewers.objects.filter(date=datetime.date.today).count()
+        count_views = ContentViewers.objects.filter(date=today).count()
         get_latest_total = get_current_total_views.total + count_views
 
         get_current_total_views.total = get_latest_total
