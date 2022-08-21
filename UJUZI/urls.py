@@ -42,7 +42,7 @@ urlpatterns = [
     path('instructor-management/', views.instructor_management, name='instructor_management'),
     path('course-management/', views.course_management, name='course_management'),
 
-    path('view-pdf/<letter_id>', views.pdf_view, name='pdf_view'),
+    path('view-pdf/<object_pk>', views.pdf_view, name='pdf_view'),
 
     path('accept-request/<request_id>', views.accept_request,name='accept_request'),
     path('deny-request/<request_id>', views.deny_request,name='deny_request'),

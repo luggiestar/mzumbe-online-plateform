@@ -62,7 +62,7 @@ def pdf_view(request, object_pk):
 
     with open(get_content.content.path, 'rb') as pdf:
         response = HttpResponse(pdf.read(), content_type='application/pdf')
-        response['Content-Disposition'] = 'inline;filename=some_file.pdf'
+        response['Content-Disposition'] = 'inline;filename=read_file.pdf'
         return response
 
 
@@ -71,7 +71,7 @@ def letter_view(request, letter_id):
 
     with open(get_content.letter.path, 'rb') as pdf:
         response = HttpResponse(pdf.read(), content_type='application/pdf')
-        response['Content-Disposition'] = 'inline;filename=some_file.pdf'
+        response['Content-Disposition'] = 'inline;filename=open_file.pdf'
         return response
 
 
