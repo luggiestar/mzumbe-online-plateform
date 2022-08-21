@@ -122,7 +122,7 @@ class TotalContentViewers(models.Model):
 
 
 class CourseSummary(models.Model):
-    Course = models.OneToOneField(Course, on_delete=models.CASCADE, )
+    course = models.OneToOneField(Course, on_delete=models.CASCADE, )
     views = models.IntegerField(default=0)
     enrollments = models.IntegerField(default=0)
     date = models.DateField(default=datetime.date.today, editable=False)
