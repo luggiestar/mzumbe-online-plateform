@@ -83,7 +83,7 @@ def my_course(request):
     # get_enrollments_total = Enrollment.objects.filter(course__instructor=request.user).annotate(total=Count('course',
     #                                  distinct=True))
     get_views = TotalContentViewers.objects.filter(content__course__instructor=request.user).annotate(
-        total=Sum('content__course',
+        total_views=Sum('total',
                   distinct=True))
 
     # except:
