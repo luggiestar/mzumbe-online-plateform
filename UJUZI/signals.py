@@ -49,7 +49,7 @@ def store_total_views(sender, instance, created, **kwargs):
                             distinct=True))
         for i in get_current_total_views:
 
-            save_views = CourseSummary.objects.filter(course=instance.content.course).fisrt()
+            save_views = CourseSummary.objects.filter(course=instance.content.course).first()
             save_views.views = i.total_views
             save_views.save()
 
