@@ -77,19 +77,19 @@ def letter_view(request, letter_id):
 
 @login_required
 def my_course(request):
-    try:
-        get_course = Course.objects.filter(instructor=request.user)
-        get_course_total = Course.objects.filter(instructor=request.user).count()
-        # get_enrollments_total = Enrollment.objects.filter(course__instructor=request.user).annotate(total=Count('course',
-        #                                  distinct=True))
-        get_views = TotalContentViewers.objects.all(content__course__instructor=request.user).annotate(
-            total=Sum('content__course',
-                      distinct=True))
+    # try:
+    get_course = Course.objects.filter(instructor=request.user)
+    get_course_total = Course.objects.filter(instructor=request.user).count()
+    # get_enrollments_total = Enrollment.objects.filter(course__instructor=request.user).annotate(total=Count('course',
+    #                                  distinct=True))
+    get_views = TotalContentViewers.objects.all(content__course__instructor=request.user).annotate(
+        total=Sum('content__course',
+                  distinct=True))
 
-    except:
-        get_course = None
-        get_course_total = 0
-        get_views = 0
+    # except:
+    #     get_course = None
+    #     get_course_total = 0
+    #     get_views = 0
         # get_enrollments_total = 0
 
     form = CourseForm()
