@@ -132,7 +132,7 @@ class CourseSummary(models.Model):
         verbose_name_plural = "Course Summary"
 
     def __str__(self):
-        return "{0}-{1}".format(self.Course,self.enrollments)
+        return "{0}-{1}".format(self.course,self.enrollments)
 
 
 class Institution(models.Model):
