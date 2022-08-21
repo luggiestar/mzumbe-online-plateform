@@ -118,7 +118,7 @@ class TotalContentViewers(models.Model):
         verbose_name_plural = "Total Content Viewers"
 
     def __str__(self):
-        return self.content
+        return "{0}".format(self.content)
 
 
 class CourseSummary(models.Model):
