@@ -43,7 +43,7 @@ def count_viewers(sender, instance, created, **kwargs):
 
 @receiver(post_save, sender=TotalContentViewers, dispatch_uid='course_summary')
 def store_total_views(sender, instance, created, **kwargs):
-    if created:
+    if instance:
         get_current_total_views = TotalContentViewers.objects.filter(content__course=instance.content.course).annotate(
             total_views=Sum('total',
                             distinct=True))
