@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from ..models import TeachingRequest
+from ..models import TeachingRequest,CourseSummary
 
 
 class VerificationAdmin(admin.ModelAdmin):
@@ -9,3 +9,4 @@ class VerificationAdmin(admin.ModelAdmin):
 
 
 admin.site.register(TeachingRequest, VerificationAdmin)
+admin.site.register(CourseSummary)

@@ -3,6 +3,8 @@ import json
 import base64
 import decimal
 import datetime
+
+from django.db.models import Sum
 from django.db.models.signals import post_save
 from django.contrib.auth.models import User
 from django.dispatch import receiver
@@ -18,17 +20,38 @@ def create_module(sender, instance, created, **kwargs):
         get_user.first_name = get_name_from_email
         get_user.save()
 
+
+@receiver(post_save, sender=Course, dispatch_uid='create_course_summary')
+def create_course_summary(sender, instance, created, **kwargs):
+    if created:
+        CourseSummary.objects.create(course=instance)
+
+
 #
-# @receiver(post_save, sender=ContentViewers, dispatch_uid='count_views')
-# def count_viewers(sender, instance, created, **kwargs):
-#     if created:
-#         get_current_total_views = TotalContentViewers.objects.filter(content=instance.content).first()
-#
-#         count_views=ContentViewers.objects.filter(date=datetime.date.today).count()
-#         get_latest_total=get_current_total_views.total + count_views
-#
-#         get_current_total_views.total=get_latest_total
-#         get_current_total_views.save()
+@receiver(post_save, sender=ContentViewers, dispatch_uid='count_views')
+def count_viewers(sender, instance, created, **kwargs):
+    if created:
+        get_current_total_views = TotalContentViewers.objects.filter(content=instance.content).first()
+
+        count_views = ContentViewers.objects.filter(date=datetime.date.today).count()
+        get_latest_total = get_current_total_views.total + count_views
+
+        get_current_total_views.total = get_latest_total
+        get_current_total_views.save()
+
+
+@receiver(post_save, sender=TotalContentViewers, dispatch_uid='course_summary')
+def store_total_views(sender, instance, created, **kwargs):
+    if created:
+        get_current_total_views = TotalContentViewers.objects.filter(content__course=instance.content.course).annotate(
+            total_views=Sum('total',
+                            distinct=True))
+        for i in get_current_total_views:
+
+            save_views = CourseSummary.objects.filter(course=instance.content.course).fisrt()
+            save_views.views = i.total_views
+            save_views.save()
+
 #
 #
 # @receiver(post_save, sender=Module, dispatch_uid='create_default_views')

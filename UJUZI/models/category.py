@@ -121,6 +121,20 @@ class TotalContentViewers(models.Model):
         return self.content
 
 
+class CourseSummary(models.Model):
+    Course = models.OneToOneField(Course, on_delete=models.CASCADE, )
+    views = models.IntegerField(default=0)
+    enrollments = models.IntegerField(default=0)
+    date = models.DateField(default=datetime.date.today, editable=False)
+
+    class Meta:
+        verbose_name = "Course Summary"
+        verbose_name_plural = "Course Summary"
+
+    def __str__(self):
+        return "{0}-{1}".format(self.Course,self.enrollments)
+
+
 class Institution(models.Model):
     name = models.CharField(max_length=30, unique=True)
     email = models.EmailField(max_length=50, unique=True)
