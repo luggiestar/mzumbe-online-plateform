@@ -56,9 +56,11 @@ def pdf_view(request, object_pk):
     get_content = get_object_or_404(Module, id=object_pk)
     try:
 
-        ContentViewers.objects.create(content=get_content, viewer=request.user)
+        TotalContentViewers.objects.create(content=get_content)
     except:
         pass
+
+    ContentViewers.objects.create(content=get_content, viewer=request.user)
 
     with open(get_content.content.path, 'rb') as pdf:
         response = HttpResponse(pdf.read(), content_type='application/pdf')
