@@ -662,7 +662,10 @@ table
 {
     .u-course
     {
+        max-width:300px;
+        min-width:290px;
         border-radius:5px;
+        padding:12px;
     }
     .form-full
     {

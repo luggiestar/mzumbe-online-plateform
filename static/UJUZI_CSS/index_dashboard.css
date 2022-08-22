@@ -1522,10 +1522,6 @@ button{
 /*phone view*/
 @media  screen and (max-width:600px)
 {
-   .u-course
-    {
-        max-width:280px;
-    }
      .course-img
     {
         width:250;
