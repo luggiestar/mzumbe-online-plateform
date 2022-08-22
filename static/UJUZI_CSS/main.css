@@ -667,6 +667,7 @@ table
         border-radius:5px;
         padding:12px;
         text-align: justify;
+        text-justify: inter-word;
     }
     .form-full
     {
