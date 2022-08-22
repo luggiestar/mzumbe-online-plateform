@@ -17,6 +17,7 @@
     --u-light-blue:#1B3B96;
     --u-sub-color:#45454e;
     --grey-color:#555;
+    --u-course-color:555;
 
 }
 body{
@@ -26,9 +27,9 @@ body{
     grid-template-columns: 70px 180px 1fr 1fr;
     grid-template-rows: 60px 1fr;
 }
-.u-container a
+.u-course-list a
 {
-    color:inherit;
+    color:var(--u-course-color);
 }
 header{
     position: fixed;
