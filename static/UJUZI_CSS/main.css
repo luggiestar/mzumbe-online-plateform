@@ -22,7 +22,6 @@ nav {
 
 .long-logo,.short-logo
 {
-    margin-left:-2px;
     transition: 0s ease-in-out;
     background:white;
 }
