@@ -140,6 +140,7 @@ nav {
     flex-wrap:wrap;
     min-height:30px;
     margin-top:-8px;
+    margin-bottom:50px;
 }
 .o-box
  {
@@ -662,8 +663,8 @@ table
 {
     .u-course
     {
-        max-width:300px;
-        min-width:290px;
+        max-width:290px;
+        min-width:285px;
         border-radius:5px;
         padding:12px;
         text-align: justify;
