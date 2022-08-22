@@ -26,7 +26,10 @@ body{
     grid-template-columns: 70px 180px 1fr 1fr;
     grid-template-rows: 60px 1fr;
 }
-
+.u-container a
+{
+    color:inherit;
+}
 header{
     position: fixed;
     top:0;
