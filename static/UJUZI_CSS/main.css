@@ -17,13 +17,12 @@ nav {
 {
     padding:5px;
     width:100%;
-    background:yellow;
     position:relative;
 }
 
 .long-logo,.short-logo
 {
-    transition: 0.1s ease-in-out;
+    transition: 0s ease-in-out;
 }
 .long-logo
 {
@@ -37,7 +36,7 @@ nav {
 .short-logo
 {
     background:white;
-    padding:2px 5px 2px 5px;
+    padding:2px 7px 2px 7px;
     width:25px;
     position:absolute;
     right:5px;
