@@ -17,7 +17,7 @@
     --u-light-blue:#1B3B96;
     --u-sub-color:#45454e;
     --grey-color:#555;
-    --u-course-color:555;
+    --u-course-color:333;
 
 }
 body{
@@ -29,7 +29,7 @@ body{
 }
 .u-course-list a
 {
-    color:inherit;
+    color:var(--u-course-color);
 }
 header{
     position: fixed;
