@@ -94,7 +94,7 @@ tr:nth-child(even) {
              </div>
          </div>
          {% if request.user.is_authenticated %}
-         <a href="{% url 'UJUZI:home_view' %}" id="side-bar-dashboard" class="sidebar-link" >
+         <a href="{% url 'UJUZI:home_view' %}" id="side-bar-dashboard" class="sidebar-link link-dash" >
              <i class=" fa fa-dashboard icons gold-shadow" ></i>
              <span>Dashboard</span>
          </a>
@@ -106,27 +106,27 @@ tr:nth-child(even) {
                {% endif %}
 
 
-         <a id="payment-link-btn" href="{% url 'UJUZI:enrolled_course' %}" class="sidebar-link" >
+         <a id="payment-link-btn" href="{% url 'UJUZI:enrolled_course' %}" class="sidebar-link link-enrolled" >
              <i class="fa-solid fa-bookmark icons gold-shadow" aria-hidden="true"></i>
              <span>Enrolled courses</span>
          </a>
          {% if request.user.is_instructor %}
-              <a id="courses-link-btn" href="{% url 'UJUZI:my_course' %}" class="sidebar-link" >
+              <a id="courses-link-btn" href="{% url 'UJUZI:my_course' %}" class="sidebar-link link-m-course" >
              <i class="fa-solid fa-database icons gold-shadow" aria-hidden="true"></i>
              <span>My courses</span>
 
            {% endif %}
 
 {% if request.user.is_verifier %}
-          <a id="instructor-link-btn" href="{% url 'UJUZI:instructor_management' %}" class="sidebar-link" >
+          <a id="instructor-link-btn" href="{% url 'UJUZI:instructor_management' %}" class="sidebar-link link-i-manage" >
              <i class="fa-solid fa-users icons gold-shadow" aria-hidden="true"></i>
              <span>Tutors Management</span>
          </a>
-           <a id="course-link-btn" href="{% url 'UJUZI:course_management' %}" class="sidebar-link" >
+           <a id="course-link-btn" href="{% url 'UJUZI:course_management' %}" class="sidebar-link link-c-manage" >
              <i class="fa-solid fa-server icons gold-shadow" aria-hidden="true"></i>
              <span>Course Management</span>
          </a>
-  <a id="verification-li-btn" href="{% url 'UJUZI:teaching_verification' %}" class="sidebar-link" >
+  <a id="verification-li-btn" href="{% url 'UJUZI:teaching_verification' %}" class="sidebar-link link-ver" >
              <i class="fa fa fa-inbox icons gold-shadow" aria-hidden="true"></i>
              <span>Teaching Verification</span>
          </a>
@@ -134,23 +134,23 @@ tr:nth-child(even) {
 
          </a>
          {% if request.user.id %}
-         <a id="payment-lin-btn" href="{% url 'UJUZI:user_profile'  request.user.id %}" class="sidebar-link" >
+         <a id="payment-lin-btn" href="{% url 'UJUZI:user_profile'  request.user.id %}" class="sidebar-link link-prof" >
              <i class="fa fa-user-circle-o icons gold-shadow" aria-hidden="true"></i>
              <span>Profile</span>
          </a>
          {% endif %}
           {% if not request.user.is_instructor %}
-         <a id="payment-li-btn" href="{% url 'UJUZI:teaching_request' %}" class="sidebar-link" >
+         <a id="payment-li-btn" href="{% url 'UJUZI:teaching_request' %}" class="sidebar-link link-req" >
              <i class="fa fa fa-envelope-o icons gold-shadow" aria-hidden="true"></i>
              <span>Teaching Request</span>
          </a>
        {% endif %}
 
-         <a id="payment-l-btn" href="{% url 'UJUZI:change_password' %}" class="sidebar-link" >
+         <a id="payment-l-btn" href="{% url 'UJUZI:change_password' %}" class="sidebar-link link-passwd" >
              <i class="fa fa-lock icons gold-shadow" aria-hidden="true"></i>
              <span>Change Password</span>
          </a>
-         <a id='exit-btn' class="sidebar-link" href="{% url 'UJUZI:logout' %}">
+         <a id='exit-btn' class="sidebar-link link-lg-out" href="{% url 'UJUZI:logout' %}">
              <i class=" fa fa-sign-out icons gold-shadow"></i>
              <span>Logout</span>
          </a>

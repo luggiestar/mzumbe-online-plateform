@@ -13,8 +13,8 @@
     --border-brand-color:#555;
 
     --u-dark-light-blue:#041027;
-    --u-gold:rgb(255,178,0);
-    --u-light-blue:#0ca0fc;
+    --u-gold:#D4AF37;
+    --u-light-blue:#1B3B96;
     --u-sub-color:#45454e;
     --grey-color:#555;
 
@@ -285,7 +285,8 @@ button{
     margin-top: 0px;
 
     /* background:#2F323A; */
-    background: rgb(1, 128, 255);
+    /*background: rgb(1, 128, 255);*/
+    background:var(--u-light-blue);
     height:calc(100% - 0px);
     width:225px;
     left:0;
@@ -2542,13 +2543,13 @@ border:1px solid rgba(218, 217, 217, 0.9);
 
 
 .gold-shadow{
-    color: rgb(255, 178, 0);
+    color: var(--u-gold);
     text-shadow: 2px 2px 4px #000000;
 }
 
 .l-gold-shadow
 {
-    color: rgb(255, 178, 0);
+    color: var(--u-gold);
     text-shadow: 1px 0.5px 1px #000000;
 }
 
