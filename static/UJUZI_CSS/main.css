@@ -15,18 +15,20 @@ nav {
 
 .logo-png
 {
-    padding:5px;
+    padding:2px;
     width:100%;
     position:relative;
 }
 
 .long-logo,.short-logo
 {
+    margin-left:-2px;
     transition: 0s ease-in-out;
+    background:white;
 }
 .long-logo
 {
-    background:white;
+
     padding:2px 5px 2px 5px;
     opacity:1;
 }
@@ -34,7 +36,6 @@ nav {
 
 .short-logo
 {
-    background:white;
     padding:2px 7px 2px 7px;
     position:absolute;
     right:5px;
