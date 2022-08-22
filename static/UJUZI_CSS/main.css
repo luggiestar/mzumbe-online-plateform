@@ -234,7 +234,7 @@ nav {
 
 .u-back-btn
 {
-     color:#0074e4;
+     color:var(--u-light-blue);
 }
 .u-back-btn i:hover
 {
