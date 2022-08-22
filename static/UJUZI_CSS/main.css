@@ -2,7 +2,7 @@
 :root
 {
     --body-color: #DBE0F9;
-    --u-course-color:red;
+    --u-course-color:#333;
 }
 nav {
     margin-bottom: 4em;
