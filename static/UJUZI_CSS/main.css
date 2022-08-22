@@ -15,10 +15,9 @@ nav {
 
 .logo-png
 {
-    padding:2px;
+    padding:0px 5px 0px 0px;
     width:100%;
     position:relative;
-    margin-left:-5px;
 }
 
 .long-logo,.short-logo
