@@ -666,6 +666,7 @@ table
         min-width:290px;
         border-radius:5px;
         padding:12px;
+        text-align: justify;
     }
     .form-full
     {
