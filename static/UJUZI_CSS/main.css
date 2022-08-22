@@ -660,6 +660,10 @@ table
 
 @media  screen and (max-width:600px)
 {
+    .u-container
+    {
+        border-radius:5px;
+    }
     .form-full
     {
         width:100%;
