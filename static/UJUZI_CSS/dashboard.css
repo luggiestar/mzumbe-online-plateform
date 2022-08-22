@@ -29,7 +29,7 @@ body{
 }
 .u-course-list a
 {
-    color:var(--u-course-color);
+    color:inherit;
 }
 header{
     position: fixed;
