@@ -54,11 +54,11 @@ nav {
     width:25px;
 }
 
-#toggle:checked ~ header .short-logo
+#toggle:checked ~ .side-bar .u-logo .logo-png .short-logo
 {
     opacity:1;
 }
-#toggle:checked ~ header .long-logo
+#toggle:checked ~ .side-bar .u-logo .logo-png .long-logo
 {
     opacity:0;
 }
