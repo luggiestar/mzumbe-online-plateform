@@ -419,6 +419,14 @@ button{
 #toggle:checked ~ .contents{
     margin-left: 70px;
 }
+#toggle:checked ~ .short-logo
+{
+    opacity:1;
+}
+#toggle:checked ~ .long-logo
+{
+    opacity:0;
+}
 #dashboard{
     background-color:white;
     display:block;

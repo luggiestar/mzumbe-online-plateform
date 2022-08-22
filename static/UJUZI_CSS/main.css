@@ -29,7 +29,7 @@ nav {
 {
     background:white;
     padding:2px 5px 2px 5px;
-    opacity:0;
+    opacity:1;
     background-color: red;
 }
 
@@ -42,7 +42,7 @@ nav {
     position:absolute;
     right:5px;
     top:5px;
-    opacity:1;
+    opacity:0;
     background-color: purple;
 }
 .long-logo img
