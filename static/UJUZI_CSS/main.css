@@ -140,7 +140,7 @@ nav {
     flex-wrap:wrap;
     min-height:30px;
     margin-top:-8px;
-    margin-bottom:50px;
+    padding-bottom:60px;
 }
 .o-box
  {
