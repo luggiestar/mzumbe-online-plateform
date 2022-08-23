@@ -711,6 +711,23 @@ table
         width: 1.2em;
         transition: 0.4s ease-in-out;
     }
+    .short-logo
+    {
+        opacity:1;
+    }
+    .long-logo
+    {
+        opacity:0;
+    }
+
+    #toggle:checked ~ .side-bar .u-logo .logo-png .short-logo
+    {
+        opacity:0;
+    }
+    #toggle:checked ~ .side-bar .u-logo .logo-png .long-logo
+    {
+        opacity:1;
+    }
 }
 
 
@@ -802,6 +819,8 @@ table
         width: 1.2em;
         transition: 0.4s ease-in-out;
     }
+
+
 }
 
 .splide__pagination__page
