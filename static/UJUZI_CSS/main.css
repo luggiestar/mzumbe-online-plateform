@@ -21,6 +21,7 @@ nav {
     background:white;
     animation-duration: 1s;
     animation-name: logoAnimation;
+    padding:3px;
 }
 
 .long-logo,.short-logo
@@ -51,6 +52,7 @@ nav {
 .short-logo img
 {
     width:30px;
+    margin-left:5px;
 }
 
 #toggle:checked ~ .side-bar .u-logo .logo-png .short-logo
