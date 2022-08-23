@@ -40,7 +40,7 @@ nav {
 {
     padding:2px 7px 2px 7px;
     position:absolute;
-    right:5px;
+    right:3px;
     top:5px;
     opacity:0;
 }
@@ -51,8 +51,8 @@ nav {
 
 .short-logo img
 {
-    width:30px;
-    margin-left:5px;
+    width:28px;
+
 }
 
 #toggle:checked ~ .side-bar .u-logo .logo-png .short-logo
