@@ -91,15 +91,14 @@ tr:nth-child(even) {
          <div class="u-logo">
              <div class="logo-png gold-shadow">
                     <div class="long-logo">
-<!--                        <img src="logo.png" alt="logo">-->
-                        UJUZISET
+                        <img src='{% static "static/img/logo-1.png" %}' alt="logo">
                     </div>
                     <div class="short-logo">
-                        U
-<!--                        <img src="short-logo.png" alt="logo">-->
+                        <img src='{% static "static/img/logo-2.png" %}' alt="logo">
                     </div>
              </div>
          </div>
+          src= alt="My image"
          {% if request.user.is_authenticated %}
          <a href="{% url 'UJUZI:home_view' %}" id="side-bar-dashboard" class="sidebar-link link-dash" >
              <i class=" fa fa-dashboard icons gold-shadow" ></i>
