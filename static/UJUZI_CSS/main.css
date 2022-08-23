@@ -19,6 +19,8 @@ nav {
     margin-right:5px;
     position:relative;
     background:white;
+    animation-duration: 3s;
+    animation-name: logoAnimation;
 }
 
 .long-logo,.short-logo
@@ -58,6 +60,11 @@ nav {
 #toggle:checked ~ .side-bar .u-logo .logo-png .long-logo
 {
     opacity:0;
+}
+
+@keyframes logoAnimation {
+    from {opacity: 0.0;}
+    to {opacity: 1.0;}
 }
 
 @keyframes blinker {
