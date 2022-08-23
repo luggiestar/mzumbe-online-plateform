@@ -46,6 +46,7 @@ nav {
 .long-logo img
 {
     width:120px;
+    max-height:60px
 }
 
 .short-logo img
