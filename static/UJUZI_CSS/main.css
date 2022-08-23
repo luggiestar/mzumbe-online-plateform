@@ -45,13 +45,12 @@ nav {
 }
 .long-logo img
 {
-    width:120px;
-    max-height:60px
+    width:150px;
 }
 
 .short-logo img
 {
-    width:25px;
+    width:30px;
 }
 
 #toggle:checked ~ .side-bar .u-logo .logo-png .short-logo
