@@ -67,10 +67,10 @@ MIDDLEWARE = [
 
 REST_FRAMEWORK = {
     'NON_FIELD_ERRORS_KEY': "errors",
-    "DEFAULT_AUTHENTICATION_CLASSES": (
-        "rest_framework.authentication.SessionAuthentication",
-        "rest_framework.authentication.TokenAuthentication"
-    )
+    # "DEFAULT_AUTHENTICATION_CLASSES": (
+    #     "rest_framework.authentication.SessionAuthentication",
+    #     "rest_framework.authentication.TokenAuthentication"
+    # )
 }
 
 CORS_ORIGIN_ALLOW_ALL = True
