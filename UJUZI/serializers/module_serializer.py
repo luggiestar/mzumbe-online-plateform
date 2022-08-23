@@ -3,7 +3,6 @@ from ..models import Module
 
 
 class ModuleSerializer(serializers.ModelSerializer):
-    # course = serializers.StringRelatedField(many=False)
     course_name = serializers.CharField(source='course.name', read_only=True)
     course_id = serializers.CharField(source='course.id', read_only=True)
     instructor = serializers.CharField(source='created_by.email', read_only=True)
