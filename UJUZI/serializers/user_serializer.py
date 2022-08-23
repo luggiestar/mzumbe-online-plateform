@@ -1,10 +1,16 @@
 from rest_framework.authtoken.models import Token
 from rest_framework.exceptions import ValidationError
 from rest_framework import serializers
-from .models import User, Category
+from ..models import User
 
 
-class UserLoginSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('email', 'phone', 'first_name', 'last_name')
+
+
+class UserSignupSerializer(serializers.ModelSerializer):
     password = serializers.CharField(min_length=8, write_only=True)
     email = serializers.EmailField()
 
@@ -40,13 +46,3 @@ class UserLoginSerializer(serializers.ModelSerializer):
         return user
 
 
-class CategorySerializer(serializers.ModelSerializer):
-    icon_url = serializers.SerializerMethodField('get_image_url')
-
-    class Meta:
-        model = Category
-        fields = ('name', 'icon_url')
-
-    def get_image_url(self, obj):
-        icon_url = obj.icon.url
-        return icon_url

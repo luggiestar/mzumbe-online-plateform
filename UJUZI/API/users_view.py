@@ -1,14 +1,14 @@
 from django.contrib.auth import authenticate, login
-from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
-from ..serializer import UserLoginSerializer
+
+from ..serializers import UserSignupSerializer
 
 
 class UserSignUpApi(APIView):
     """Api for user signup"""
-    serializer_class = UserLoginSerializer
+    serializer_class = UserSignupSerializer
 
     def post(self, request):
         data = request.data
@@ -30,18 +30,19 @@ class UserSignUpApi(APIView):
 
 class UserSignIn(APIView):
     """Api for user signin"""
+
     def post(self, request):
         email = request.data.get('email')
         password = request.data.get('password')
 
         user = authenticate(email=email, password=password)
-
         if user is not None:
             login(request, user)
+
             response = {
-                'msg':'success',
+                'msg': 'success',
                 'token': user.auth_token.key,
-                'user_id': user.id
+                'userId': user.id,
             }
 
             return Response(response, status=status.HTTP_200_OK)

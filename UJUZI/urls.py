@@ -4,7 +4,9 @@ from . import views
 from .views import *
 from dal import autocomplete
 from .models import *
-from .API import CategoryListApi, UserSignUpApi,UserSignIn
+from .API import CategoryListApi, UserSignUpApi, \
+    UserSignIn, CourseListApi, CourseDetailApi, \
+    CourseEnrollApi, CourseModule
 
 app_name = 'UJUZI'
 
@@ -71,6 +73,13 @@ urlpatterns = [
     path("category-list/", CategoryListApi.as_view(), name="category_list"),
     path("user-signup-api/", UserSignUpApi.as_view(), name="user_signup"),
     path("user-signin/", UserSignIn.as_view(), name="user_signin"),
+    path("course-list-api/", CourseListApi.as_view(), name="course_list"),
+    path("course-detail-api/<int:pk>/", CourseDetailApi.as_view(), name="course_list"),
+    path("course-enrolled-course-api/<int:pk>/<int:user_id>/", CourseEnrollApi.as_view(), name="course_enroll_list"),
+    path("course-enroll-api/", CourseEnrollApi.as_view(), name="course_enroll"),
+    path("course-module-api/<int:course>/", CourseModule.as_view(), name="course_module"),
+
+
 ]
 
 # import djhacker

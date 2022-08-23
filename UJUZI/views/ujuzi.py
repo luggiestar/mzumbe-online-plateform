@@ -64,6 +64,7 @@ def course_detail(request, course_name):
         get_enroll = Enrollment.objects.filter(student=request.user, course=check_course).first()
     except:
         get_enroll = None
+
     modules = Module.objects.filter(course=check_course)
     total = Module.objects.filter(course=check_course).count()
 

@@ -62,8 +62,11 @@ class Module(models.Model):
     content = models.FileField(upload_to='contents/%Y/%m/%d', validators=[validate_file_extension])
 
     course = models.ForeignKey(Course,
-                               on_delete=models.CASCADE)
+                               on_delete=models.CASCADE, related_name='course')
     created_by = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    uploaded_date = models.DateField(auto_now_add=True)
+    uploaded_time = models.TimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = "Module"
