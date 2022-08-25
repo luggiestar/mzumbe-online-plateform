@@ -7,6 +7,19 @@ a {
     color: #fff !important;
 }
 
+.index-logo
+{
+    background:white;
+    padding:5px;
+    border-radius:3px;
+}
+
+.index-logo img
+{
+    width:120px;
+}
+
+
 .main-header {
 	background: #0ca0fc;
 	border-bottom-left-radius: 3rem;
