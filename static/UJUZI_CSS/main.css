@@ -142,12 +142,12 @@ nav {
     transition: 0.3s ease-in-out;
 }
 .splide__arrow.splide__arrow--prev:hover {
-    background-color: #0ca0fc;
+    background-color: #1B3B96;
     color: white !important;
     border:none;
 }
 .splide__arrow.splide__arrow--next:hover {
-    background-color: #0ca0fc;
+    background-color:  #1B3B96;
     color: white !important;
     border:none;
 }
@@ -838,7 +838,7 @@ table
 }
 
 .splide__pagination__page.is-active {
-    background: var(--u-light-blue);
+    background:#1B3B96;
     transform: scale(1.5);
     z-index: 1;
 }
