@@ -339,6 +339,7 @@ button{
 #toggle:checked ~ .side-bar{
     left:-180px;
 }
+
 #toggle:checked ~ .side-bar span{
     display:none;
 }
@@ -365,6 +366,10 @@ button{
 
 #toggle:checked ~ header .u-u-name{
     margin-left: 125px;
+}
+#toggle:checked ~ header .u-footer
+{
+    width:calc(100% - 50px);
 }
 
 
