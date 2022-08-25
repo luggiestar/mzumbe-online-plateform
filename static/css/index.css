@@ -16,7 +16,7 @@ a {
 
 .index-logo img
 {
-    width:120px;
+    width:130px;
 }
 
 
@@ -157,10 +157,19 @@ img {
     {
         font-size:1rem;
     }
+    .index-logo img
+    {
+        width:110px;
+    }
 }
 
 
 @media (max-width:551px) {
+    .index-logo img
+    {
+        width:100px;
+    }
+
 	.display-on-lg {
 		display: none;
 	}
