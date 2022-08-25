@@ -12,6 +12,7 @@ a {
     background:white;
     padding:5px;
     border-radius:3px;
+    min-height:90px;
 }
 
 .index-logo img
