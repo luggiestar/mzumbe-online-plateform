@@ -367,7 +367,8 @@ button{
 #toggle:checked ~ header .u-u-name{
     margin-left: 125px;
 }
-#toggle:checked ~ header .u-footer
+
+#toggle:checked ~ .contents .u-footer
 {
     width:calc(100% - 50px);
 }
