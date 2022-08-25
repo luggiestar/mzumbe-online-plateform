@@ -85,8 +85,8 @@ a {
 	overflow: hidden;
 	padding-top: 50px;
 	margin-top:-4rem;
-	background: linear-gradient(90deg, #01B3B96 0%, #01B3B96 80%),url(" /static/img/header.jpg");  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(90deg, #01B3B96 0%, #01B3B96 80%), url(" /static/img/header.jpg"); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: linear-gradient(90deg, #0ca0fc94 20%, #0ca0fc94 80%),url(" /static/img/header.jpg");  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(90deg, #00ca0fc94 20%, #0ca0fc94 80%), url(" /static/img/header.jpg"); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
