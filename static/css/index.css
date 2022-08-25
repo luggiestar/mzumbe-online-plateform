@@ -155,7 +155,9 @@ img {
 {
     .header-txt
     {
-        font-size:1rem;
+        margin-top:-15px;
+        font-size:1.2rem;
+        letter-spacing:.5px;
     }
     .index-logo img
     {
