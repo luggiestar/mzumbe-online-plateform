@@ -371,7 +371,7 @@ button{
 #toggle:checked ~ .contents .u-footer
 {
     width:calc(100% - 50px);
-    margin-left:-12px;
+    margin-left:-14px;
 }
 
 
