@@ -8,11 +8,11 @@ a {
 }
 .navbar
 {
-    min-height:75px !important;
+    height:70px !important;
 }
 .index-logo
 {
-    padding:5px;
+    background:white;
     border-radius:3px;
     animation-name: showLogo;
     animation-duration: 3s;
@@ -20,6 +20,7 @@ a {
 
 .index-logo img
 {
+    margin:5px;
     width:150px;
 }
 
@@ -248,6 +249,6 @@ img {
 
 @keyframes showLogo {
   0%   {opacity: 0;}
-  50% {opacity: 0;transform:scale(0.9);background:white;}
+  50% {opacity: 0;transform:scale(0.9);}
   100% {opacity: 1;transform:scale(1);}
 }
