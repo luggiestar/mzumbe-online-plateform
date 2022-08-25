@@ -172,6 +172,10 @@ img {
 
 
 @media (max-width:551px) {
+    .navbar
+    {
+        height:60px !important;
+    }
     .index-logo img
     {
         width:100px;
