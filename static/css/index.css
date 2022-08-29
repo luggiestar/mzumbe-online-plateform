@@ -176,6 +176,10 @@ img {
     {
         margin-top:5px;
     }
+    .sub-title {
+        font-size:20px;
+    }
+    }
     .category-li
     {
         min-height: 110px !important;
