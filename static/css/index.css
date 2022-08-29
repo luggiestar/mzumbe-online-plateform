@@ -176,6 +176,11 @@ img {
     {
         margin-top:5px;
     }
+    .category-li
+    {
+        min-height: 110px !important;
+        max-height: 120px !important;
+    }
     .navbar
     {
         height:60px !important;
