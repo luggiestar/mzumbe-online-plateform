@@ -16,8 +16,8 @@
     <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-    <link rel="apple-touch-icon" href="{% static ''%}">
-    <link rel="icon" href="{% static ''%}">
+    <link rel="apple-touch-icon" href='{% static "img/logo-2.png" %}'>
+    <link rel="icon" href='{% static "img/logo-2.png" %}'>
 
     <!-- Custom styles for this template-->
     <link href="{% static 'css/mu.css' %}" rel="stylesheet">
@@ -34,15 +34,12 @@
             <div class="col-xl-5 col-md-5 wow fadeIn p-10">
                 <div class="">
                     <div class="border shadow" style="margin-top: -5rem;">
-                        <div class="pt-2">
-                            <center> 
-                                <h1><i class="fas fa-book-reader fa-2x text-blue"></i> </h1>
-                            </center>
+                        <div class="pt-2 d-flex justify-content-center">
+                            <div class="logo-size">
+                                <img src='{% static "img/logo-2.png" %}' class="animateLogo" alt="logo">
+                            </div>
                         </div>
-                        <center>
-                            <h2 class="text-blue text-shadow"><b>UJUZISET</b></h2>
-                            <h6 class=""><b>Login here</b></h6>
-                        </center>
+                        <h6 class="text-center"><b>Singin with your credentials</b></h6>
                         <hr style="background:white;">
                         <div class="card-body">
                             {% if messages %}

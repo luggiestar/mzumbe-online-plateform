@@ -11,13 +11,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Login</title>
+    <title>Registration</title>
    <!-- Custom fonts for this template-->
     <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-    <link rel="apple-touch-icon" href="{% static ''%}">
-    <link rel="icon" href="{% static ''%}">
+    <link rel="apple-touch-icon" href='{% static "img/logo-2.png" %}'>
+    <link rel="icon" href='{% static "img/logo-2.png" %}'>
 
     <!-- Custom styles for this template-->
     <link href="{% static 'css/mu.css' %}" rel="stylesheet">
@@ -34,15 +34,12 @@
             <div class="col-xl-5 col-md-5 wow fadeIn p-10">
                 <div class="">
                     <div class="border shadow" style="margin-top: -5rem;">
-                        <div class="pt-2">
-                            <center>
-                                <h4><i class="fas fa-book-reader fa-2x text-blue"></i> </h4>
-                            </center>
+                        <div class="pt-2 d-flex justify-content-center">
+                            <div class="logo-size">
+                                <img src='{% static "img/logo-2.png" %}' class="animateLogo" alt="logo">
+                            </div>
                         </div>
-                        <center>
-                            <h5 class="text-blue text-shadow"><b>UJUZISET</b></h5>
-                            <small class=""><b>REGISTRER HERE</b></small>
-                        </center>
+                        <h6 class="text-center"><b>Are you new to ujuziset register here</b></h6>
                         <hr style="background:white;">
                         <div class="card-body">
                             <form  method="post" >
@@ -54,7 +51,7 @@
                                 <h6 class="text-center">
                                 </h6>
                             </form>
-                            <h6 class="text-right"><a href="{% url 'UJUZI:login' %}" style="color:#e74a3b"> Already have an account?! <b>Login</b></a></h6>
+                            <h6 class="text-left"><a href="{% url 'UJUZI:login' %}" style="color:#e74a3b"> Already have an account?! <b>Login</b></a></h6>
 
                         <h6 class="text-center pb-3" style=""><a href="#" class="yellow text-shadow"><b>Powered by VRI-LOUS &copy; <span>{{year}}</span></b></a></h6>
                     </div>
@@ -81,6 +78,25 @@
 
     <!-- Custom scripts for all pages-->
     <script src="{% static 'js/mu.js' %}"></script>
+
+    <script>
+        $("#id_phone").hide()
+        $("#id_password").hide()
+        $("#id_password2").hide()
+    //    $("label").hide()
+        $(document).ready(function() {
+            $("#id_email").focus(function() {
+                $("#id_phone").show(300)
+                $("#id_phone").focus(function() {
+                    $("#id_password").show(300)
+                    $("#id_password").focus(function() {
+                        $("#id_password2").show(300)
+                    })
+                })
+            })
+        }) 
+           
+    </script>
 
     <script>
         new WOW().init();
