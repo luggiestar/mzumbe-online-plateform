@@ -757,6 +757,10 @@ table
 
 @media  screen and (max-width:600px)
 {
+    .cat-name
+    {
+        font-size:18px;
+    }
     .u-course
     {
         max-width:290px;
