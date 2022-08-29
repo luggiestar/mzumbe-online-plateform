@@ -583,6 +583,7 @@ table
         flex-direction:column;
         justify-content:center;
         align-items:center;
+        border-radius:5px;
 
     }
     .sponsor-logo
@@ -593,7 +594,7 @@ table
     }
     .sponsor-logo img
     {
-        height:45px;
+        height:50px;
     }
     .web-link span
     {
