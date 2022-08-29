@@ -582,10 +582,13 @@ table
     }
     .sponsor-logo
     {
-
+        display:flex;
+        justify-content:center;
+        align-items:center;
     }
     .sponsor-logo img
     {
+        height:25px;
     }
     .web-link span
     {
