@@ -1289,7 +1289,7 @@ button{
  }
  .u-course-title
  {
-    font-size:0.85rem;
+    font-size:1.0rem;
     font-weight:600;
     color:#444;
     display: -webkit-box;
@@ -1307,8 +1307,8 @@ button{
  }
  .u-course-desc-txt p
  {
-    font-size:0.9rem;
-    line-height:1rem;
+    font-size:1.0rem;
+    line-height:1.1rem;
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
