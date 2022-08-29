@@ -765,6 +765,8 @@ table
     {
         width:100% !important;
         height:160px;
+        border-radius:3px;
+        overflow:hidden;
     }
     .u-course
     {
