@@ -576,9 +576,12 @@ table
     .sponsor
     {
         background-color: #e0e0e0;
-        width: 250px;
-        height: 60px;
+        width: 260px;
+        height: 80px;
         padding:5px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
     }
     .sponsor-logo
     {
