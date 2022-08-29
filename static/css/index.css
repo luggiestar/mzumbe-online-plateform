@@ -3,9 +3,27 @@ a {
 }
 
 .elp-bg{
-    background: #0ca0fc;
+    background: #1B3B96;
     color: #fff !important;
 }
+.navbar
+{
+    height:70px !important;
+}
+.index-logo
+{
+    background:white;
+    border-radius:3px;
+    animation-name: showLogo;
+    animation-duration: 3s;
+}
+
+.index-logo img
+{
+    margin:5px;
+    width:150px;
+}
+
 
 .main-header {
 	background: #0ca0fc;
@@ -72,8 +90,8 @@ a {
 	overflow: hidden;
 	padding-top: 50px;
 	margin-top:-4rem;
-	background: linear-gradient(90deg, #0ca0fc94 0%, #0ca0fc94 80%),url(" /static/img/header.jpg");  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(90deg, #0ca0fc94 0%, #0ca0fc94 80%), url(" /static/img/header.jpg"); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: linear-gradient(90deg, rgba(27,59,150,0.8) 20%, rgba(27,59,150,0.8) 80%),url(" /static/img/header.jpg");  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(90deg, rgba(27,59,150,0.8) 20%, rgba(27,59,150,0.8) 80%), url(" /static/img/header.jpg"); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -138,8 +156,44 @@ img {
 	margin: auto;
 	width: 7rem;
 }
+@media  screen and (max-width:768px)
+{
+    .header-txt
+    {
+        margin-top:-12px;
+        font-size:1.1rem;
+        letter-spacing:.5px;
+    }
+    .index-logo img
+    {
+        width:110px;
+    }
+}
+
 
 @media (max-width:551px) {
+    .header-txt
+    {
+        margin-top:5px;
+    }
+    .sub-title {
+        font-size:20px;
+    }
+    }
+    .category-li
+    {
+        min-height: 100px !important;
+        max-height: 110px !important;
+    }
+    .navbar
+    {
+        height:60px !important;
+    }
+    .index-logo img
+    {
+        width:100px;
+    }
+
 	.display-on-lg {
 		display: none;
 	}
@@ -160,8 +214,8 @@ img {
 		height:20rem;
 		overflow: hidden;
 		padding-top: 130px;
-		background: linear-gradient(90deg, #0ca0fc94 0%, #0ca0fc94 80%),url(" /static/img/header.jpg");  /* Chrome 10-25, Safari 5.1-6 */
-	  	background: linear-gradient(90deg, #0ca0fc94 0%, #0ca0fc94 80%), url(" /static/img/header.jpg"); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+		background: linear-gradient(90deg,  rgba(27,59,150,0.8) 20%,  rgba(27,59,150,0.8) 80%),url(" /static/img/header.jpg");  /* Chrome 10-25, Safari 5.1-6 */
+	  	background: linear-gradient(90deg, rgba(27,59,150,0.8) 20%, rgba(27,59,150,0.8) 80%), url(" /static/img/header.jpg"); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 		background-position: center;
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -186,9 +240,6 @@ img {
 
 
 @media (max-width:423px) {
-	.navbar-brand {
-		display: none;
-	}
 
 	.intro {
 		font-size: 17px;
@@ -211,4 +262,10 @@ img {
 		background-size: cover;
 		background-repeat: no-repeat;
 	}
+}
+
+@keyframes showLogo {
+  0%   {opacity: 0;}
+  50% {opacity: 0;transform:scale(0.9);}
+  100% {opacity: 1;transform:scale(1);}
 }

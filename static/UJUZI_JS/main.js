@@ -55,35 +55,60 @@ user_input.on('keyup', function () {
 
 if(window.location.href.indexOf("home") > -1)
 {
-    $('.link-dash').css('color','rgb(255,178,0)')
+    $('.link-dash').css('color','var(--u-gold)')
 }
 
 if(window.location.href.indexOf("user-profile") > -1)
 {
-    $('.link-prof').css('color','rgb(255,178,0)')
+    $('.link-prof').css('color','var(--u-gold)')
 }
 
 if(window.location.href.indexOf("teaching-request") > -1)
 {
-    $('.link-req').css('color','rgb(255,178,0)')
+    $('.link-req').css('color','var(--u-gold)')
 }
 
 if(window.location.href.indexOf("change-password") > -1)
 {
-    $('.link-passwd').css('color','rgb(255,178,0)')
+    $('.link-passwd').css('color','var(--u-gold)')
 }
 
 if(window.location.href.indexOf("enrolled-course") > -1)
 {
     $('.u-enrol-courses').css('display','flex');
-    $('.link-enrolled').css('color','rgb(255,178,0)')
+    $('.link-enrolled').css('color','var(--u-gold)')
     var w= window.innerWidth;
 }
 
 if(window.location.href.indexOf("logout") > -1)
 {
-    $('.link-lg-out').css('color','rgb(255,178,0)')
+    $('.link-lg-out').css('color','var(--u-gold)')
 }
+
+
+
+if(window.location.href.indexOf("teaching-verification") > -1)
+{
+    $('.link-ver').css('color','var(--u-gold)')
+}
+if(window.location.href.indexOf("course-management") > -1)
+{
+    $('.link-c-manage').css('color','var(--u-gold)')
+}
+
+if(window.location.href.indexOf("instructor-management") > -1)
+{
+    $('.link-i-manage').css('color','var(--u-gold)')
+}
+if(window.location.href.indexOf("my-course") > -1)
+{
+    $('.link-m-course').css('color','var(--u-gold)')
+}
+
+
+
+
+
 
 $('.m-c-txt').each(function(){
     $(this).click(()=>{

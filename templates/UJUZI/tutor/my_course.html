@@ -43,33 +43,25 @@
 {% if total > 0 %}
 <div class="cards my-courses">
     {% for x in courses %}
-        <a href="{% url 'UJUZI:course_module_contents' x.id %}" class="card m-course" style="text-decoration:none;">
+        <a href="{% url 'UJUZI:course_module_contents' x.course.id %}" class="card m-course" style="text-decoration:none;">
             <div class="m-course-cover">
-                <img src="{{x.image.url}}" alt="img"/>
+                <img src="{{x.course.image.url}}" alt="img"/>
             </div>
             <div class="m-course-title">
-                <p>{{x.name}}</p>
+                <p>{{x.course.name}}</p>
             </div>
             <div class="m-st-views">
                 <div class="m-st">
                     <i class="fa fa-users"></i>
                     <span>
+                        {{x.enrollments}} enrollment
+</span>
 
- {% for y in enrollment %}
-                        {% if x.id  ==  y.course.id %}
-
-                        {{y.total}} enrollments</span>
-                     {% endif %}
-                     {% endfor %}
                 </div>
                 <div class="m-views">
                     <i class="fa fa-eye"></i>
-                    <span> {% for z in views %}
-                        {% if x.id  ==  z.content.course.id %}
-
-                        {{z.total_views}} views</span>
-                     {% endif %}
-                     {% endfor %}</span>
+                    <span>  {{x.views}} views</span>
+                    </span>
                 </div>
             </div>
         </a>

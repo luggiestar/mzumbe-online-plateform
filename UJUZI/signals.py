@@ -2,13 +2,13 @@ import json
 
 import base64
 import decimal
-import datetime
+from datetime import datetime
 
 from django.db.models import Sum
 from django.db.models.signals import post_save
 from django.contrib.auth.models import User
 from django.dispatch import receiver
-from .models import *
+from .models import Course, CourseSummary, ContentViewers, TotalContentViewers, Enrollment
 
 
 @receiver(post_save, sender=User, dispatch_uid='add_first_name_to user')
@@ -31,9 +31,10 @@ def create_course_summary(sender, instance, created, **kwargs):
 @receiver(post_save, sender=ContentViewers, dispatch_uid='count_views')
 def count_viewers(sender, instance, created, **kwargs):
     if created:
+        today = datetime.today().date()
         get_current_total_views = TotalContentViewers.objects.filter(content=instance.content).first()
 
-        count_views = ContentViewers.objects.filter(date=datetime.date.today).count()
+        count_views = ContentViewers.objects.filter(date=today).count()
         get_latest_total = get_current_total_views.total + count_views
 
         get_current_total_views.total = get_latest_total
@@ -42,16 +43,23 @@ def count_viewers(sender, instance, created, **kwargs):
 
 @receiver(post_save, sender=TotalContentViewers, dispatch_uid='course_summary')
 def store_total_views(sender, instance, created, **kwargs):
-    if created:
+    if instance:
         get_current_total_views = TotalContentViewers.objects.filter(content__course=instance.content.course).annotate(
             total_views=Sum('total',
                             distinct=True))
         for i in get_current_total_views:
-
-            save_views = CourseSummary.objects.filter(course=instance.content.course).fisrt()
+            save_views = CourseSummary.objects.filter(course=instance.content.course).first()
             save_views.views = i.total_views
             save_views.save()
 
+
+@receiver(post_save, sender=Enrollment, dispatch_uid='count_enrollment')
+def count_enrollment(sender, instance, created, **kwargs):
+    if instance:
+        get_enrollment = Enrollment.objects.filter(course=instance.course).count()
+        save_views = CourseSummary.objects.filter(course=instance.course).first()
+        save_views.enrollments = get_enrollment
+        save_views.save()
 #
 #
 # @receiver(post_save, sender=Module, dispatch_uid='create_default_views')
