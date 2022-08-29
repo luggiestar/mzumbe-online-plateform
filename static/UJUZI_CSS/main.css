@@ -67,6 +67,10 @@ nav {
     width:28px;
 
 }
+.s-icon i
+{
+    margin-top:3px;
+}
 
 #toggle:checked ~ .side-bar .u-logo .logo-png .short-logo
 {
