@@ -67,19 +67,19 @@ MIDDLEWARE = [
 
 REST_FRAMEWORK = {
     'NON_FIELD_ERRORS_KEY': "errors",
-    # "DEFAULT_AUTHENTICATION_CLASSES": (
-    #     "rest_framework.authentication.SessionAuthentication",
-    #     "rest_framework.authentication.TokenAuthentication"
-    # )
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework.authentication.SessionAuthentication",
+        "rest_framework.authentication.TokenAuthentication"
+    )
 }
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:8080",
-#     "http://127.0.0.1:8080",
-#     "http://ujuziset.herokuapp.com"
-# ]
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8080",
+    "http://127.0.0.1:8080",
+    "http://ujuziset.herokuapp.com"
+]
 
 CORS_ALLOW_METHODS = [
     "DELETE",
