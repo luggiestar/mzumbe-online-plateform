@@ -2441,6 +2441,10 @@ border:1px solid rgba(218, 217, 217, 0.9);
     }
 }
 @media  screen and (max-width:600px){
+    .u-content-box
+    {
+        padding: 1rem 0.2rem 1rem 0.0rem !important;
+    }
     .search-box{
         width:90%;
         left:5%;

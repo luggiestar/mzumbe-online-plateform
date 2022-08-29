@@ -844,10 +844,6 @@ table
         transition: 0.4s ease-in-out;
     }
 
-    .u-content-box
-    {
-        padding: 1rem 0.2rem 1rem 0.0rem !important;
-    }
 
 }
 
