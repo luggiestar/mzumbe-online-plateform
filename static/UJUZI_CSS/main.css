@@ -576,8 +576,8 @@ table
     .sponsor
     {
         background-color: #e0e0e0;
-        width: 260px;
-        height: 80px;
+        width: 300px;
+        height: 100px;
         padding:5px;
         display:flex;
         flex-direction:column;
@@ -593,7 +593,7 @@ table
     }
     .sponsor-logo img
     {
-        height:35px;
+        height:45px;
     }
     .web-link span
     {
