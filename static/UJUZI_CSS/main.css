@@ -567,6 +567,32 @@ table
 }
 
 
+
+    .sponsors
+    {
+        display:flex;
+        flex-wrap: wrap;
+    }
+    .sponsor
+    {
+        background-color: #e0e0e0;
+        width: 200px;
+        height: 150px;
+        padding:5px;
+    }
+    .sponsor-logo
+    {
+
+    }
+    .sponsor-logo img
+    {
+    }
+    .web-link span
+    {
+        color:#0000CD;
+    }
+
+
 @media  screen and (max-width:1150px)
 {
 
@@ -593,6 +619,9 @@ table
         width:160px;
     }
 }
+
+
+
 
 @media  screen and (max-width:900px)
 {
@@ -648,6 +677,8 @@ table
         transition: 0.4s ease-in-out;
     }
 }
+
+
 
 @media  screen and (max-width:768px)
 {
