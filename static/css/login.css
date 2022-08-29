@@ -1,5 +1,8 @@
+:root {
+    --blue:#1B3B96;
+}
 .mu-bg{
-    background: #0ca0fc;
+    background: var(--blue);
     color: #fff !important;
 }
 
@@ -23,7 +26,7 @@
 }
 
 .text-blue {
-    color: #0ca0fc;   
+    color: var(--blue);;   
 }
 
 .yellow {
@@ -31,7 +34,7 @@
 }
 
 .border {
-    border: 10px solid #0ca0fc;
+    border: 10px solid var(--blue);;
 }
 
 /* 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15) */
@@ -40,17 +43,17 @@
 }
 
 .form-control::placeholder {
-    color: #0ca0fc94;
+    color: var(--blue);94;
     font-size: 20px;
     opacity: 1; /* Firefox */
 }
 
 .form-control :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: #0ca0fc;
+    color: var(--blue);;
 }
 
 .form-control::-ms-input-placeholder { /* Microsoft Edge */
-    color: #0ca0fc;
+    color: var(--blue);;
 }
 
 .card{
@@ -61,7 +64,7 @@
     background: none;
 }
 .rounded {
-    background: #0ca0fc;
+    background: var(--blue);;
     padding: 7px;
     border-radius:50%;
 }

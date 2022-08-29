@@ -34,6 +34,7 @@ class CourseEnrollApi(APIView):
                 "msg": "Enrolled successfully"
             }
             return Response(response, status=status.HTTP_200_OK)
+
         else:
             response = {
                 "msg": "Something went wrong try again"

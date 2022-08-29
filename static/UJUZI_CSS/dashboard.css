@@ -41,6 +41,10 @@ body{
 {
     color:var(--u-course-color);
 }
+
+.bg-light-blue {
+    background-color: var(--u-light-blue) !important;
+}
 header{
     position: fixed;
     top:0;

@@ -4,252 +4,273 @@
 
 
 <html lang="en">
-     <head>
-         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-         <meta name="viewport" content="width=device-width, initial-scale=1">
-         <title>UJUZISET</title>
-         <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-         <link rel="icon" type="image/png" href='{% static "img/logo-2.png" %}'>
 
-         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
-         <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css">
-         <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.2.4/css/fixedHeader.bootstrap.min.css">
-         <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.bootstrap.min.css">
-<!--         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">-->
-         <link rel="stylesheet" href="{% static 'UJUZI_CSS/dashboard.css' %}">
-         <link rel="stylesheet" href="{% static 'UJUZI_CSS/dashboardSummary.css' %}">
-         <link rel="stylesheet" href="{% static 'UJUZI_CSS/index.css' %}">
-         <link rel="stylesheet" href="{% static 'UJUZI_CSS/skill_app.css' %}">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UJUZISET</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" type="image/png" href='{% static "img/logo-2.png" %}'>
 
-         <!-- Fontawesome 6 icons -->
-         <link rel="stylesheet" href="{% static 'UJUZI_CSS/main.css' %}" />
-         <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/all.css' %}" />
-         <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/all.min.css' %}"/>
-         <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/brands.css' %}"/>
-         <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/brands.min.css' %}"/>
-         <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/regular.css' %}" />
-         <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/regular.min.css' %}"/>
-         <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/solid.css' %}" />
-         <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/solid.min.css' %}" />
-         <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/fontawesome.css' %}" />
-         <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/fontawesome.min.css' %}"/>
-         <link rel="stylesheet"  href="{% static 'UJUZI_CSS/fa-css/svg-with-js.css' %}"/>
-         <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/svg-with-js.min.css' %}"/>
-         <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/v4-font-face.css' %}" />
-         <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/v4-font-face.min.css' %}"/>
-         <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/v4-shims.css' %}"/>
-         <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/v4-shims.min.css' %}" />
-         <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/v5-font-face.css' %}" />
-         <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/v5-font-face.min.css' %}" />
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <!-- Fontawesome 6 icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.2.4/css/fixedHeader.bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.bootstrap.min.css">
+    <!--         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="{% static 'UJUZI_CSS/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'UJUZI_CSS/dashboardSummary.css' %}">
+    <link rel="stylesheet" href="{% static 'UJUZI_CSS/index.css' %}">
+    <link rel="stylesheet" href="{% static 'UJUZI_CSS/skill_app.css' %}">
 
-         <link rel="stylesheet" href="{% static 'UJUZI_CSS/splide.min.css' %}">
-<style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
+    <!-- Fontawesome 6 icons -->
+    <link rel="stylesheet" href="{% static 'UJUZI_CSS/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/all.css' %}" />
+    <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/all.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/brands.css' %}" />
+    <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/brands.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/regular.css' %}" />
+    <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/regular.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/solid.css' %}" />
+    <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/solid.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/fontawesome.css' %}" />
+    <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/fontawesome.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/svg-with-js.css' %}" />
+    <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/svg-with-js.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/v4-font-face.css' %}" />
+    <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/v4-font-face.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/v4-shims.css' %}" />
+    <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/v4-shims.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/v5-font-face.css' %}" />
+    <link rel="stylesheet" href="{% static 'UJUZI_CSS/fa-css/v5-font-face.min.css' %}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Fontawesome 6 icons -->
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-</style>
-
-     </head>
-     <body>
-     <input type="checkbox" id="toggle"/>
-     <!--header starts here-->
-     <header>
-         <div class="toggle-div" style="color:yellow;">
-             <label for="toggle" class="toggle-label"><span></span></label>
-         </div>
-         </div>
-         <div class="u-u-name">
-             <div class="u-u-icon">
-                 <i class="fa fa-user-circle-o"></i>
-             </div>
-             {% if request.user.is_authenticated%}
-
-             <p>{{request.user.first_name}} &nbsp;(<span class="l-gold-shadow">{% if request.user.is_instructor %} Tutor {% elif request.user.is_verifier %} Verifier {% else %} Student {% endif %}</span>)</p>
-             {% else %}
-             <span class="l-gold-shadow"></span>
-             <button class="btn btn-sm btn-dark ml-2" data-target="#login" data-toggle="modal">guest Login Here</button>
-             {% endif %}
-         </div>
-     </header>
-
-     <!--header ends here-->
-     <!--sidebar menu starts here-->
-     <div class="side-bar">
-         <div class="u-logo">
-             <div class="logo-png gold-shadow">
-                    <div class="long-logo">
-                        <img src='{% static "img/logo-1.png" %}' class="animateLogo" alt="logo">
-                    </div>
-                    <div class="short-logo">
-                        <img src='{% static "img/logo-2.png" %}' class="animateLogo" alt="logo">
-                    </div>
-             </div>
-         </div>
-         {% if request.user.is_authenticated %}
-         <a href="{% url 'UJUZI:home_view' %}" id="side-bar-dashboard" class="sidebar-link link-dash" >
-             <i class=" fa fa-dashboard icons gold-shadow" ></i>
-             <span>Dashboard</span>
-         </a>
-               {% if request.user.is_superuser %}
-          <a href="{% url 'admin:index' %}" id="admin-dashboard" class="sidebar-link" >
-             <i class=" fa fa-gears icons gold-shadow" ></i>
-             <span>Admin Site</span>
-         </a>
-               {% endif %}
-
-
-         <a id="payment-link-btn" href="{% url 'UJUZI:enrolled_course' %}" class="sidebar-link link-enrolled" >
-             <i class="fa-solid fa-bookmark icons gold-shadow" aria-hidden="true"></i>
-             <span>Enrolled courses</span>
-         </a>
-         {% if request.user.is_instructor %}
-              <a id="courses-link-btn" href="{% url 'UJUZI:my_course' %}" class="sidebar-link link-m-course" >
-             <i class="fa-solid fa-database icons gold-shadow" aria-hidden="true"></i>
-             <span>My courses</span>
-
-           {% endif %}
-
-{% if request.user.is_verifier %}
-          <a id="instructor-link-btn" href="{% url 'UJUZI:instructor_management' %}" class="sidebar-link link-i-manage" >
-             <i class="fa-solid fa-users icons gold-shadow" aria-hidden="true"></i>
-             <span>Tutors Management</span>
-         </a>
-           <a id="course-link-btn" href="{% url 'UJUZI:course_management' %}" class="sidebar-link link-c-manage" >
-             <i class="fa-solid fa-server icons gold-shadow" aria-hidden="true"></i>
-             <span>Course Management</span>
-         </a>
-  <a id="verification-li-btn" href="{% url 'UJUZI:teaching_verification' %}" class="sidebar-link link-ver" >
-             <i class="fa fa fa-inbox icons gold-shadow" aria-hidden="true"></i>
-             <span>Teaching Verification</span>
-         </a>
-{% endif %}
-
-         </a>
-         {% if request.user.id %}
-         <a id="payment-lin-btn" href="{% url 'UJUZI:user_profile'  request.user.id %}" class="sidebar-link link-prof" >
-             <i class="fa fa-user-circle-o icons gold-shadow" aria-hidden="true"></i>
-             <span>Profile</span>
-         </a>
-         {% endif %}
-          {% if not request.user.is_instructor %}
-         <a id="payment-li-btn" href="{% url 'UJUZI:teaching_request' %}" class="sidebar-link link-req" >
-             <i class="fa fa fa-envelope-o icons gold-shadow" aria-hidden="true"></i>
-             <span>Teaching Request</span>
-         </a>
-       {% endif %}
-
-         <a id="payment-l-btn" href="{% url 'UJUZI:change_password' %}" class="sidebar-link link-passwd" >
-             <i class="fa fa-lock icons gold-shadow" aria-hidden="true"></i>
-             <span>Change Password</span>
-         </a>
-         <a id='exit-btn' class="sidebar-link link-lg-out" href="{% url 'UJUZI:logout' %}">
-             <i class=" fa fa-sign-out icons gold-shadow"></i>
-             <span>Logout</span>
-         </a>
-         {% else %}
-         <a href="{% url 'UJUZI:index' %}" id="guest-dashboard" class="sidebar-link" >
-             <i class=" fa fa-home icons gold-shadow" ></i>
-             <span>back</span>
-         </a>
-         {% endif %}
-     </div>
-     <!--sidebar menu ends here-->
-     <div class="contents u-contents">
-         <div class="u-content-box">
-             {% block content %}
-             {% endblock content %}
-         </div>
-         <div class="u-footer" >
-             <div>
-                 powered by <span class="l-gold-shadow">Vlirous</span>
-             </div>
-             <div class="d-year">
-                 <span class="l-gold-shadow">SmartCore</span> & <span class="l-gold-shadow">Mzumbe University</span> &copy; 2022
-             </div>
-         </div>
-     </div>
-     <script type='text/javascript' src="{% static 'UJUZI_JS/jquery.js' %}"></script>
-     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-     <script type='text/javascript' src="{% static 'UJUZI_JS/jquery-cookie/jquery.cookie.js' %}"></script>
-     <script type='text/javascript' src="{% static 'UJUZI_JS/application.js' %}"></script>
-     <script type='text/javascript' src="{% static 'UJUZI_JS/main.js' %}"></script>
-     <script type='text/javascript' src="{% static 'UJUZI_JS/splide.js' %}"></script>
-     <script type='text/javascript' src="{% static 'UJUZI_JS/splide.esm.js' %}"></script>
-     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-     <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
-     <script src="https://cdn.datatables.net/fixedheader/3.2.4/js/dataTables.fixedHeader.min.js"></script>
-     <script src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
-     <script src="https://cdn.datatables.net/responsive/2.3.0/js/responsive.bootstrap.min.js"></script>
-     <script>
-         $(document).ready(function () {
-             let table = $('#datatable').DataTable( {
-                 responsive: true
-             } );
-             new $.fn.dataTable.FixedHeader( table );
-        });
-    </script>
-     <script>
-		$(document).ready(function (){
-            login()
-		})
-        function login() {
-            $("#login-form").submit(function (e) {
-        		e.preventDefault()
-        		let thisForm = $(this);
-				let username = $('input[name=username]').val()
-				let password = $('input[name=password]').val()
-				console.log("success "+username)
-
-				$.ajax({
-					url:"{%  url 'UJUZI:guest_login' %}",
-					method: 'POST',
-					dataType:'json',
-					data: {
-						username:username,
-						password:password,
-						csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
-					},
-					success: function (data) {
-						location.reload();
-					},
-					error: function (data) {
-						location.reload();
-					}
-				})
-
-			})
+    <link rel="stylesheet" href="{% static 'UJUZI_CSS/splide.min.css' %}">
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
         }
 
-	</script>
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+
+</head>
+
+<body>
+    <input type="checkbox" id="toggle" />
+    <!--header starts here-->
+    <header>
+        <div class="toggle-div" style="color:yellow;">
+            <label for="toggle" class="toggle-label"><span></span></label>
+        </div>
+        </div>
+        <div class="u-u-name">
+            <div class="u-u-icon">
+                <i class="fa fa-user-circle-o"></i>
+            </div>
+            {% if request.user.is_authenticated%}
+
+            <p>{{request.user.first_name}} &nbsp;(<span class="l-gold-shadow">{% if request.user.is_instructor %} Tutor
+                    {% elif request.user.is_verifier %} Verifier {% else %} Student {% endif %}</span>)</p>
+            {% else %}
+            <span class="l-gold-shadow"></span>
+            <button class="btn btn-sm btn-dark ml-2" data-target="#login" data-toggle="modal">guest Login Here</button>
+            {% endif %}
+        </div>
+    </header>
+
+    <!--header ends here-->
+    <!--sidebar menu starts here-->
+    <div class="side-bar">
+        <div class="u-logo">
+            <div class="logo-png gold-shadow">
+                <div class="long-logo">
+                    <img src='{% static "img/logo-1.png" %}' class="animateLogo" alt="logo">
+                </div>
+                <div class="short-logo">
+                    <img src='{% static "img/logo-2.png" %}' class="animateLogo" alt="logo">
+                </div>
+            </div>
+        </div>
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'UJUZI:home_view' %}" id="side-bar-dashboard" class="sidebar-link link-dash">
+            <i class=" fa fa-dashboard icons gold-shadow"></i>
+            <span>Dashboard</span>
+        </a>
+        {% if request.user.is_superuser %}
+        <a href="{% url 'admin:index' %}" id="admin-dashboard" class="sidebar-link">
+            <i class=" fa fa-gears icons gold-shadow"></i>
+            <span>Admin Site</span>
+        </a>
+        {% endif %}
+
+
+        <a id="payment-link-btn" href="{% url 'UJUZI:enrolled_course' %}" class="sidebar-link link-enrolled">
+            <i class="fa-solid fa-bookmark icons gold-shadow" aria-hidden="true"></i>
+            <span>Enrolled courses</span>
+        </a>
+        {% if request.user.is_instructor %}
+        <a id="courses-link-btn" href="{% url 'UJUZI:my_course' %}" class="sidebar-link link-m-course">
+            <i class="fa-solid fa-database icons gold-shadow" aria-hidden="true"></i>
+            <span>My courses</span>
+
+            {% endif %}
+
+            {% if request.user.is_verifier %}
+            <a id="instructor-link-btn" href="{% url 'UJUZI:instructor_management' %}"
+                class="sidebar-link link-i-manage">
+                <i class="fa-solid fa-users icons gold-shadow" aria-hidden="true"></i>
+                <span>Tutors Management</span>
+            </a>
+            <a id="course-link-btn" href="{% url 'UJUZI:course_management' %}" class="sidebar-link link-c-manage">
+                <i class="fa-solid fa-server icons gold-shadow" aria-hidden="true"></i>
+                <span>Course Management</span>
+            </a>
+            <a id="verification-li-btn" href="{% url 'UJUZI:teaching_verification' %}" class="sidebar-link link-ver">
+                <i class="fa fa fa-inbox icons gold-shadow" aria-hidden="true"></i>
+                <span>Teaching Verification</span>
+            </a>
+            {% endif %}
+
+        </a>
+        {% if request.user.id %}
+        <a id="payment-lin-btn" href="{% url 'UJUZI:user_profile'  request.user.id %}" class="sidebar-link link-prof">
+            <i class="fa fa-user-circle-o icons gold-shadow" aria-hidden="true"></i>
+            <span>Profile</span>
+        </a>
+        {% endif %}
+        {% if not request.user.is_instructor %}
+        <a id="payment-li-btn" href="{% url 'UJUZI:teaching_request' %}" class="sidebar-link link-req">
+            <i class="fa fa fa-envelope-o icons gold-shadow" aria-hidden="true"></i>
+            <span>Teaching Request</span>
+        </a>
+        {% endif %}
+
+        <a id="payment-l-btn" href="{% url 'UJUZI:change_password' %}" class="sidebar-link link-passwd">
+            <i class="fa fa-lock icons gold-shadow" aria-hidden="true"></i>
+            <span>Change Password</span>
+        </a>
+        <a id='exit-btn' class="sidebar-link link-lg-out" href="{% url 'UJUZI:logout' %}">
+            <i class=" fa fa-sign-out icons gold-shadow"></i>
+            <span>Logout</span>
+        </a>
+        {% else %}
+        <a href="{% url 'UJUZI:index' %}" id="guest-dashboard" class="sidebar-link">
+            <i class=" fa fa-home icons gold-shadow"></i>
+            <span>back</span>
+        </a>
+        {% endif %}
+    </div>
+    <!--sidebar menu ends here-->
+    <div class="contents u-contents">
+        <div class="u-content-box">
+            {% block content %}
+            {% endblock content %}
+        </div>
+        <div class="u-footer">
+            <div>
+                powered by <span class="l-gold-shadow">Vlirous</span>
+            </div>
+            <div class="d-year">
+                <span type="button" data-target="#sponsor" data-toggle="modal">sponsor link</span>
+                <span class="l-gold-shadow">SmartCore</span> & <span class="l-gold-shadow">Mzumbe University</span>
+                &copy; 2022
+            </div>
+        </div>
+        <!-- modal for sponsor -->
+        <div class="modal fade" id="sponsor">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-light-blue text-light">
+                        Sponsor
+                    </div>
+                    <div class="modal-body">
+                        <h3>Sponsores list here</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type='text/javascript' src="{% static 'UJUZI_JS/jquery.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type='text/javascript' src="{% static 'UJUZI_JS/jquery-cookie/jquery.cookie.js' %}"></script>
+    <script type='text/javascript' src="{% static 'UJUZI_JS/application.js' %}"></script>
+    <script type='text/javascript' src="{% static 'UJUZI_JS/main.js' %}"></script>
+    <script type='text/javascript' src="{% static 'UJUZI_JS/splide.js' %}"></script>
+    <script type='text/javascript' src="{% static 'UJUZI_JS/splide.esm.js' %}"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/fixedheader/3.2.4/js/dataTables.fixedHeader.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.3.0/js/responsive.bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let table = $('#datatable').DataTable({
+                responsive: true
+            });
+            new $.fn.dataTable.FixedHeader(table);
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            login()
+        })
+        function login() {
+            $("#login-form").submit(function (e) {
+                e.preventDefault()
+                let thisForm = $(this);
+                let username = $('input[name=username]').val()
+                let password = $('input[name=password]').val()
+                console.log("success " + username)
+
+                $.ajax({
+                    url: "{%  url 'UJUZI:guest_login' %}",
+                    method: 'POST',
+                    dataType: 'json',
+                    data: {
+                        username: username,
+                        password: password,
+                        csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
+                    },
+                    success: function (data) {
+                        location.reload();
+                    },
+                    error: function (data) {
+                        location.reload();
+                    }
+                })
+
+            })
+        }
+
+    </script>
 
     <script>
-		let splide = new Splide('.splide', {
-			type: 'loop',
-			drag   : 'free',
-			focus  : 'center',
-			height: '10rem',
-			paddingBottom: '12rem'
-		});
+        let splide = new Splide('.splide', {
+            type: 'loop',
+            drag: 'free',
+            focus: 'center',
+            height: '10rem',
+            paddingBottom: '12rem'
+        });
 
-		splide.mount();
-	</script>
+        splide.mount();
+    </script>
 
-     </body>
+</body>
+
 </html>
 <!--end of base-->

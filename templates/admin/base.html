@@ -39,23 +39,21 @@
 
     <link rel="stylesheet" href="{% static 'admin/dist/css/django.css' %}">
     {% if adminlte_site_logo.valid %}
-    <link rel="apple-touch-icon" href="{{ adminlte_site_logo.site_logo }}">
-    <link rel="icon" href="{{ adminlte_site_logo.site_logo }}">
+    <link rel="icon" type="image/png" href='{% static "img/logo-2.png" %}'>
     {% else %}
-    <link rel="apple-touch-icon" href="{% static 'img/user.png' %}">
-    <link rel="icon" href="{% static 'img/user.png' %}">
+    <link rel="icon" type="image/png" href='{% static "img/logo-2.png" %}'>
     {% endif %}
 
     <style type="text/css">
     	.mu-bg{
-            background:#0ca0fc;
-	        background: linear-gradient(90deg, #0ca0fc80 0%, #0ca0fc80 100%);
+            background:#1B3B96;
+	        background: linear-gradient(90deg, #1B3B9680 0%, #1B3B9680 100%);
 	        color: white;
         }
         .skin-blue .sidebar-menu>li:hover>a, .skin-blue .sidebar-menu>li.active>a {
             color: red;
             background: #16021a;
-            border-left-color: #3c8dbc;
+            border-left-color: #1B3B96;
         }
 
         .skin-blue .sidebar-menu>li>.treeview-menu {
@@ -113,7 +111,7 @@
         .skin-blue .sidebar-menu>li:hover>a, .skin-blue .sidebar-menu>li.active>a {
     	color: white;
    	 background: #16021a;
-      	border-left-color: #3c8dbc;
+      	border-left-color: #1B3B96;
 	}
 	.skin-blue .sidebar a {
     color: #ffffff;
@@ -126,7 +124,7 @@
 
 .skin-blue .sidebar-menu>li:hover>a, .skin-blue .sidebar-menu>li.active>a {
     color: white;
-    background: #0ca0fc;
+    background: #1B3B96;
     border-left-color: #dbdbdb;
 }
 
@@ -142,6 +140,37 @@
     text-shadow: 2px 2px 4px #000000;
     font-size: 23px;
 }
+
+.i {
+    color: #D4AF37;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.i-blue {
+    color: #1B3B96;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.bg-blue-new {
+    background-color: #1B3B96;
+}
+
+.text-white {
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.url-list-bg {
+    background-color: #D4AF37;
+}
+img {
+    max-width: 100%;
+}
+.logo-round{
+   margin-top: 0.3rem;
+    background-color: whitesmoke;
+ 
+}
 </style>
  {{form.media.css}}
 </head>
@@ -151,21 +180,23 @@
     <header class="main-header" >
         <!-- Logo -->
         <!-- #ecf0f5 -->
-        <a href="#" class="logo" style="background:#0e876e">
+        <a href="#" class="logo" style="background:#1B3B96">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini" style="background: #0e876e;">
+            <span class="logo-mini" style="background:white;">
                 <!-- <img src="{% static 'img/user.png' %}" class="user-image" alt="User Image" style="width:45px;height:45px;padding:5px;"> -->
-                <b class="intro-3"> Maarifa Jukwaa </b>
+                <b class="intro-3"><img src='{% static "img/logo-1.png" %}' width="12%"> </b>
             </span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg" style="background: #0e876e">
-                <b class="intro-3"> Maarifa Jukwaa </b>
+            <span class="logo-lg">
+                <div class="logo-round">
+                    <b class="intro-3"><img src='{% static "img/logo-1.png" %}'> </b>
+                </div>
             </span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
-        <nav class="navbar navbar-static-top" style="background-color:#fff; color:#05443b">
+        <nav class="navbar navbar-static-top" style="background-color:#fff; color:#1B3B96">
             <!-- Sidebar toggle button-->
-            <a href="#" class="sidebar-toggle" style="background-color:#fff; color:#37886e" data-toggle="offcanvas" role="button">
+            <a href="#" class="sidebar-toggle" style="background-color:#fff; color:#1B3B96" data-toggle="offcanvas" role="button">
                 <span class="sr-only">Toggle navigation</span>
             </a>
 
@@ -189,7 +220,7 @@
                     <!-- User Account: style can be found in dropdown.less -->
                     <li class="dropdown user user-menu" >
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                           <i class="fa fa-power-off fa-lg " style="color:#37886e"></i>
+                           <i class="fa fa-power-off fa-lg " style="color:#1B3B96"></i>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
@@ -197,7 +228,7 @@
                             {% if adminlte_show_avatar.valid and adminlte_show_avatar.show_avatar == 'on' %}
 
                             {% else %}
-                            <li class="user-header" style="height: auto; background-color:#37886e;padding:1rem">
+                            <li class="user-header" style="height: auto; background-color:#1B3B96;padding:1rem">
                                  <!-- <img src="{% static 'img/invest.png' %}"> -->
                                 <p>
                                     {% if request.user.is_superuser %}
@@ -212,12 +243,14 @@
                                 </p>
                             </li>
                             {% endif %}
-                            <div style="padding-top:2rem;padding-bottom:2rem;">
-                                <div class="pull-left">
-                                    <a  href="#" class="btn btn-default btn-flat">{% trans 'Change password' %}</a>
-                                </div>
-                                <div class="pull-right">
-                                    <a href="{% url 'UJUZI:logout' %}" class="btn btn-default btn-flat">{% trans 'Log out' %}</a>
+                            <div style="padding:1rem;">
+                                <div style="padding-bottom: 1rem;">
+                                    <div class="pull-left" style="padding-bottom: 1rem;">
+                                        <a  href="#" class="btn btn-default btn-flat">{% trans 'Change password' %}</a>
+                                    </div>
+                                    <div class="pull-right" style="padding-bottom: 1rem;">
+                                        <a href="{% url 'UJUZI:logout' %}" class="btn btn-default btn-flat">{% trans 'Log out' %}</a>
+                                    </div>
                                 </div>
                             </div>
                             </li>
@@ -231,7 +264,7 @@
 
    <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar" style="background: #0e876e;">
+        <section class="sidebar" style="background: #1B3B96;">
             <!-- Sidebar user panel -->
             {% get_adminlte_option 'show_avatar' as adminlte_show_avatar  %}
             {% if adminlte_show_avatar.valid and adminlte_show_avatar.show_avatar == 'on' %}
@@ -257,7 +290,7 @@
                 {% if request.user.is_admin %}
                 {% if request.user.is_staff %}
                     <li>
-                        <a style="background-color: #0e876e" id="adminIndex" href="{% url 'admin:index' %}">
+                        <a style="background-color: #1B3B96" id="adminIndex" href="{% url 'admin:index' %}">
                             <i class="fa fa-tachometer" style="color: #fff;"></i> <span>{% trans 'Dashboard' %}</span>
                         </a>
                     </li>
@@ -267,13 +300,13 @@
                         {% if request.user.is_staff %}
                         <!-- <img src="{% static 'img/user.png' %}" class="user-image" alt="User Image" style="width:45px;height:45px;padding:5px;"> -->
 
-                        <a style="background-color: #0e876e" id="adminIndex" href="{% url 'admin:index' %}">
-                            <i class="fa fa-tachometer-alt" style="color:#3be7df;"></i>
+                        <a style="background-color: #1B3B96" id="adminIndex" href="{% url 'admin:index' %}">
+                            <i class="fa fa-tachometer-alt i"></i>
                             <span style="color: #fff;">{% trans 'Dashboard' %}</span>
                         </a>
                         {% else %}
-                        <a style="background-color:#0e876e" id="adminIndex" href="#">
-                            <i class="fa fa-tachometer" style="color:#3be7df"></i>
+                        <a style="background-color:#1B3B96" id="adminIndex" href="#">
+                            <i class="fa fa-tachometer" ></i>
                             <span style="color: #fff;">{% trans 'Dashboard' %}</span>
                         </a>
                         {% endif %}
@@ -335,15 +368,25 @@
                 {% if not app.app_label or app.app_label != adminlte.main_navigation_app %}
                 <li {% if not app.admin_url %}class="treeview "{% endif %}>
                     <a href="{% if app.admin_url %}{{app.admin_url}}{% else %}javascript:void(0){% endif %}">
-                        {% if app.name == 'UJUZI' %}
-                            <i class=" fa {% if app.icon %} {{app.icon}} {% else %}fa-book-open{% endif %}" style="color:#3be7df;"></i>
+                        {% if app.name == 'Ujuzi' %}
+                            <i class=" fa fa-book-open i"></i>
                             <span style="color: #fff; overflow: hidden; display: inline-block; vertical-align:top;">{{ app.name }}</span>
+                        
                         {% elif app.name == 'Authentication and Authorization' %}
-                            <i class="fa {% if app.icon %} {{app.icon}} {% else %}fa-user{% endif %}" style="color:#3be7df"></i>
+                            <i class="fa fa-user i" ></i>
                             <span style="color: #fff; overflow: hidden; display: inline-block; vertical-align:top;">User Management</span>
+                        
                         {% elif app.name == 'AdminSettings' %}
-                            <i class="fa {% if app.icon %} {{app.icon}} {% else %}fa-cogs{% endif %}" style="color:#3be7df;"></i>
-                            <span style="color: #fff; overflow: hidden; display: inline-block; vertical-align:top;">{{ app.name}}</span>
+                        <i class="fa fa-cogs i"></i>
+                        <span style="color: #fff; overflow: hidden; display: inline-block; vertical-align:top;">{{ app.name}}</span>
+                        
+                        {% elif app.name == 'Auth Token' %}
+                        <i class="fa fa-lock i"></i>
+                        <span style="color: #fff; overflow: hidden; display: inline-block; vertical-align:top;">{{ app.name}}</span>
+                        
+                        {% else %}
+                        <i class="fa {% if app.icon %} {{app.icon}} {% else %}fa-cogs{% endif %} icon-shadow i"></i>
+                        <span style="color: #fff; overflow: hidden; display: inline-block; vertical-align:top;">{{ app.name}}</span>
                         {% endif %}
 
                         {% if not app.admin_url %}
@@ -353,13 +396,14 @@
                         {% endif %}
                     </a>
                     {% if not app.admin_url %}
-                    <ul class="treeview-menu" style="color: #fff;" >
+                    <ul class="treeview-menu" >
                         {% for model in app.models %}
                         {% if model.admin_url %}
                         <li>
                             <!-- #ecf0f5 -->
-                            <a href="{{ model.admin_url }}" style="background: #16021a;">
-                                <i class="fa {% if model.icon %} {{model.icon}} {% else %}fa-check-circle{% endif %}" style="color:#3be7df;"></i>{{ model.name }}</a></li>
+                            <a href="{{ model.admin_url }}" class="url-list-bg">
+                                <i class="fa fa-circle icon-shadow i-blue"></i>
+                                <span class="text-white">{{ model.name }}</span></a></li>
                         {% endif %}
                         {% endfor %}
                     </ul>
@@ -369,32 +413,27 @@
                 {% endif %}
                 {% endfor %}
                 {% endif %}
-
                 {% endif %}
-
-            
-
-
-{% endif %}
+                {% endif %}
                 {% if  request.user.is_authenticated %}
- <li {% if not app.admin_url %}class="treeview"{% endif %}>
+                <li {% if not app.admin_url %}class="treeview"{% endif %}>
                     <a href="{% url 'UJUZI:home_view' %}">
-                        <i class="fas {% if app.icon %} {{app.icon}} {% else %}fa-home{% endif %}" style="color:#3be7df;"></i>
+                        <i class="fas {% if app.icon %} {{app.icon}} {% else %}fa-home{% endif %} i"></i>
                         <span style="color: #fff; overflow: hidden; display: inline-block; vertical-align:top;">Home Site</span> </a>
                 </li>
-                 {% endif %}
-{% if request.user.is_authenticated%}
-                  <li {% if not app.admin_url %}class="treeview"{% endif %}>
+                {% endif %}
+                {% if request.user.is_authenticated%}
+                <li {% if not app.admin_url %}class="treeview"{% endif %}>
                     <a href="#">
-                        <i class="fas {% if app.icon %} {{app.icon}} {% else %}fa-book{% endif %}" style="color:#3be7df;"></i>
+                        <i class="fas {% if app.icon %} {{app.icon}} {% else %}fa-book{% endif %} i"></i>
                         <span style="color: #fff; overflow: hidden; display: inline-block; vertical-align:top;">Enrolled Course</span> </a>
                 </li>
                 <li {% if not app.admin_url %}class="treeview"{% endif %}>
                     <a href="{% url 'UJUZI:logout' %}">
-                        <i class="fas {% if app.icon %} {{app.icon}} {% else %}fa-power-off{% endif %}" style="color:#3be7df;"></i>
+                        <i class="fas {% if app.icon %} {{app.icon}} {% else %}fa-power-off{% endif %} i"></i>
                         <span style="color: #fff; overflow: hidden; display: inline-block; vertical-align:top;">Logout</span> </a>
                 </li>
-                  {% endif %}
+                {% endif %}
             </ul>
         </section>
         <!-- /.sidebar -->
@@ -409,7 +448,7 @@
     <!-- /.content-wrapper -->
     {% if not is_popup %}
     <footer class="main-footer">
-        <p class="text-right " style="color: #277341;"> <b>&copy Maarifa Jukwaa</b> <span id='date-time'></span>.</p>
+        <p class="text-right text-blue"> <b>&copy <img src='{% static "img/logo-2.png" %}' width="15px"> juziset</b> <span id='date-time'></span>.</p>
     </footer>
     {% endif %}
 </div>
