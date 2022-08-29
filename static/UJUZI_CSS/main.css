@@ -580,8 +580,10 @@ table
         height: 80px;
         padding:5px;
         display:flex;
+        flex-direction:column;
         justify-content:center;
         align-items:center;
+
     }
     .sponsor-logo
     {
