@@ -160,8 +160,8 @@ img {
 {
     .header-txt
     {
-        margin-top:-15px;
-        font-size:1.2rem;
+        margin-top:-12px;
+        font-size:1.1rem;
         letter-spacing:.5px;
     }
     .index-logo img
@@ -172,6 +172,10 @@ img {
 
 
 @media (max-width:551px) {
+    .header-txt
+    {
+        margin-top:-15px;
+    }
     .navbar
     {
         height:60px !important;
