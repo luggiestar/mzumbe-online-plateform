@@ -5,6 +5,11 @@
     --u-course-color:#333;
     --u-light-blue:#1B3B96;
 }
+
+input::-webkit-input-placeholder {
+    font-size: 20px;
+    line-height: 3;
+}
 nav {
     margin-bottom: 4em;
 }
