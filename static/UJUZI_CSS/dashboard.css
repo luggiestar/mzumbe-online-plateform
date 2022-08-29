@@ -323,7 +323,7 @@ button{
     padding:10px;
 }
 .side-bar a:hover{
-    background: #2045ad;
+    background: #2857db;
     transition: 0.6s ease-in-out;
     box-shadow: -1px 0px .4px 0px rgba(145, 215, 255, 0.446);
 }
