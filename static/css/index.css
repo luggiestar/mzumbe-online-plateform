@@ -182,8 +182,8 @@ img {
     }
     .category-li
     {
-        min-height: 110px !important;
-        max-height: 120px !important;
+        min-height: 100px !important;
+        max-height: 110px !important;
     }
     .navbar
     {
