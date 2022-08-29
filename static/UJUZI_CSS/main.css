@@ -761,6 +761,10 @@ table
     {
         font-size:18px;
     }
+     .course-img
+    {
+        width:100% !important;
+    }
     .u-course
     {
         max-width:290px;
