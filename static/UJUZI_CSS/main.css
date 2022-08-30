@@ -570,7 +570,7 @@ table
 
     .sponsors
     {
-        margin-top:15px;
+        margin-top:25px;
         display:flex;
         flex-wrap: wrap;
         justify-content:center;
@@ -597,6 +597,7 @@ table
         display:flex;
         justify-content:center;
         align-items:center;
+        margin-bottom:5px;
     }
     .sponsor-logo-box img
     {
@@ -604,7 +605,7 @@ table
     }
     .web-link
     {
-        font-size:0.8rem;
+        font-size:0.9rem;
     }
     .web-link span
     {
