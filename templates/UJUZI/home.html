@@ -75,7 +75,7 @@
 <ul class="u-course-list cat-courses-li is-s">
     {% for x in courses %}
     <a href="{% url 'UJUZI:course_detail' x.name %}" style="text-decoration:none;">
-        <li class='u-course course-{{x.category.id}}' id='course-{{x.id}}'>
+    <li class='u-course course-{{x.category.id}}' id='course-{{x.id}}'>
         <div class='course-img'>
             <img src="{{x.image.url}}" alt='img'>
         </div>
@@ -85,6 +85,20 @@
             </div>
             <div class='u-course-desc-txt'>
                 {{x.objective|safe}}
+            </div>
+        </div>
+
+
+        <div class="m-st-views">
+            <div class="m-st">
+                <i class="fa fa-users"></i>
+                <span>
+                    {{x.enrollments}} enrollment
+                </span>
+            </div>
+            <div class="m-views">
+                <i class="fa fa-eye"></i>
+                <span>  {{x.views}} views</span>
             </div>
         </div>
     </li>
