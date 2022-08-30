@@ -4,18 +4,33 @@
 <ul class="u-course-list s-courses">
     {% for x in artists %}
     <a href="{% url 'UJUZI:course_detail' x.name %}" style="text-decoration:none;">
-     <li class='u-course course-{{x.category.id}}' id='l-course-{{x.id}}'>
-        <div class='course-img'>
-            <img src="{{x.image.url}}" alt='no image'>
-        </div>
-        <div class='u-course-desc'>
-            <div class='u-course-title'>
-                {{x.name}}
-            </div>
-            <div class='u-course-desc-txt'>
-{{x.objective|safe}}            </div>
-        </div>
-    </li>
+         <li class='u-course course-{{x.category.id}}' id='l-course-{{x.id}}'>
+                <div class='course-img'>
+                    <img src="{{x.image.url}}" alt='no image'>
+                </div>
+                <div class='u-course-desc'>
+                    <div class='u-course-title'>
+                        {{x.name}}
+                    </div>
+                    <div class='u-course-desc-txt'>
+                        {{x.objective|safe}}
+                    </div>
+                </div>
+
+                <div class="m-st-views m-st-views-course">
+                    <div class="m-st">
+                        <i class="fa fa-users"></i>
+                        <span>
+                            {{x.enrollments}} enrollment
+                        </span>
+                    </div>
+                    <div class="m-views">
+                        <i class="fa fa-eye"></i>
+                        <span>  {{x.views}} views</span>
+                    </div>
+                </div>
+
+            </li>
         </a>
     {% endfor %}
 </ul>
