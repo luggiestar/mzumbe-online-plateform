@@ -587,9 +587,9 @@ table
         justify-content:center;
         align-items:center;
         border-radius:5px;
-        box-shadow:2px 3px 3px 5px rgba(90,90,90,0.18);
+        box-shadow:2px 3px 4px 6px rgba(90,90,90,0.16);
         margin-right:30px;
-        margin-bottom:30px;
+        margin-bottom:35px;
 
     }
     .sponsor-logo-box
