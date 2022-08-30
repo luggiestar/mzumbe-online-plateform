@@ -586,13 +586,13 @@ table
         border-radius:5px;
 
     }
-    .sponsor-logo
+    .sponsor-logo-box
     {
         display:flex;
         justify-content:center;
         align-items:center;
     }
-    .sponsor-logo img
+    .sponsor-logo-box img
     {
         height:50px;
     }
