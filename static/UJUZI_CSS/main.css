@@ -813,6 +813,10 @@ table
 
 @media  screen and (max-width:600px)
 {
+    .sponsor
+    {
+        margin-right:0;
+    }
     .cat-name
     {
         font-size:18px;
