@@ -539,7 +539,11 @@ table
     justify-content: space-between;
     padding:8px 5px 2px 6px;
     font-size:0.7rem;
+}
 
+.m-st-views-course
+{
+    padding:8px 15px 2px 15px !important;
 }
 .m-st-views div span
 {
