@@ -588,6 +588,7 @@ table
         align-items:center;
         border-radius:5px;
         box-shadow:2px 3px 3px 5px rgba(90,90,90,0.15);
+        box-shadow:-2px -3px 3px 5px rgba(90,90,90,0.15);
         margin-right:30px;
         margin-bottom:30px;
 
