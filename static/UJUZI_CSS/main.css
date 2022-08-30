@@ -603,6 +603,10 @@ table
     {
         height:55px;
     }
+    .square-logo img
+    {
+        height:75px;
+    }
     .web-link
     {
         font-size:0.9rem;
