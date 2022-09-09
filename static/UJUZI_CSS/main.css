@@ -611,6 +611,7 @@ table
     .sponsor-logo-box img
     {
         height:55px;
+        object-fit:contain;
     }
     .square-logo img
     {
