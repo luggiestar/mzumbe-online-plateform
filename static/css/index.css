@@ -1,7 +1,10 @@
 a {
 	text-decoration: none;
 }
-
+.header-txt
+{
+    padding:2rem;
+}
 .elp-bg{
     background: #1B3B96;
     color: #fff !important;
