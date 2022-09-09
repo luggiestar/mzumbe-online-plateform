@@ -3,7 +3,7 @@ a {
 }
 .header-txt
 {
-    padding:2rem;
+    padding:0rem 6rem 0rem 6rem;
 }
 .elp-bg{
     background: #1B3B96;
@@ -166,6 +166,7 @@ img {
         margin-top:-12px;
         font-size:1.1rem;
         letter-spacing:.5px;
+        padding:0rem 1rem 0rem 1rem;
     }
     .index-logo img
     {
