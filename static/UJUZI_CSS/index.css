@@ -29,7 +29,11 @@ body {
     bottom: -500px;
     left: -200px;
  }
-
+.abt-txt
+{
+    font-size:1rem;
+    letter-spacing:0.3px;
+}
 .container {
     display: flex;
     align-items: center;
