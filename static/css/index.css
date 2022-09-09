@@ -5,6 +5,11 @@ a {
 {
     padding:0rem 8rem 0rem 8rem;
 }
+.abt-txt
+{
+    font-size:1.2rem !important;
+    letter-spacing:0.3px;
+}
 .elp-bg{
     background: #1B3B96;
     color: #fff !important;
