@@ -9,7 +9,7 @@ a {
 {
     font-size:1.1rem !important;
     line-height:1.2rem;
-    letter-spacing:0.3px;
+    letter-spacing:0.5px;
 }
 .elp-bg{
     background: #1B3B96;
@@ -167,6 +167,11 @@ img {
 }
 @media  screen and (max-width:768px)
 {
+    .abt-txt
+    {
+        font-size:1.0rem !important;
+        line-height:1.1rem;
+    }
     .header-txt
     {
         margin-top:-12px;
