@@ -5,6 +5,11 @@ a {
 {
     padding:0rem 8rem 0rem 8rem;
 }
+.big-txt
+{
+    font-size:1.6rem !important;
+}
+
 .abt-txt
 {
     font-size:1.1rem !important;
