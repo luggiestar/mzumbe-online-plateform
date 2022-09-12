@@ -8,9 +8,9 @@ a {
 .abt-txt
 {
     font-size:1.1rem !important;
-    line-height:1.5rem;
+    line-height:1.55rem;
     letter-spacing:0.3px;
-    word-spacing:0.5px;
+    word-spacing:0.8px;
 }
 .elp-bg{
     background: #1B3B96;
@@ -171,7 +171,7 @@ img {
     .abt-txt
     {
         font-size:1.0rem !important;
-        line-height:1.2rem;
+        line-height:1.3rem;
     }
     .header-txt
     {
