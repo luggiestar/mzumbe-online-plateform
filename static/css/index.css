@@ -4,10 +4,11 @@ a {
 .header-txt
 {
     padding:0rem 8rem 0rem 8rem;
+    font-size:1.2rem;
 }
 .big-txt
 {
-    font-size:2.4rem !important;
+    font-size:2.0rem !important;
     letter-spacing:0.6px;
 }
 
@@ -182,7 +183,7 @@ img {
     .header-txt
     {
         margin-top:-12px;
-        font-size:1.1rem;
+        font-size:1.0rem;
         letter-spacing:.5px;
         padding:0rem 1rem 0rem 1rem;
     }
