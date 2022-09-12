@@ -4,7 +4,7 @@ a {
 .header-txt
 {
     padding:0rem 8rem 0rem 8rem;
-    font-size:1.2rem;
+    font-size:1.1rem;
 }
 .big-txt
 {
@@ -180,10 +180,15 @@ img {
         font-size:1.0rem !important;
         line-height:1.3rem;
     }
+    .big-txt
+    {
+        font-size:1.6rem !important;
+        letter-spacing:0.3px;
+    }
     .header-txt
     {
         margin-top:-12px;
-        font-size:1.0rem;
+        font-size:0.9rem;
         letter-spacing:.5px;
         padding:0rem 1rem 0rem 1rem;
     }
