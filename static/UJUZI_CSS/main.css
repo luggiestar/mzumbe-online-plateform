@@ -75,6 +75,8 @@ nav {
 .sp-txt
 {
     color:#0000CD;
+    font-weight:bold;
+    letter-spacing:.3px;
 }
 #toggle:checked ~ .side-bar .u-logo .logo-png .short-logo
 {
