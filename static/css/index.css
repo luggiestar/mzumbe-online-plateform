@@ -173,6 +173,11 @@ img {
 	margin: auto;
 	width: 7rem;
 }
+.index-footer
+{
+    padding:15px 10px 15px 10px;
+    font-size:1.2rem;
+}
 @media  screen and (max-width:768px)
 {
     .abt-txt
