@@ -45,7 +45,7 @@
 
 .sub-head-txt
 {
-    font-weight:600;
+    font-weight:600 !important;
     font-size:1.5rem !important;
 }
 .notification-bell{
