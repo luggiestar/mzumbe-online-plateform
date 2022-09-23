@@ -1230,6 +1230,8 @@ button{
  flex-wrap:wrap;
  padding-bottom:20px;
  margin-top:0px;
+ justify-content:center;
+ align-items:center;
 }
 
 
