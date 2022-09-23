@@ -4,8 +4,9 @@ $('.cat-courses-li').css('display','none');
 $('.latest-c').css('display','flex');
 
 
-$('.splide__list').on('click', '.category-li', function () {
-
+$('.category-li').each(function(){
+       $(this).click(()=>
+       {
             $('.cat-courses-li').css('display','flex');
             $('.cat-courses-li').css('padding-top','10px');
             $('.latest-c').css('display','none');
@@ -28,18 +29,8 @@ $('.splide__list').on('click', '.category-li', function () {
             $('.course-'+catId).css('opacity',1);
             $('.course-'+catId).css('display','flex');
 
-});
-
-//    $('.category-li').each(function(){
-//           $(this).click(()=>{
-//
-//
-//
-//
-//
-//
-//        })
-//    })
+    })
+})
 
 
 
