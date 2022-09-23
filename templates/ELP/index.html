@@ -123,8 +123,7 @@
 		</div>
 		{% if categories.count > 4  %}
 		<ul class="categories-list is-s splide" aria-label="Splide">
-			<div class="splide__track">
-				<div class="splide__list">
+
 					{% for i in categories %}
 						<li class="category-li splide__slide mt-4 ml-3 mb-3 shadow">
 								<div class="u-cat-no">{{i.id}}</div>
@@ -135,10 +134,29 @@
 								<span>{{i.name}} </span>
 						</li>
 					{% endfor %}
-				</div>
-			</div>
 		</ul>
 		{% endif %}
+
+<!--slider-->
+<!--		{% if categories.count > 4  %}-->
+<!--		<ul class="categories-list is-s splide" aria-label="Splide">-->
+<!--			<div class="splide__track">-->
+<!--				<div class="splide__list">-->
+<!--					{% for i in categories %}-->
+<!--						<li class="category-li splide__slide mt-4 ml-3 mb-3 shadow">-->
+<!--								<div class="u-cat-no">{{i.id}}</div>-->
+<!--								<div class="course-category-name" style="display:none">{{i.name}}</div>-->
+<!--								<div class="cat-img">-->
+<!--									<img src="{{i.icon.url}}"/>-->
+<!--								</div>-->
+<!--								<span>{{i.name}} </span>-->
+<!--						</li>-->
+<!--					{% endfor %}-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</ul>-->
+<!--		{% endif %}-->
+<!--end of slide-->
 
 		<div class="sub-title is-s ind-s-c-name">
 			<span class="cat-name">Latest</span> ~ courses
