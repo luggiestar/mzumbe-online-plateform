@@ -162,44 +162,46 @@
 			<span class="cat-name">Latest</span> ~ courses
 		 </div>
 
-
-		<!--latest courses-->
-		<ul class="u-course-list latest-c is-s pt-3">
-			{% for x in latest %}
-			<a href="{% url 'UJUZI:course_detail' x.name %}" style="text-decoration:none;">
-				<li class='u-course course-{{x.category.id}} ' id='l-course-{{x.id}}'>
-					<div class='course-img'>
-						<img src="{{x.image.url}}" alt='no image'>
-					</div>
-					<div class='u-course-desc'>
-						<div class='u-course-title'>
-							{{x.name}}
+		<div class="u-course-list-wrapper">
+			<!--latest courses-->
+			<ul class="u-course-list latest-c is-s pt-3">
+				{% for x in latest %}
+				<a href="{% url 'UJUZI:course_detail' x.name %}" style="text-decoration:none;">
+					<li class='u-course course-{{x.category.id}} ' id='l-course-{{x.id}}'>
+						<div class='course-img'>
+							<img src="{{x.image.url}}" alt='no image'>
 						</div>
-						<div class='u-course-desc-txt'>
-							{{x.objective|safe}}
+						<div class='u-course-desc'>
+							<div class='u-course-title'>
+								{{x.name}}
+							</div>
+							<div class='u-course-desc-txt'>
+								{{x.objective|safe}}
+							</div>
 						</div>
-					</div>
 
 
-					<div class="m-st-views m-st-views-course">
-						<div class="m-st">
-							<i class="fa fa-users"></i>
-							<span>
-								{{x.enrollments}} enrollment
-							</span>
+						<div class="m-st-views m-st-views-course">
+							<div class="m-st">
+								<i class="fa fa-users"></i>
+								<span>
+									{{x.enrollments}} enrollment
+								</span>
+							</div>
+							<div class="m-views">
+								<i class="fa fa-eye"></i>
+								<span>  {{x.views}} views</span>
+							</div>
 						</div>
-						<div class="m-views">
-							<i class="fa fa-eye"></i>
-							<span>  {{x.views}} views</span>
-						</div>
-					</div>
 
 
-				</li>
-			</a>
-			{% endfor %}
-		</ul>
-		<!--end of the latest course-->
+					</li>
+				</a>
+				{% endfor %}
+			</ul>
+			<!--end of the latest course-->
+		</div>
+
 
 		<!--selected category courss-->
 		<ul class="u-course-list cat-courses-li is-s">
