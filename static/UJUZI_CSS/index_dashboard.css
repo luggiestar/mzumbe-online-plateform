@@ -43,7 +43,11 @@
     color:white;
 }
 
-
+.sub-head-txt
+{
+    font-weight:600;
+    font-size:1.5rem !important;
+}
 .notification-bell{
     height:30px;
     width:30px;
