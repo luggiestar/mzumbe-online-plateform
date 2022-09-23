@@ -1168,7 +1168,7 @@ button{
 {
     font-weight:500;
     letter-spacing:0.5px;
-    font-size:0.85rem;
+    font-size:0.95rem;
 }
 .category-li .cat-img
 {
@@ -1367,10 +1367,6 @@ button{
         min-height:75px;
     }
 
-    .category-li span
-    {
-        font-size:0.6rem;
-    }
     .category-li i
     {
         font-size:24px;
