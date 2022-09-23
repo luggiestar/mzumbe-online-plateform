@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin:0;
     padding:0;
+    font-family:"Work sans";
 }
 
 
@@ -195,7 +196,6 @@ button{
 .right-tab-label{
     font-size:1rem;
     padding:2px;
-    font-family: Tahoma;
 }
 .notification-link:hover{
     background: #19B3D3;
@@ -609,7 +609,7 @@ button{
     background-color:rgba(10, 120, 180, 0.8);
 }
 .stream-title{
-    font-family: Tahoma;
+
     font-size: 16px;
     color:white;
 }
@@ -1734,7 +1734,6 @@ button{
     width: 100%;
     font-size:18px;
     justify-content: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, Tahoma;
 }
 /* end */
 /* module style start here */
@@ -1873,7 +1872,6 @@ button{
 .under-construct p{
     font-size: 24px;
     color:white;
-    font-family: Verdana, Geneva, Tahoma, Tahoma;
 }
 /*progress bar style starts here*/
 .progress{
@@ -2124,7 +2122,6 @@ border:1px solid rgba(218, 217, 217, 0.9);
     right:5px;
     top:5px;
     color:white;
-    font-family: Tahoma;
     font-weight: 400;
     display:none;
     justify-content: center;

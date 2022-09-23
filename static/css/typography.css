@@ -15,7 +15,7 @@ Table Of Contents
 
 body {
     font-size: 14px;
-    font-family: 'Lato', sans-serif;
+    font-family:"Work sans";
 }
 
 h1,
@@ -25,10 +25,8 @@ h4,
 h5,
 h6 {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
 }
 p{
-    font-family: 'Lato', sans-serif;
     font-size: 15px;
     line-height: 26px;
     color: #444;
@@ -48,7 +46,6 @@ a:visited {
     -moz-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     outline: 0;
-    font-family: 'Poppins', sans-serif;
 }
 a:hover{
     text-decoration: none;
