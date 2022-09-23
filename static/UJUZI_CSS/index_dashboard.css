@@ -1225,6 +1225,11 @@ button{
 .u-course-list-wrapper
 {
     width:calc(100vw -4rem);
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+
     height:auto;
     display:flex;
     justify-content:center;
