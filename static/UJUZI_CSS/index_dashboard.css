@@ -4,7 +4,10 @@
     padding:0;
     font-family:"Work sans";
 }
-
+body
+{
+    font-family:"Work sans";
+}
 
 :root
 {
@@ -1320,6 +1323,10 @@ button{
 }
 /*tablet view*/
 @media  screen and (max-width:768px){
+    .sub-head-txt
+    {
+        font-size:1.2rem !important;
+    }
     .u-course:hover
     {
          box-shadow:none;
