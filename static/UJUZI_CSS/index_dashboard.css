@@ -1233,6 +1233,7 @@ button{
 }
 .u-course-list
 {
+ width:fit-content;
  list-style-type:none;
  display:none;
  flex-wrap:wrap;
