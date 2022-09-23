@@ -18,7 +18,7 @@ a {
     line-height:1.55rem;
     letter-spacing:0.3px;
     word-spacing:0.8px;
-    justify-content:space-between;
+    justify-content:space-evenly !important;
 }
 .elp-bg{
     background: #1B3B96;
