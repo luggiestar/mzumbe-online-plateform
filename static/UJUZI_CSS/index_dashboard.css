@@ -2516,6 +2516,8 @@ border:1px solid rgba(218, 217, 217, 0.9);
 .u-content-box
 {
     padding:2rem 1rem 2rem 1rem;
+    width:100%;
+    background:purple;
 }
 
 
