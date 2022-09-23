@@ -4,10 +4,8 @@ if(window.location.pathname == '/home/')
     $('.cat-courses-li').css('display','none');
     $('.latest-c').css('display','flex');
 
-
-$('.splide__list').on('click', '.category-li', function () {
-
-
+    $('.category-li').each(function(){
+        $(this).click(()=>{
             $('.cat-courses-li').css('display','flex');
             $('.latest-c').css('display','none');
 
@@ -22,7 +20,7 @@ $('.splide__list').on('click', '.category-li', function () {
             $('.course-'+catId).css('visibility','visible');
             $('.course-'+catId).css('opacity',1);
             $('.course-'+catId).css('display','flex');
-
+        })
     })
 }
 
