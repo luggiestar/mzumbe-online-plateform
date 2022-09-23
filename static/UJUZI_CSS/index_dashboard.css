@@ -1222,28 +1222,15 @@ button{
 }
 /* ujuzi category courses*/
 
-.u-course-list-wrapper
-{
-    width:calc(100vw -4rem);
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-
-    height:auto;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:red;
-}
 .u-course-list
 {
- width:fit-content !important;
  list-style-type:none;
  display:none;
  flex-wrap:wrap;
  padding-bottom:20px;
  margin-top:0px;
+ justify-content:center;
+ align-items:center;
 }
 
 
